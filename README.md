@@ -4,11 +4,10 @@ Projeto Engenhria Software II
 Processo de instalação das dependências
 
 -Instalar react
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
 ```
 yarn create react-app . 
+```
+
  
  
 -Instalar reactstrap
