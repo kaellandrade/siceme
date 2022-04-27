@@ -1,8 +1,11 @@
 import React from "react";
 import Header from "../../components/header/Header"
-import Listagem from "./listagem.css"
+import Listagemstyle from "./ButtonSubStyle"
 import { Input } from "reactstrap"
 import { BiSearch } from "react-icons/bi";
+import ButtonSubMenu from "./ButtonSubMenu"
+import listagem from "./listagem.css"
+
 
 function ListagemGeral(props) {
   return (
@@ -30,12 +33,16 @@ function ListagemGeral(props) {
             </li>
           </ul>
 
-          <div className="flex-column" >
+          <main className="flex-column" >
+            <ButtonSubMenu texto={"Listagem Geral"} />
+            <ButtonSubMenu texto={"Limpeza"}  />
+            <ButtonSubMenu texto={"Desinfecção"} />
+            <ButtonSubMenu texto={"Esterilização"} />
+            <ButtonSubMenu texto={"Distribuição"} />
+           
             
-            <h3>Listagem Geral</h3>
-            <h3>Limpeza</h3>
 
-          </div>
+          </main>
 
       </section>
     </div>

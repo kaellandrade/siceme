@@ -1,17 +1,17 @@
 import React from "react";
-import {ButtonH} from "./headerstyle.js";
+import { ButtonSubM } from "./ButtonSubStyle";
 
 
-function ButtonHeader(props) {
+function ButtonSubMenu(props) {
   return (
     <li className="nav-item">
       <a href={props.href}>
-        <ButtonH className="button" buttonS={props.buttonS} buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor} >
+        <ButtonSubM className="button" size="lg" block buttonS={props.buttonS} buttonSelect={props.buttonSelect}  >
           {props.texto}
-        </ButtonH>
+        </ButtonSubM>
       </a>
     </li>
   );
 }
 
-export default ButtonHeader;
+export default ButtonSubMenu;
