@@ -29,3 +29,7 @@ yarn add react-router-dom
 ```
 yarn add styled-components 
 ```
+-Instalar react icones
+```
+yarn add react-icons
+```
