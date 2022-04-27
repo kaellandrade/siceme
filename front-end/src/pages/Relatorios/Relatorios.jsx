@@ -7,7 +7,7 @@ import { BiSearch } from "react-icons/bi";
 function Relatorios(props) {
   return (
     <div className="Relatorios">
-      <Header optionButton="Relatorios" buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor}/>
+      <Header optionButton="Relatorios" buttonSelect={props.buttonSelect} />
       <section className="col-md-12">
           <h1 className="body">Relatorios</h1>
           <ul className="col-md-12 nav d-flex align-items-center justify-content-around">

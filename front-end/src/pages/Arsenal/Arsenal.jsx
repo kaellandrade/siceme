@@ -7,7 +7,7 @@ import { BiSearch } from "react-icons/bi";
 function Arsenal(props) {
   return (
     <div className="Arsenal">
-      <Header optionButton="Arsenal" buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor}/>
+      <Header optionButton="Arsenal" buttonSelect={props.buttonSelect} />
       <section className="col-md-12">
           <h1 className="body">Arsenal</h1>
           <ul className="col-md-12 nav d-flex align-items-center justify-content-around">

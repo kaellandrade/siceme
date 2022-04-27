@@ -12,28 +12,23 @@ function MainRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element={
-          <Home buttonSelect="Início" colorButton="#000"  
-                backgroundColor="#fff" />
+          <Home buttonSelect="Início" />
           } 
         />
         <Route path="/triagem/listagemgeral" element={
-          <ListagemGeral buttonSelect="Triagem" colorButton="#000"                 
-                         backgroundColor="#fff" />
+          <ListagemGeral buttonSelect="Triagem" />
           } 
         />
         <Route path="/arsenal" element={
-          <Arsenal buttonSelect="Arsenal" colorButton="#000"                 
-                         backgroundColor="#fff" />
+          <Arsenal buttonSelect="Arsenal" />
           } 
         />
         <Route path="/cadastro" element={
-          <Cadastro buttonSelect="Cadastro" colorButton="#000"                 
-                         backgroundColor="#fff" />
+          <Cadastro buttonSelect="Cadastro" />
           } 
         />
         <Route path="/relatorios" element={
-          <Relatorios buttonSelect="Relatorios" colorButton="#000"                 
-                         backgroundColor="#fff" />
+          <Relatorios buttonSelect="Relatorios" />
           } 
         />
       </Routes>

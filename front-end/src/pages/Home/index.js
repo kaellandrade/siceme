@@ -7,7 +7,7 @@ import { BiSearch } from "react-icons/bi";
 function Home(props) {
   return (
     <div className="Home">
-      <Header buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor} />
+      <Header buttonSelect={props.buttonSelect} />
       <section className="col-md-12">
           <h1 className="body">Painel Administrativo</h1>
           <ul className="col-md-12 nav d-flex align-items-center justify-content-around">

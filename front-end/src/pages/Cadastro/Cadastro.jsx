@@ -7,7 +7,7 @@ import { BiSearch } from "react-icons/bi";
 function Cadastro(props) {
   return (
     <div className="Cadastro">
-      <Header optionButton="Cadastro" buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor}/>
+      <Header optionButton="Cadastro" buttonSelect={props.buttonSelect} />
       <section className="col-md-12">
           <h1 className="body">Cadastro</h1>
           <ul className="col-md-12 nav d-flex align-items-center justify-content-around">

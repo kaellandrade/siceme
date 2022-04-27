@@ -14,11 +14,11 @@ function Header(props) {
             
             <ul className="col-md-7 nav d-flex align-items-center justify-content-around">
               <h1>SICEME</h1>
-              <Button texto="Início" href="/" buttonS="Início" buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor} />
-              <Button texto="Triagem" href="/triagem/listagemgeral" buttonS="Triagem" buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor} />
-              <Button texto="Arsenal" href="/arsenal" buttonS="Arsenal" buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor} />
-              <Button texto="Cadastro" href="/cadastro" buttonS="Cadastro" buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor}  />
-              <Button texto="Relatórios" href="/relatorios" buttonS="Relatorios" buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor} />
+              <Button texto="Início" href="/" buttonS="Início" buttonSelect={props.buttonSelect} />
+              <Button texto="Triagem" href="/triagem/listagemgeral" buttonS="Triagem" buttonSelect={props.buttonSelect} />
+              <Button texto="Arsenal" href="/arsenal" buttonS="Arsenal" buttonSelect={props.buttonSelect} />
+              <Button texto="Cadastro" href="/cadastro" buttonS="Cadastro" buttonSelect={props.buttonSelect}  />
+              <Button texto="Relatórios" href="/relatorios" buttonS="Relatorios" buttonSelect={props.buttonSelect} />
             </ul>
 
           </article>
