@@ -4,10 +4,10 @@ import home from "./home.css"
 import { Input } from "reactstrap"
 import { BiSearch } from "react-icons/bi";
 
-function Home() {
+function Home(props) {
   return (
     <div className="Home">
-      <Header />
+      <Header buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor} />
       <section className="col-md-12">
           <h1 className="body">Painel Administrativo</h1>
           <ul className="col-md-12 nav d-flex align-items-center justify-content-around">

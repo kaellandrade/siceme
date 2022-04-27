@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "../../components/header/Header"
-import Listagem from "./listagem.css"
+import cadastro from "./cadastro.css"
 import { Input } from "reactstrap"
 import { BiSearch } from "react-icons/bi";
 
-function ListagemGeral(props) {
+function Cadastro(props) {
   return (
-    <div className="ListagemGeral">
-      <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor}/>
+    <div className="Cadastro">
+      <Header optionButton="Cadastro" buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor}/>
       <section className="col-md-12">
-          <h1 className="body">Listagem Geral</h1>
+          <h1 className="body">Cadastro</h1>
           <ul className="col-md-12 nav d-flex align-items-center justify-content-around">
 
             <li className="nav-item">
@@ -35,4 +35,4 @@ function ListagemGeral(props) {
   );
 }
 
-export default ListagemGeral;
+export default Cadastro;

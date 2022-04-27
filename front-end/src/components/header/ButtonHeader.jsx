@@ -1,16 +1,14 @@
 import React from "react";
-import header from "./headerstyle.js"
-import { Button } from 'reactstrap';
-
+import {ButtonH} from "./headerstyle.js";
 
 
 function ButtonHeader(props) {
   return (
     <li className="nav-item">
       <a href={props.href}>
-        <Button className="button" buttonHeader='false' >
+        <ButtonH className="button" buttonS={props.buttonS} buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor} >
           {props.texto}
-        </Button>
+        </ButtonH>
       </a>
     </li>
   );

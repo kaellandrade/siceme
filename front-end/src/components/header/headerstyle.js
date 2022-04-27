@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from 'reactstrap';
 
 export const HeaderStyle = styled.header`
   background: #316B83;
@@ -7,17 +8,14 @@ export const HeaderStyle = styled.header`
     color: #fff;
     padding-right: 100px;
   }
-
-  button{
-    background-color: ${props => (props.buttonHeader == 'active' ? '#fff' : '#316B83') };
-    padding: 16px;
-    font-size: small;
-    color: #000;
-    font-weight: 500;
-  }
 `;
 
-
- 
-
+export const ButtonH = styled(Button)`
+  background-color: ${props => props.buttonS === props.buttonSelect ? props.backgroundColor : "#316B83" };
+  padding: 16px;
+  font-size: small;
+  color: ${props => props.buttonS === props.buttonSelect ? props.colorButton : "#fff" };
+  font-weight: 500;
+`;
+  
 

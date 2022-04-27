@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "../../components/header/Header"
-import Listagem from "./listagem.css"
+import arsenal from "./arsenal.css"
 import { Input } from "reactstrap"
 import { BiSearch } from "react-icons/bi";
 
-function ListagemGeral(props) {
+function Arsenal(props) {
   return (
-    <div className="ListagemGeral">
-      <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor}/>
+    <div className="Arsenal">
+      <Header optionButton="Arsenal" buttonSelect={props.buttonSelect} colorButton={props.colorButton} backgroundColor={props.backgroundColor}/>
       <section className="col-md-12">
-          <h1 className="body">Listagem Geral</h1>
+          <h1 className="body">Arsenal</h1>
           <ul className="col-md-12 nav d-flex align-items-center justify-content-around">
 
             <li className="nav-item">
@@ -35,4 +35,4 @@ function ListagemGeral(props) {
   );
 }
 
-export default ListagemGeral;
+export default Arsenal;
