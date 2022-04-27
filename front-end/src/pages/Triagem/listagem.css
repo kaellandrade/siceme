@@ -37,9 +37,16 @@ main.flex-column{
   padding-bottom: 300px ;
   position: relative;
   right: 30.4%;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 ul.col-md-12.nav.d-flex.align-items-center.justify-content-around{
   padding-bottom: 50px;
+}
+
+button.d-flex.align-items-center{
+  background: none;
+  border: none;
+  position: relative;
+  right: 190px;
 }
