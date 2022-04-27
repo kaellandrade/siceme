@@ -1,12 +1,12 @@
 import React from "react";
 import Button from "./ButtonHeader";
-import header from "./header.css"
+import { HeaderStyle } from "./headerstyle.js" 
 
-function Header() {
+function Header(props) {
   return (
     <div>
-      {/* header */}
-      <header className="container-fluid">
+      {/* Header */}
+      <HeaderStyle className="container-fluid" >
         
         <section className="container">
           
@@ -15,8 +15,8 @@ function Header() {
             
             <ul className="col-md-7 nav d-flex align-items-center justify-content-around">
               <h1>SICEME</h1>
-              <Button texto="Início" href="/home" />
-              <Button texto="Triagem" href="/triagem" />
+              <Button texto="Início" href="/" buttonHeader={props.buttonHeader || 'no-active'} />
+              <Button texto="Triagem" href="/triagem/listagemgeral" buttonHeader={props.buttonHeader || 'no-active' } />
               <Button texto="Arsenal" href="/arsenal" />
               <Button texto="Cadastro" href="/cadastro" />
               <Button texto="Relatórios" href="/relatorios" />
@@ -24,8 +24,8 @@ function Header() {
 
           </article>
         </section>
-      </header>
-      {/* header */}
+      </HeaderStyle>
+      {/* Header */}
     </div>
   );
 }
