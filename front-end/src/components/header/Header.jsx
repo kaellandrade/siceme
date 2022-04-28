@@ -13,7 +13,7 @@ function Header(props) {
           
           <article className="row d-flex align-items-center">
             
-            <ul className="col-md-7 nav d-flex align-items-center justify-content-around">
+            <ul className="col-md-12 nav d-flex align-items-center justify-content-around">
               <h1>SICEME</h1>
               <Button texto="Início" href="/" buttonS="Início" buttonSelect={props.buttonSelect} />
               <Button texto="Triagem" href="/triagem" buttonS="Triagem" buttonSelect={props.buttonSelect} />

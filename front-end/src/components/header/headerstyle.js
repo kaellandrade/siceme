@@ -8,6 +8,10 @@ export const HeaderStyle = styled.header`
     color: #fff;
     padding-right: 100px;
   }
+
+  .container{
+    height: 58px;
+  }
 `;
 
 export const ButtonH = styled(Button)`

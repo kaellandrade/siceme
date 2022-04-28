@@ -4,7 +4,7 @@ import Listagemstyle from "./ButtonSubStyle"
 import { Input } from "reactstrap"
 import { BiSearch } from "react-icons/bi";
 import ButtonSubMenu from "./ButtonSubMenu"
-import listagem from "./listagem.css"
+import index from "./index.css"
 
 
 function Limpeza(props) {

@@ -29,19 +29,29 @@ view{
   margin: 0;
 }
 
-main.flex-column{
-  background-color: #316B83;
+main.container.flex-column{
+
+  background-color: white;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 350px ;
+  padding-bottom: 10px ;
   position: relative;
-  right: 30.4%;
   border-radius: 5px;
+  
 }
 
+
+div.col-md-2{
+  background-color: #316B83;
+  border-radius: 5px;
+  padding-bottom: 120px;
+}
+
+
+
 ul.col-md-12.nav.d-flex.align-items-center.justify-content-around{
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 button.d-flex.align-items-center{

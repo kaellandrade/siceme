@@ -4,7 +4,7 @@ import Listagemstyle from "./ButtonSubStyle"
 import { Input } from "reactstrap"
 import { BiSearch } from "react-icons/bi";
 import ButtonSubMenu from "./ButtonSubMenu"
-import listagem from "./listagem.css"
+import index from "./index.css"
 
 
 function Main(props) {
@@ -34,12 +34,24 @@ function Main(props) {
             </li>
           </ul>
 
-          <main className="flex-column" >
-            <ButtonSubMenu texto={"Listagem Geral"}  />
-            <ButtonSubMenu texto={"Limpeza"} href={"/triagem/limpeza"} onClick={e => e.preventDefault() }  />
-            <ButtonSubMenu texto={"Desinfecção"} />
-            <ButtonSubMenu texto={"Esterilização"} />
-            <ButtonSubMenu texto={"Distribuição"} />
+          <main className="container flex-column" >
+            <div className="row">
+
+              <div className="col-md-2">
+                
+                <ButtonSubMenu texto={"Listagem Geral"}  />
+                <ButtonSubMenu texto={"Limpeza"} href={"/triagem/limpeza"} onClick={e => e.preventDefault() }  />
+                <ButtonSubMenu texto={"Desinfecção"}  />
+                <ButtonSubMenu texto={"Esterilização"}  />
+                <ButtonSubMenu texto={"Distribuição"}  />
+
+              </div>
+
+              <div className="col-md-10">
+                <p>conteudo</p>
+              </div>
+            </div>
+            
           </main>
       </section>
     </div>
