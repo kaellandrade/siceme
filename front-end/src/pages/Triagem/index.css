@@ -2,7 +2,7 @@ h1.body{
   color: #316B83;
   text-align: center;
   padding: 20px;
-  font-size: 1px;
+  font-size: 30px;
 }
 
 view{
@@ -11,30 +11,11 @@ view{
   background-color: #316B83;
 }
 
-.busca{
-  /* width: 38em; */
-  /* margin: 0; */
-  /* position: relative;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%); */
-  /* display: flex; */
-  /* align-items: center;
-  justify-content: center; */
-}
-
-
 
 main.container.flex-column{
-
   background-color: white;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px ;
   position: relative;
   border-radius: 5px;
-  
 }
 
 
@@ -45,9 +26,43 @@ div.col-md-2{
 }
 
 button.button.search{
-  padding-bottom: 30px;
-  background: none;
+  width: 40px;
+  background: #316B83;
   border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
 }
 
+.row.search{
+  padding-bottom: 30px;
+  width: 1000px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input.search{
+  width: 900px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+svg{
+  color: white;
+}
+
+.table-responsive{
+  border-radius: 5px;
+}
+
+thead{
+  background-color: #316B83;
+  color: white;
+  
+}
+
+th, td{
+  text-align: center;   
+}
 
