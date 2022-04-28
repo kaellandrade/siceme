@@ -10,6 +10,42 @@ import TabelaTriagem from "./TabelaTriagem";
 
 function Main(props) {
 
+  var materiais = [
+    {
+      "id": "1",
+      "codigo": "001817",
+      "descricao": "Kit de emergencia medica",
+      "qtde": "85",
+      "aplicacao": "Cirurgia em geral",
+      "status": "em distribuição"
+    },
+    {
+      "id": "2",
+      "codigo": "001487",
+      "descricao": "Kit médico oftalmológico",
+      "qtde": "45",
+      "aplicacao": "Cirurgia oftalmológica",
+      "status": "em desinfecção"
+    },
+    {
+      "id": "5",
+      "codigo": "002341",
+      "descricao": "Pinça Schimidt Reta 18cm",
+      "qtde": "41",
+      "aplicacao": "Cirurgia de amígdalas",
+      "status": "em esterilização"
+    },
+    {
+      "id": "4",
+      "codigo": "001343",
+      "descricao": "Agulha 21G 1/2 40x8",
+      "qtde": "29",
+      "aplicacao": "Raqueanestesia",
+      "status": "em limpeza"
+    },
+    
+  ];
+
   return (
     <div className="Main">
       <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
@@ -43,14 +79,14 @@ function Main(props) {
 
               <div className="col-md-2">
                 <ButtonSubMenu texto={"Listagem Geral"}  />
-                <ButtonSubMenu texto={"Limpeza"} href={"/triagem/limpeza"} onClick={e => e.preventDefault() }  />
+                <ButtonSubMenu texto={"Limpeza"} href={"/triagem/limpeza"} />
                 <ButtonSubMenu texto={"Desinfecção"}  />
                 <ButtonSubMenu texto={"Esterilização"}  />
                 <ButtonSubMenu texto={"Distribuição"}  />
               </div>
 
               <div className="col-md-10">
-                <TabelaTriagem />
+                <TabelaTriagem dataMaterias={materiais} />
               </div>
             </div>
             

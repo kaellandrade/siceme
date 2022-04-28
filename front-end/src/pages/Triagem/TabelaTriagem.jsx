@@ -6,32 +6,7 @@ import index from "./index"
 
 function TabelaTriagem(props) {
 
-  var materiais = [
-    {
-      "id": "1",
-      "codigo": "001817",
-      "descricao": "Kit de emergencia medica",
-      "qtde": "85",
-      "aplicacao": "Cirurgia em geral",
-      "status": "em distribuição"
-    },
-    {
-      "id": "2",
-      "codigo": "001487",
-      "descricao": "Kit médico oftalmológico",
-      "qtde": "45",
-      "aplicacao": "Cirurgia oftalmológica",
-      "status": "em desinfecção"
-    },
-    {
-      "id": "3",
-      "codigo": "005047",
-      "descricao": "Kit de traqueostomia",
-      "qtde": "25",
-      "aplicacao": "Traqueostomia",
-      "status": "em esterilização"
-    }
-  ];
+  var materiais = props.dataMaterias;
 
   const renderMateriais = (materiais) => {
     return (
