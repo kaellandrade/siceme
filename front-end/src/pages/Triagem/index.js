@@ -1,15 +1,18 @@
 import React from "react";
 import Header from "../../components/header/Header"
-import home from "./home.css"
+import Listagemstyle from "./ButtonSubStyle"
 import { Input } from "reactstrap"
 import { BiSearch } from "react-icons/bi";
+import ButtonSubMenu from "./ButtonSubMenu"
+import listagem from "./listagem.css"
 
-function Home(props) {
+
+function Main(props) {
   return (
-    <div className="Home">
-      <Header buttonSelect={props.buttonSelect} />
-      <section className="col-md-12">
-          <h1 className="body">Painel Administrativo</h1>
+    <div className="Main">
+      <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
+      <section className="col-md-12 nav d-flex align-items-center justify-content-around">
+          <h1 className="body">Listagem Geral</h1>
           <ul className="col-md-12 nav d-flex align-items-center justify-content-around">
 
             <li className="nav-item">
@@ -31,9 +34,16 @@ function Home(props) {
             </li>
           </ul>
 
+          <main className="flex-column" >
+            <ButtonSubMenu texto={"Listagem Geral"}  />
+            <ButtonSubMenu texto={"Limpeza"} href={"/triagem/limpeza"} onClick={e => e.preventDefault() }  />
+            <ButtonSubMenu texto={"Desinfecção"} />
+            <ButtonSubMenu texto={"Esterilização"} />
+            <ButtonSubMenu texto={"Distribuição"} />
+          </main>
       </section>
     </div>
   );
 }
 
-export default Home;
+export default Main;

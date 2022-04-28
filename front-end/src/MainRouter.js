@@ -5,18 +5,25 @@ import ListagemGeral from './pages/Triagem/ListagemGeral';
 import Arsenal from './pages/Arsenal/Arsenal';
 import Cadastro from './pages/Cadastro/Cadastro';
 import Relatorios from './pages/Relatorios/Relatorios';
+import Limpeza from './pages/Triagem/Limpeza'
+import Triagem from './pages/Triagem/index'
 
 function MainRouter() {
 
   return (
     <BrowserRouter>
       <Routes>
+
         <Route path="/" exact element={
           <Home buttonSelect="Início" />
           } 
         />
-        <Route path="/triagem/listagemgeral" element={
-          <ListagemGeral buttonSelect="Triagem" />
+        <Route path="/triagem" element={
+          <Triagem buttonSelect="Triagem" />
+          } 
+        />
+        <Route path="/triagem/limpeza" element={
+          <Limpeza buttonSelect="Limpeza" />
           } 
         />
         <Route path="/arsenal" element={
@@ -31,6 +38,7 @@ function MainRouter() {
           <Relatorios buttonSelect="Relatorios" />
           } 
         />
+    
       </Routes>
     </BrowserRouter>
   );
