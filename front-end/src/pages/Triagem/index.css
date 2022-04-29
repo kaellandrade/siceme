@@ -23,6 +23,7 @@ div.col-md-2{
   background-color: #316B83;
   border-radius: 5px;
   padding-bottom: 120px;
+  align-items: center;
 }
 
 button.button.search{
@@ -66,3 +67,8 @@ th, td{
   text-align: center;   
 }
 
+.buttonMenu{
+  border: none;
+  background-color: #316B83;
+  width: 100%;
+}

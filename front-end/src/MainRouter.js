@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/index'
-import ListagemGeral from './pages/Triagem/ListagemGeral';
 import Arsenal from './pages/Arsenal/Arsenal';
 import Cadastro from './pages/Cadastro/Cadastro';
 import Relatorios from './pages/Relatorios/Relatorios';
 import Limpeza from './pages/Triagem/Limpeza'
 import Triagem from './pages/Triagem/index'
+
 
 function MainRouter() {
 
@@ -20,10 +20,6 @@ function MainRouter() {
         />
         <Route path="/triagem" element={
           <Triagem buttonSelect="Triagem" />
-          } 
-        />
-        <Route path="/triagem/limpeza" element={
-          <Limpeza buttonSelect="Limpeza" />
           } 
         />
         <Route path="/arsenal" element={

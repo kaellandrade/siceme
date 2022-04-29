@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import Header from "../../components/header/Header"
 import Listagemstyle from "./ButtonSubStyle"
 import { Input, Table } from "reactstrap"
-import { BiSearch } from "react-icons/bi";
 import ButtonSubMenu from "./ButtonSubMenu"
 import index from "./index.css"
 import TabelaTriagem from "./TabelaTriagem";
 
 
 function Main(props) {
+
+  const [buttonSelect, setButtonSelect] = useState(localStorage.getItem('buttonSelect'));
 
   var materiais = [
     {
@@ -17,7 +19,7 @@ function Main(props) {
       "descricao": "Kit de emergencia medica",
       "qtde": "85",
       "aplicacao": "Cirurgia em geral",
-      "status": "em distribuição"
+      "status": "Em distribuição"
     },
     {
       "id": "2",
@@ -25,7 +27,7 @@ function Main(props) {
       "descricao": "Kit médico oftalmológico",
       "qtde": "45",
       "aplicacao": "Cirurgia oftalmológica",
-      "status": "em desinfecção"
+      "status": "Em desinfecção"
     },
     {
       "id": "5",
@@ -33,7 +35,7 @@ function Main(props) {
       "descricao": "Pinça Schimidt Reta 18cm",
       "qtde": "41",
       "aplicacao": "Cirurgia de amígdalas",
-      "status": "em esterilização"
+      "status": "Em esterilização"
     },
     {
       "id": "4",
@@ -41,12 +43,21 @@ function Main(props) {
       "descricao": "Agulha 21G 1/2 40x8",
       "qtde": "29",
       "aplicacao": "Raqueanestesia",
-      "status": "em limpeza"
+      "status": "Em limpeza"
     },
     
   ];
 
+  useEffect(() => {
+    setButtonSelect(window.localStorage.getItem('buttonSelect'));
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('buttonSelect', buttonSelect);
+  }, [buttonSelect]);
+
   return (
+    
     <div className="Main">
       <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
       <section className="col-md-12 nav d-flex align-items-center justify-content-around">
@@ -78,21 +89,33 @@ function Main(props) {
             <div className="row">
 
               <div className="col-md-2">
-                <ButtonSubMenu texto={"Listagem Geral"}  />
-                <ButtonSubMenu texto={"Limpeza"} href={"/triagem/limpeza"} />
-                <ButtonSubMenu texto={"Desinfecção"}  />
-                <ButtonSubMenu texto={"Esterilização"}  />
-                <ButtonSubMenu texto={"Distribuição"}  />
+                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Listagem Geral") }  >
+                  <ButtonSubMenu texto={"Listagem Geral"}  />
+                </button>
+                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Em limpeza") }  > 
+                  <ButtonSubMenu texto={"Limpeza"}  />
+                </button>
+                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Em desinfecção") } >
+                  <ButtonSubMenu texto={"Desinfecção"}  />
+                </button>
+                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Em esterilização") } >
+                  <ButtonSubMenu texto={"Esterilização"}  />
+                </button>
+                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Em distribuição") } >
+                  <ButtonSubMenu texto={"Distribuição"} />
+                </button>
+                
               </div>
 
               <div className="col-md-10">
-                <TabelaTriagem dataMaterias={materiais} />
+                <TabelaTriagem buttonSelect={buttonSelect} dataMaterias={materiais} />
               </div>
             </div>
             
           </main>
       </section>
     </div>
+   
   );
 }
 

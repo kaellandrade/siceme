@@ -7,14 +7,27 @@ import index from "./index"
 function TabelaTriagem(props) {
 
   var materiais = props.dataMaterias;
+  var buttonSelect = props.buttonSelect;
 
   const renderMateriais = (materiais) => {
-    return (
-      materiais.map(({ id, codigo, descricao, qtde, aplicacao, status}) => {
-        return <RowTabelaTriagem id={id} codigo={codigo} descricao={descricao} 
-                  qtde={qtde} aplicacao={aplicacao} status={status} />
-      })
-    )
+    if(buttonSelect == "Listagem Geral"){
+      return (
+        materiais.map(({ id, codigo, descricao, qtde, aplicacao, status}) => {
+          return <RowTabelaTriagem id={id} codigo={codigo} descricao={descricao} 
+                    qtde={qtde} aplicacao={aplicacao} status={status} />
+        })
+      )
+    }
+    else{
+      return (
+        materiais.map(({ id, codigo, descricao, qtde, aplicacao, status}) => {
+          if(status === buttonSelect){
+            return <RowTabelaTriagem id={id} codigo={codigo} descricao={descricao} 
+                      qtde={qtde} aplicacao={aplicacao} status={status} />
+          }
+        })
+      )
+    }
   } 
 
   return (
