@@ -23,7 +23,8 @@ function Main(props) {
   }
 
   function buscarPadrao(nome, materialPesq){
-    return nome.search(materialPesq)
+    var regex = new RegExp(materialPesq, "i"); //ignorar maiusculas e minusculas
+    return nome.search(regex);
   }
 
   useEffect(() => {
