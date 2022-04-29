@@ -43,6 +43,10 @@ button.button.search{
   margin-right: auto;
 }
 
+.form.search{
+  width: 900px;
+}
+
 .input.search{
   width: 900px;
   border-top-right-radius: 0;
