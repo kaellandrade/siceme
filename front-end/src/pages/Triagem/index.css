@@ -67,20 +67,19 @@ svg{
   align-items: center;
   overflow-y: auto;
   max-height: 650px;
+  display: block;
+  width: 100%;
 }
 
 thead{
   background-color: #316B83;
   color: white;
-  width: 100%;
-  position: relative;
-  
 }
-
 
 th, td{
   text-align: center;   
 }
+
 
 .buttonMenu{
   border: none;

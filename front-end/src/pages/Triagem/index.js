@@ -8,11 +8,7 @@ import index from "./index.css"
 import TabelaTriagem from "./TabelaTriagem";
 import { materiais } from "../../data/data"
 
-
-
 function Main(props) {
-
-
 
   const [buttonSelect, setButtonSelect] = useState(localStorage.getItem('buttonSelect'));
   const [dataMateriais, setDataMateriais] = useState(materiais);
@@ -92,13 +88,7 @@ function Main(props) {
               </div>
 
               <div className="col-md-10">
-                <div>
-                  
-                </div>
-                <div>
-                  <TabelaTriagem buttonSelect={buttonSelect} dataMaterias={dataMateriais} />
-                </div>
-                
+                <TabelaTriagem buttonSelect={buttonSelect} dataMaterias={dataMateriais} />
               </div>
             </div>
             
