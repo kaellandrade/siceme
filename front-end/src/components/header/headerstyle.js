@@ -15,10 +15,10 @@ export const HeaderStyle = styled.header`
 `;
 
 export const ButtonH = styled(Button)`
-  background-color: ${props => props.buttonS === props.buttonSelect ? "#fff" : "#316B83" };
+  background-color: ${props => props.texto === props.buttonSelect ? "#fff" : "#316B83" };
   padding: 18px;
   font-size: small;
-  color: ${props => props.buttonS === props.buttonSelect ? "#316B83" : "#fff" };
+  color: ${props => props.texto === props.buttonSelect ? "#316B83" : "#fff" };
   font-weight: 500;
   border-top: none;
   border-left: none;

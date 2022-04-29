@@ -71,4 +71,9 @@ th, td{
   border: none;
   background-color: #316B83;
   width: 100%;
+  text-decoration-color: red;
+}
+
+.table-responsive{
+  font-size: small;
 }

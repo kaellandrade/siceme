@@ -9,7 +9,7 @@ function RowTabelaTriagem(props) {
         {props.codigo}
       </td>
       <td>
-        {props.descricao}
+        {props.nome}
       </td>
       <td>
         {props.qtde}
@@ -18,7 +18,7 @@ function RowTabelaTriagem(props) {
         {props.aplicacao}
       </td>
       <td>
-        {props.status}
+        Em {props.status}
       </td>
     </tr>
   );

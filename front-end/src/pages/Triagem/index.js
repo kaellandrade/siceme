@@ -6,47 +6,13 @@ import { Input, Table } from "reactstrap"
 import ButtonSubMenu from "./ButtonSubMenu"
 import index from "./index.css"
 import TabelaTriagem from "./TabelaTriagem";
+import { materiais } from "../../data/data"
 
 
 function Main(props) {
 
   const [buttonSelect, setButtonSelect] = useState(localStorage.getItem('buttonSelect'));
 
-  var materiais = [
-    {
-      "id": "1",
-      "codigo": "001817",
-      "descricao": "Kit de emergencia medica",
-      "qtde": "85",
-      "aplicacao": "Cirurgia em geral",
-      "status": "Em distribuição"
-    },
-    {
-      "id": "2",
-      "codigo": "001487",
-      "descricao": "Kit médico oftalmológico",
-      "qtde": "45",
-      "aplicacao": "Cirurgia oftalmológica",
-      "status": "Em desinfecção"
-    },
-    {
-      "id": "5",
-      "codigo": "002341",
-      "descricao": "Pinça Schimidt Reta 18cm",
-      "qtde": "41",
-      "aplicacao": "Cirurgia de amígdalas",
-      "status": "Em esterilização"
-    },
-    {
-      "id": "4",
-      "codigo": "001343",
-      "descricao": "Agulha 21G 1/2 40x8",
-      "qtde": "29",
-      "aplicacao": "Raqueanestesia",
-      "status": "Em limpeza"
-    },
-    
-  ];
 
   useEffect(() => {
     setButtonSelect(window.localStorage.getItem('buttonSelect'));
@@ -65,7 +31,7 @@ function Main(props) {
           <div className="container">
             
             <div className="row title">
-              <h1 className="body">Listagem Geral</h1>
+              <h1 className="body">{buttonSelect}</h1>
             </div>
             <div className="row search">
                           
@@ -90,19 +56,19 @@ function Main(props) {
 
               <div className="col-md-2">
                 <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Listagem Geral") }  >
-                  <ButtonSubMenu texto={"Listagem Geral"}  />
+                  <ButtonSubMenu texto={"Listagem Geral"} buttonSelect={buttonSelect} />
                 </button>
-                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Em limpeza") }  > 
-                  <ButtonSubMenu texto={"Limpeza"}  />
+                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Limpeza") }  > 
+                  <ButtonSubMenu texto={"Limpeza"} buttonSelect={buttonSelect} />
                 </button>
-                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Em desinfecção") } >
-                  <ButtonSubMenu texto={"Desinfecção"}  />
+                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Desinfecção") } >
+                  <ButtonSubMenu texto={"Desinfecção"} buttonSelect={buttonSelect} />
                 </button>
-                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Em esterilização") } >
-                  <ButtonSubMenu texto={"Esterilização"}  />
+                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Esterilização") } >
+                  <ButtonSubMenu texto={"Esterilização"} buttonSelect={buttonSelect} />
                 </button>
-                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Em distribuição") } >
-                  <ButtonSubMenu texto={"Distribuição"} />
+                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Distribuição") } >
+                  <ButtonSubMenu texto={"Distribuição"} buttonSelect={buttonSelect} />
                 </button>
                 
               </div>
