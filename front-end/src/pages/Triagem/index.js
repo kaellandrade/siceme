@@ -12,6 +12,8 @@ import { materiais } from "../../data/data"
 
 function Main(props) {
 
+
+
   const [buttonSelect, setButtonSelect] = useState(localStorage.getItem('buttonSelect'));
   const [dataMateriais, setDataMateriais] = useState(materiais);
 
@@ -67,10 +69,10 @@ function Main(props) {
 
           </div>
 
-          <main className="container flex-column" >
+          <main className="container-fluid flex-column" >
             <div className="row">
 
-              <div className="col-md-2">
+              <div className="col-md-1">
                 <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Listagem Geral") }  >
                   <ButtonSubMenu texto={"Listagem Geral"} buttonSelect={buttonSelect} />
                 </button>
@@ -90,7 +92,13 @@ function Main(props) {
               </div>
 
               <div className="col-md-10">
-                <TabelaTriagem buttonSelect={buttonSelect} dataMaterias={dataMateriais} />
+                <div>
+                  
+                </div>
+                <div>
+                  <TabelaTriagem buttonSelect={buttonSelect} dataMaterias={dataMateriais} />
+                </div>
+                
               </div>
             </div>
             
