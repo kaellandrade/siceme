@@ -51,7 +51,7 @@ function Main(props) {
                 <Input  
                   className="input search"
                   type="search"
-                  placeholder="Buscar kit/material"
+                  placeholder="Digite o nome do kit/material"
                   id="inputBuscaMaterial"
                   
                 />
