@@ -94,7 +94,9 @@ function Main(props) {
             
           </main>
       </section>
+      
     </div>
+    
    
   );
 }

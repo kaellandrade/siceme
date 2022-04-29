@@ -6,7 +6,7 @@ import Cadastro from './pages/Cadastro/Cadastro';
 import Relatorios from './pages/Relatorios/Relatorios';
 import Limpeza from './pages/Triagem/Limpeza'
 import Triagem from './pages/Triagem/index'
-
+import Login from './pages/Login/index'
 
 function MainRouter() {
 
@@ -32,6 +32,11 @@ function MainRouter() {
         />
         <Route path="/relatorios" element={
           <Relatorios buttonSelect="Relatorios" />
+          } 
+        />
+
+        <Route path="/login" element={
+          <Login />
           } 
         />
     
