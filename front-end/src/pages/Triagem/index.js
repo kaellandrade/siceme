@@ -19,7 +19,7 @@ function Main(props) {
     event.preventDefault();
     var materialPesq = document.getElementById("inputBuscaMaterial").value;
     if(materialPesq.length != 0)
-      setDataMateriais(dataMateriais.filter(function(obj) { return (buscarPadrao(obj.nome,materialPesq) != -1 ) ; }));
+      setDataMateriais(dataMateriais.filter(function(obj) { return (buscarPadrao(obj.nome,materialPesq) > -1 ) ; }));
   }
 
   function buscarPadrao(nome, materialPesq){
