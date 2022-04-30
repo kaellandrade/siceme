@@ -10,12 +10,12 @@ export const ButtonSubM = styled(Button)`
   border-top: none;
   border-left: none;
   border-right: none;
+  border-bottom: 2px;
   border-width: 2px;
   border-color: #316B83; 
   
   :hover{
-    border-color: white;
-    background-color: #316B83;  
+    background-color: #3d84a2;  
   }
 `;
   
