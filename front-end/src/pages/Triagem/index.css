@@ -42,7 +42,7 @@ button.button.search{
 
 .row.search{
   padding-bottom: 30px;
-  width: 1000px;
+  width: 1200px;
 
   margin-left: auto;
   margin-right: auto;
@@ -56,6 +56,14 @@ button.button.search{
   width: 900px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  
+  
+}
+
+.input.search:focus{
+  outline:none;
+  box-shadow: none;
+  border-color: #979ca0;
 }
 
 svg{
@@ -86,4 +94,26 @@ th, td{
   border: none;
   background-color: #316b83;
   width: 100%;
+}
+
+
+
+.btn.btn-primary{
+  width: 120px;
+  font-size: 14px;
+  color: rgba(38, 50, 56, 0.734);
+  background-color: white;
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.btn.btn-primary:hover{
+  background-color: #f3f3f3;
+  border-radius: 5px;
+}
+
+.btn.btn-primary:focus{
+  outline:none;
+  box-shadow: none;
 }

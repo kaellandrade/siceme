@@ -28,6 +28,12 @@ export const ButtonH = styled(Button)`
   :hover{
     background-color: #3d84a2;  
   }
+
+  ::selection{
+    outline: none;
+    box-shadow: red;
+    
+  }
 `;
   
 
