@@ -12,12 +12,12 @@ function Main(props) {
 
   const [buttonSelect, setButtonSelect] = useState(localStorage.getItem('buttonSelect'));
   const [dataMateriais, setDataMateriais] = useState(materiais);
+  const [materialPesq, setMaterialPesq] = useState("");
+  
 
   const handlePesquisar = event => {
     event.preventDefault();
-    var materialPesq = document.getElementById("inputBuscaMaterial").value;
-    if(materialPesq.length != 0)
-      setDataMateriais(dataMateriais.filter(function(obj) { return (buscarPadrao(obj.nome,materialPesq) > -1 ) ; }));
+    setMaterialPesq(document.getElementById("inputBuscaMaterial").value);
   }
 
   function buscarPadrao(nome, materialPesq){
@@ -28,6 +28,14 @@ function Main(props) {
   useEffect(() => {
     setButtonSelect(window.localStorage.getItem('buttonSelect'));
   }, []);
+
+  useEffect(() => {
+    if(materialPesq.length != 0){
+      setDataMateriais(dataMateriais.filter(function(obj) { return (buscarPadrao(obj.nome,materialPesq) > -1 ) ; }));
+    }else{
+      document.getElementById("inputBuscaMaterial").value = "" ;
+    }
+  }, [materialPesq]);
 
   useEffect(() => {
     window.localStorage.setItem('buttonSelect', buttonSelect);
@@ -58,6 +66,12 @@ function Main(props) {
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                   </svg>
+              </button>
+              <button type="button" class="btn btn-light" onClick={ () => {
+                setDataMateriais(materiais); 
+                setMaterialPesq("");
+              }} >
+                Limpar busca
               </button>
               
               
