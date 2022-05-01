@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Arsenal from './pages/Arsenal/Arsenal';
-import Cadastro from './pages/Cadastro/Cadastro';
+import Cadastro from './pages/Cadastro/index';
 import Relatorios from './pages/Relatorios/Relatorios';
-import Limpeza from './pages/Triagem/Limpeza'
 import Triagem from './pages/Triagem/index'
 import Login from './pages/Login/index'
 
@@ -12,7 +11,11 @@ function MainRouter() {
   return (
     <BrowserRouter>
       <Routes>
-
+         
+        <Route path="/" element={
+          <Login />
+          } 
+        />
         <Route path="/triagem" element={
           <Triagem buttonSelect="Triagem" />
           } 
@@ -29,10 +32,7 @@ function MainRouter() {
           <Relatorios buttonSelect="Relatorios" />
           } 
         />
-        <Route path="/" element={
-          <Login />
-          } 
-        />
+        
     
       </Routes>
     </BrowserRouter>

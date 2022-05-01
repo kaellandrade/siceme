@@ -1,4 +1,4 @@
-h1.body{
+ h1.body{
   color: #316B83;
   text-align: center;
   padding: 20px;
@@ -26,7 +26,8 @@ div.col-md-1{
   border-radius: 5px;
   width: 10%;
   padding-top: 5px;
-  max-height: 700px;
+  height: 800px;
+
   align-items: center;
 }
 
@@ -115,4 +116,12 @@ th, td{
 .btn.btn-primary:focus{
   outline:none;
   box-shadow: none;
+}
+
+.button.cadastrar.material{
+  background-color: #316b83;
+}
+
+.button.cadastrar.material:hover{
+  background-color: #3d84a2;;
 }

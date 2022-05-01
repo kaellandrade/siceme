@@ -1,8 +1,10 @@
 import React from "react";
 import Header from "../../components/header/Header"
 import arsenal from "./arsenal.css"
-import { Input } from "reactstrap"
+
 import { BiSearch } from "react-icons/bi";
+import { Input, Form, Row, Col, FormGroup, Label, Button, Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from "reactstrap"
+
 
 function Arsenal(props) {
   return (
@@ -32,6 +34,9 @@ function Arsenal(props) {
           </ul>
 
       </section>
+      
+
+       
     </div>
   );
 }
