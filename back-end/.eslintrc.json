@@ -15,7 +15,7 @@
     "prettier/prettier": [
       "error",
       {
-        "singlequotes": false
+        "singlequotes": true
       }
     ],
     "class-methods-use-this": "off",
