@@ -9,26 +9,40 @@ import { materiais } from "../../data/data"
 
 function Main(props) {
 
-  const [buttonSelect, setButtonSelect] = useState(localStorage.getItem('buttonSelect'));
+  const [buttonSelect2, setButtonSelect2] = useState(localStorage.getItem('buttonSelect2'));
+
+  const handleCadastrar = (event) => {
+    event.preventDefault();
+
+    var novoMaterial = {
+      nomeMaterial: document.getElementById("nome do material").value,
+      fabricante: document.getElementById("fabricante").value,
+      validade: document.getElementById("validade").value,
+      descricao: document.getElementById("descricao").value,
+      qtde: document.getElementById("quantidade").value,
+      imagem: document.getElementById("file image").value,
+      categoria: document.getElementById("inputCategoriaP").value
+    };
+  }
 
   useEffect(() => {
-    setButtonSelect(window.localStorage.getItem('buttonSelect'));
+    setButtonSelect2(window.localStorage.getItem('buttonSelect2'));
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem('buttonSelect', buttonSelect);
-  }, [buttonSelect]);
+    window.localStorage.setItem('buttonSelect2', buttonSelect2);
+  }, [buttonSelect2]);
 
   return (
 
     <div className="Main">
-      <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
+      <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect2={props.buttonSelect2} />
       <section className="col-md-12 nav d-flex align-items-center justify-content-around">
 
         <div className="container">
 
           <div className="row title">
-            <h1 className="body">{buttonSelect}</h1>
+            <h1 className="body">{buttonSelect2}</h1>
           </div>
 
 
@@ -38,22 +52,21 @@ function Main(props) {
           <div className="row">
 
             <div className="col-md-1">
-              <button type="button" className="buttonMenu" onClick={() => setButtonSelect("Cadastrar materiais")}  >
-                <ButtonSubMenu texto={"Cadastrar materiais"} buttonSelect={buttonSelect} />
+              <button type="button" className="buttonMenu" onClick={() => setButtonSelect2("Cadastrar materiais")}  >
+                <ButtonSubMenu texto={"Cadastrar materiais"} buttonSelect2={buttonSelect2} />
               </button>
-              <button type="button" className="buttonMenu" onClick={() => setButtonSelect("Cadastrar kit")}  >
-                <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect={buttonSelect} />
+              <button type="button" className="buttonMenu" onClick={() => setButtonSelect2("Cadastrar kit")}  >
+                <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect2={buttonSelect2} />
               </button>
-              <button type="button" className="buttonMenu" onClick={() => setButtonSelect("Cadastrar colaboradores")}  >
-                <ButtonSubMenu texto={"Cadastrar colaboradores"} buttonSelect={buttonSelect} />
+              <button type="button" className="buttonMenu" onClick={() => setButtonSelect2("Cadastrar colaboradores")}  >
+                <ButtonSubMenu texto={"Cadastrar colaboradores"} buttonSelect2={buttonSelect2} />
               </button>
 
             </div>
 
             <div className="col-md-10">
               
-
-              <Form inline>
+              <Form inline onSubmit={handleCadastrar} >
                 <Row>
                   <Col md={5}>
                     <FormGroup floating>
@@ -136,7 +149,7 @@ function Main(props) {
                     <FormGroup>
 
                       <Input
-                        id="file imagee"
+                        id="file image"
                         name="file image"
                         type="file"
                         placeholder="imagem"
@@ -159,9 +172,7 @@ function Main(props) {
                     </FormGroup>
                   </Col>
                 </Row>
-                  
-                
-                
+
                 <FormGroup check>
                   <Input
                     id="check"
@@ -175,7 +186,7 @@ function Main(props) {
                     Confirmo as informações acima
                   </Label>
                 </FormGroup>
-                <Button className="button cadastrar material" >
+                <Button className="button cadastrar material" type="submit" >
                   Cadastrar
                 </Button>
 
