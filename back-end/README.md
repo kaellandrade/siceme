@@ -3,8 +3,19 @@
 
 # Alguns Comandos Úteis
 ## Eslint
+Corrige um código com base no padrão escolhido no ESLint:
 ```npx exlint --fix arquivo.js```
 
 ## Docker
-```docker compose exec -it id_conteiner bash``` Entrar no container.
+Entrar no container:
+```docker exec -it id_conteiner bash```
 
+## Sequelize
+Cria uma migration:
+```npx sequelize migration:create --name=nome_da_migration```
+
+Executa a migration
+```npx sequelize db:migrate```
+
+Desfaz a última operação feita
+```npx sequelize db:migrate:undo```
