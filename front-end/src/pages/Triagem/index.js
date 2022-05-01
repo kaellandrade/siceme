@@ -10,11 +10,10 @@ import { materiais } from "../../data/data"
 
 function Main(props) {
 
-  const [buttonSelect, setButtonSelect] = useState(localStorage.getItem('buttonSelect'));
+  const [buttonSelect, setButtonSelect] = useState("Listagem Geral");
   const [dataMateriais, setDataMateriais] = useState(materiais);
   const [materialPesq, setMaterialPesq] = useState("");
   
-
   const handlePesquisar = event => {
     event.preventDefault();
     setMaterialPesq(document.getElementById("inputBuscaMaterial").value);
@@ -26,20 +25,12 @@ function Main(props) {
   }
 
   useEffect(() => {
-    setButtonSelect(window.localStorage.getItem('buttonSelect'));
-  }, []);
-
-  useEffect(() => {
     if(materialPesq.length != 0){
       setDataMateriais(dataMateriais.filter(function(obj) { return (buscarPadrao(obj.nome,materialPesq) > -1 ) ; }));
     }else{
       document.getElementById("inputBuscaMaterial").value = "" ;
     }
   }, [materialPesq]);
-
-  useEffect(() => {
-    window.localStorage.setItem('buttonSelect', buttonSelect);
-  }, [buttonSelect]);
 
   return (
     
@@ -84,19 +75,19 @@ function Main(props) {
             <div className="row">
 
               <div className="col-md-1">
-                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Listagem Geral") }  >
+                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Listagem Geral")} }  >
                   <ButtonSubMenu texto={"Listagem Geral"} buttonSelect={buttonSelect} />
                 </button>
-                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Limpeza") }  > 
+                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Limpeza")} }  > 
                   <ButtonSubMenu texto={"Limpeza"} buttonSelect={buttonSelect} />
                 </button>
-                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Desinfecção") } >
+                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Desinfecção")} } >
                   <ButtonSubMenu texto={"Desinfecção"} buttonSelect={buttonSelect} />
                 </button>
-                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Esterilização") } >
+                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Esterilização")} } >
                   <ButtonSubMenu texto={"Esterilização"} buttonSelect={buttonSelect} />
                 </button>
-                <button type="button" className="buttonMenu" onClick={ () => setButtonSelect("Distribuição") } >
+                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Distribuição")} } >
                   <ButtonSubMenu texto={"Distribuição"} buttonSelect={buttonSelect} />
                 </button>
                 

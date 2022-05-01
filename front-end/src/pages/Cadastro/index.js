@@ -9,11 +9,10 @@ import { materiais } from "../../data/data"
 
 function Main(props) {
 
-  const [buttonSelect2, setButtonSelect2] = useState(localStorage.getItem('buttonSelect2'));
+  const [buttonSelect, setButtonSelect] = useState("Cadastrar materiais");
 
   const handleCadastrar = (event) => {
     event.preventDefault();
-
     var novoMaterial = {
       nomeMaterial: document.getElementById("nome do material").value,
       fabricante: document.getElementById("fabricante").value,
@@ -25,24 +24,16 @@ function Main(props) {
     };
   }
 
-  useEffect(() => {
-    setButtonSelect2(window.localStorage.getItem('buttonSelect2'));
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem('buttonSelect2', buttonSelect2);
-  }, [buttonSelect2]);
-
   return (
 
     <div className="Main">
-      <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect2={props.buttonSelect2} />
+      <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
       <section className="col-md-12 nav d-flex align-items-center justify-content-around">
 
         <div className="container">
 
           <div className="row title">
-            <h1 className="body">{buttonSelect2}</h1>
+            <h1 className="body">{buttonSelect}</h1>
           </div>
 
 
@@ -52,14 +43,14 @@ function Main(props) {
           <div className="row">
 
             <div className="col-md-1">
-              <button type="button" className="buttonMenu" onClick={() => setButtonSelect2("Cadastrar materiais")}  >
-                <ButtonSubMenu texto={"Cadastrar materiais"} buttonSelect2={buttonSelect2} />
+              <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Cadastrar materiais")} } >
+                <ButtonSubMenu texto={"Cadastrar materiais"} buttonSelect={buttonSelect} />
               </button>
-              <button type="button" className="buttonMenu" onClick={() => setButtonSelect2("Cadastrar kit")}  >
-                <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect2={buttonSelect2} />
+              <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Cadastrar kit")} } >
+                <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect={buttonSelect} />
               </button>
-              <button type="button" className="buttonMenu" onClick={() => setButtonSelect2("Cadastrar colaboradores")}  >
-                <ButtonSubMenu texto={"Cadastrar colaboradores"} buttonSelect2={buttonSelect2} />
+              <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Cadastrar colaboradores")} } >
+                <ButtonSubMenu texto={"Cadastrar colaboradores"} buttonSelect={buttonSelect} />
               </button>
 
             </div>
