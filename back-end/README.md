@@ -4,7 +4,7 @@
 # Alguns Comandos Úteis
 ## Eslint
 Corrige um código com base no padrão escolhido no ESLint:
-```npx exlint --fix arquivo.js```
+```npx eslint --fix arquivo.js```
 
 ## Docker
 Entrar no container:
@@ -19,3 +19,13 @@ Executa a migration
 
 Desfaz a última operação feita
 ```npx sequelize db:migrate:undo```
+
+Criando uma seed
+```npx sequelize-cli seed:generate --name demo-material```
+
+Executando uma seed
+```npx sequelize-cli db:seed:all```
+
+Desfazendo a últia seed
+```npx sequelize-cli db:seed:undo```
+

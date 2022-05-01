@@ -1,9 +1,3 @@
-import express from 'express';
+import App from './src/app';
 
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('Olá, docker meu filho cadê você ?');
-});
-
-app.listen(3000);
+App.setPort = 3000;

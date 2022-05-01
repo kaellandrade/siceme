@@ -16,7 +16,6 @@ module.exports = {
       mrl_quantidade: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        unique: true,
       },
       mrl_data_cadastro: {
         type: Sequelize.DATE,
