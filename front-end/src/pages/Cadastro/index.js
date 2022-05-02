@@ -139,7 +139,7 @@ function Main(props) {
                 </Row>
 
                 <Row>
-                  <Col md={4}>
+                  <Col md={5}>
                     <FormGroup>
 
                       <Input
@@ -149,7 +149,7 @@ function Main(props) {
                         placeholder="imagem"
                       />
                       <FormText>
-                        Escolha uma imagem com tamanho máximo de 2 mb.
+                        Escolha uma imagem com tamanho máximo de 2 MB.
                       </FormText>
                     </FormGroup>
                   </Col>
@@ -170,7 +170,7 @@ function Main(props) {
                     check
                     for="check"
                   >
-                    Confirmo as informações acima
+                    Li e confirmo as informações acima.
                   </Label>
                 </FormGroup>
                 <Button className="button cadastrar material" type="submit" >
