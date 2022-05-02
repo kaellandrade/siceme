@@ -137,7 +137,7 @@ function Main(props) {
                 </Row>
 
                 <Row>
-                  <Col md={4}>
+                  <Col md={5}>
                     <FormGroup>
 
                       <Input
