@@ -1,0 +1,157 @@
+h1.body {
+  color: #316B83;
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+
+view {
+  justify-content: center;
+  align-content: space-between;
+  background-color: #316B83;
+}
+
+
+main.container.flex-column {
+  background-color: white;
+  position: relative;
+  border-radius: 5px;
+
+
+}
+
+
+div.col-md-1 {
+  background-color: #316B83;
+  border-radius: 5px;
+  width: 10%;
+  padding-top: 5px;
+  height: 800px;
+
+  align-items: center;
+}
+
+button.button.search {
+  width: 40px;
+  background: #316B83;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+
+.row.search {
+  padding-bottom: 30px;
+  width: 1200px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form.search {
+  width: 900px;
+}
+
+.input.search {
+  width: 900px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+
+}
+
+.input.search:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #979ca0;
+}
+
+svg {
+  color: white;
+}
+
+.table-responsive {
+  border-radius: 5px;
+  font-size: small;
+  align-items: center;
+  overflow-y: auto;
+  max-height: 650px;
+  display: block;
+  width: 100%;
+}
+
+thead {
+  background-color: #316B83;
+  color: white;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+
+.buttonMenu {
+  border: none;
+  background-color: #316b83;
+  width: 100%;
+}
+
+
+
+.btn.btn-primary {
+  width: 120px;
+  font-size: 14px;
+  color: rgba(38, 50, 56, 0.734);
+  background-color: white;
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.btn.btn-primary:hover {
+  background-color: #f3f3f3;
+  border-radius: 5px;
+}
+
+.btn.btn-primary:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.button.cadastrar.material {
+  background-color: #316b83;
+}
+
+.button.cadastrar.material:hover {
+  background-color: #3d84a2;
+  ;
+}
+
+.btn.btn-primary.dropdown-toggle{
+  text-transform: none;
+  width: 40%;
+  box-shadow: none;
+  border-color: black;
+}
+
+.dropdown-menu li {
+  position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+}
+
+.dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+}
+
+.dropdown-menu>li:hover>.dropdown-submenu {
+  display: block;
+}
+
