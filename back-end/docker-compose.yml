@@ -1,23 +1,32 @@
 version: "3"
 
-services: 
+services:
 
-  nodejs: 
-    build: .
-    command: npm start 
+  nodejs:
+    build:
+      context: .
+      target: debug
+    command: npm start
     ports:
       - "3000:3000"
+      - 9229:9229
     volumes:
       - .:/app/siceme
     depends_on:
       - postgresdb
     networks:
       - siceme-network
-  
+    links:
+      -  postgresdb
+
+
   postgresdb:
+    container_name: pg_container
     image: postgres:14.2
     environment:
       POSTGRES_PASSWORD: "siceme123"
+      POSTGRES_USER: root
+      POSTGRES_DB: siceme
     ports:
     - "5432:5432"
     volumes:
@@ -36,6 +45,8 @@ services:
       - postgresdb
     networks:
       - siceme-network
-networks: 
+    links:
+      -  postgresdb
+networks:
   siceme-network:
     driver: bridge

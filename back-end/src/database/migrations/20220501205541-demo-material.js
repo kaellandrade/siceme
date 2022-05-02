@@ -17,11 +17,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      mrl_data_cadastro: {
+      created_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      mrl_data_atualizacao: {
+      updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },

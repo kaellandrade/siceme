@@ -11,13 +11,13 @@ class Material extends Model {
       {
         mrl_nome: Sequelize.STRING,
         mrl_quantidade: Sequelize.INTEGER,
-        //mrl_dataFabricacao: Sequelize.DATE,
-        //mrl_codigo: Sequelize.INTEGER,
       },
       {
         sequelize,
+        tableName: 'mrl_material',
       },
     );
+    this.removeAttribute('id'); // Esse id é passado por padrão pelo sequlize (desabilitando)
   }
 }
 
