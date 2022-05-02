@@ -6,6 +6,7 @@ import { Input, Form, Row, Col, FormGroup, Label, Button, Dropdown, DropdownTogg
 import ButtonSubMenu from "./ButtonSubMenu"
 import index from "./index.css"
 import { materiais } from "../../data/data"
+import Categoria_Dropdown from "./Categoria_Dropdown";
 
 function Main(props) {
 
@@ -44,23 +45,24 @@ function Main(props) {
           <div className="row">
 
             <div className="col-md-1">
-              <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Cadastrar materiais")} } >
+              <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar materiais") }} >
                 <ButtonSubMenu texto={"Cadastrar materiais"} buttonSelect={buttonSelect} />
               </button>
-              <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Cadastrar kit")} } >
+              <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar kit") }} >
                 <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect={buttonSelect} />
               </button>
-              <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Cadastrar colaboradores")} } >
+              <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar colaboradores") }} >
                 <ButtonSubMenu texto={"Cadastrar colaboradores"} buttonSelect={buttonSelect} />
               </button>
 
             </div>
 
             <div className="col-md-10">
-              
+
               <Form inline onSubmit={handleCadastrar} >
                 <Row>
                   <Col md={5}>
+
                     <FormGroup floating>
                       <Input
                         id="nome do material"
@@ -100,11 +102,11 @@ function Main(props) {
                     </FormGroup>
                   </Col>
                 </Row>
-                
+
                 <Row>
                   <Col md={10}>
                     <FormGroup floating>
-                      
+
                       <Input
                         id="descricao"
                         name="descricao"
@@ -117,11 +119,11 @@ function Main(props) {
                       </Label>
                     </FormGroup>
                   </Col>
-                  
-                  
+
+
                   <Col md={2}>
                     <FormGroup floating>
-                      
+
                       <Input
                         id="quantidade"
                         name="quantidade"
@@ -153,14 +155,7 @@ function Main(props) {
                   </Col>
                   <Col md={4}>
                     <FormGroup floating>
-                      <div className="categorias col-md-8 d-flex">
-                          <select id="inputCategoriaP" className="form-select">
-                            <option disabled selected>Categoria/Aplicação</option>
-                            <option>Cirurgia em geral</option>
-                            <option>Cirurgia de amígdalas</option>
-                            <option>Raqueanestesia</option>
-                          </select>
-                      </div>
+                      <Categoria_Dropdown />
                     </FormGroup>
                   </Col>
                 </Row>

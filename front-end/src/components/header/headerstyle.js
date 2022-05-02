@@ -24,7 +24,8 @@ export const ButtonH = styled(Button)`
   border-left: none;
   border-right: none;
   border-color: #316B83; 
-
+  text-transform: none;
+  
   :hover{
     background-color: #3d84a2;  
   }

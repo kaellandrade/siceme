@@ -1,27 +1,27 @@
- h1.body{
+h1.body {
   color: #316B83;
   text-align: center;
   padding: 20px;
   font-size: 30px;
 }
 
-view{
+view {
   justify-content: center;
-  align-content: space-between ;
+  align-content: space-between;
   background-color: #316B83;
 }
 
 
-main.container.flex-column{
+main.container.flex-column {
   background-color: white;
   position: relative;
   border-radius: 5px;
- 
+
 
 }
 
 
-div.col-md-1{
+div.col-md-1 {
   background-color: #316B83;
   border-radius: 5px;
   width: 10%;
@@ -31,7 +31,7 @@ div.col-md-1{
   align-items: center;
 }
 
-button.button.search{
+button.button.search {
   width: 40px;
   background: #316B83;
   border: none;
@@ -40,7 +40,7 @@ button.button.search{
 
 }
 
-.row.search{
+.row.search {
   padding-bottom: 30px;
   width: 1200px;
 
@@ -48,29 +48,29 @@ button.button.search{
   margin-right: auto;
 }
 
-.form.search{
+.form.search {
   width: 900px;
 }
 
-.input.search{
+.input.search {
   width: 900px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  
-  
+
+
 }
 
-.input.search:focus{
-  outline:none;
+.input.search:focus {
+  outline: none;
   box-shadow: none;
   border-color: #979ca0;
 }
 
-svg{
+svg {
   color: white;
 }
 
-.table-responsive{
+.table-responsive {
   border-radius: 5px;
   font-size: small;
   align-items: center;
@@ -80,17 +80,18 @@ svg{
   width: 100%;
 }
 
-thead{
+thead {
   background-color: #316B83;
   color: white;
 }
 
-th, td{
-  text-align: center;   
+th,
+td {
+  text-align: center;
 }
 
 
-.buttonMenu{
+.buttonMenu {
   border: none;
   background-color: #316b83;
   width: 100%;
@@ -98,7 +99,7 @@ th, td{
 
 
 
-.btn.btn-primary{
+.btn.btn-primary {
   width: 120px;
   font-size: 14px;
   color: rgba(38, 50, 56, 0.734);
@@ -108,20 +109,49 @@ th, td{
   border-radius: 5px;
 }
 
-.btn.btn-primary:hover{
+.btn.btn-primary:hover {
   background-color: #f3f3f3;
   border-radius: 5px;
 }
 
-.btn.btn-primary:focus{
-  outline:none;
+.btn.btn-primary:focus {
+  outline: none;
   box-shadow: none;
 }
 
-.button.cadastrar.material{
+.button.cadastrar.material {
   background-color: #316b83;
 }
 
-.button.cadastrar.material:hover{
-  background-color: #3d84a2;;
+.button.cadastrar.material:hover {
+  background-color: #3d84a2;
+  ;
 }
+
+.btn.btn-primary.dropdown-toggle{
+  text-transform: none;
+  width: 40%;
+  box-shadow: none;
+  border-color: black;
+}
+
+.dropdown-menu li {
+  position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+}
+
+.dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+}
+
+.dropdown-menu>li:hover>.dropdown-submenu {
+  display: block;
+}
+

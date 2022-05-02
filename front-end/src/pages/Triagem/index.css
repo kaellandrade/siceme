@@ -32,6 +32,7 @@ div.col-md-1{
 
 button.button.search{
   width: 40px;
+  height: 38px;
   background: #316B83;
   border: none;
   border-top-right-radius: 5px;
@@ -98,7 +99,8 @@ th, td{
 
 
 .btn.btn-primary{
-  width: 120px;
+  width: 140px;
+  height: 38px;
   font-size: 14px;
   color: rgba(38, 50, 56, 0.734);
   background-color: white;

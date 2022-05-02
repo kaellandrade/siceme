@@ -289,3 +289,19 @@ export const materiais = [
   }
   
 ];
+
+export const categorias = [
+  {
+    "id": "1",
+    "sub_categoria": "1.1"
+  },
+  {
+    "id": "2",
+    "sub_categoria": "2.1"
+  },
+  {
+    "id": "3",
+    "sub_categoria": "null"
+  }
+];
+
