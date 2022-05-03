@@ -14,6 +14,10 @@ function Main(props) {
 
   const handleCadastrar = (event) => {
     event.preventDefault();
+    let subCat = document.getElementById("inputSubCategoria").value;
+    if(subCat === 'Subcategoria' || subCat === 'None') 
+      subCat = []; 
+
     var novoMaterial = {
       nomeMaterial: document.getElementById("nome do material").value,
       fabricante: document.getElementById("fabricante").value,
@@ -21,8 +25,10 @@ function Main(props) {
       descricao: document.getElementById("descricao").value,
       qtde: document.getElementById("quantidade").value,
       imagem: document.getElementById("file image").value,
-      categoria: document.getElementById("inputCategoriaP").value
+      categoria: document.getElementById("inputCategoria").value,
+      subCategoria: subCat
     };
+    console.log(novoMaterial);
   }
 
 
@@ -139,7 +145,7 @@ function Main(props) {
                 </Row>
 
                 <Row>
-                  <Col md={4}>
+                  <Col md={5}>
                     <FormGroup>
 
                       <Input
@@ -153,7 +159,7 @@ function Main(props) {
                       </FormText>
                     </FormGroup>
                   </Col>
-                  <Col md={8}>
+                  <Col md={7}>
                     <FormGroup floating>
                       <Categoria_Dropdown />
                     </FormGroup>

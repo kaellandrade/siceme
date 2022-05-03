@@ -5,7 +5,7 @@ import SubCategoria_Dropdown from "./SubCategoria_Dropdown";
 
 function Categoria_Dropdown() {
 
-  const [ctgSelect, setCtgSelect] = useState({});
+  const [ctgSelect, setCtgSelect] = useState({sub_categoria: []});
   const [subCat, setSubCat] = useState(false);
 
   const renderizarCategorias = (categorias) => {
@@ -24,7 +24,7 @@ function Categoria_Dropdown() {
 
   const handleCtgS = event => {
     event.preventDefault();
-    let ctg = document.getElementById("inputCategoriaP").value;
+    let ctg = document.getElementById("inputCategoria").value;
     let categoria = categorias.find( ({id, sub_categoria}) => {
       return id === ctg;
     } );
@@ -40,11 +40,13 @@ function Categoria_Dropdown() {
   return (
     <>
       <div className="categorias col-md-12 d-flex">
-        <select id="inputCategoriaP" className="form-select" onChange={handleCtgS} >
+        <select id="inputCategoria" className="form-select categoria" onChange={handleCtgS} >
           <option disabled selected>Categoria/Aplicação</option>
           {renderizarCategorias(categorias)}
         </select>
-        {subCat && <SubCategoria_Dropdown subCateg={ctgSelect} /> }
+        {/* {subCat && <SubCategoria_Dropdown subCateg={ctgSelect} /> } */}
+        <SubCategoria_Dropdown subCateg={ctgSelect} />
+
       </div>
     </>
   );

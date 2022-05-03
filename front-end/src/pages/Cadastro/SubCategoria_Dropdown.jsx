@@ -4,9 +4,13 @@ function SubCategoria_Dropdown(props) {
 
 
   const renderizarCategorias = (subCategorias) => {
-    return (
-      subCategorias.map( (obj) => <option>{obj}</option>)
-    )
+    if(subCategorias.length > 0){
+      return (
+        subCategorias.map( (obj) => <option>{obj}</option>)
+      );
+    }else{
+      return <option>None</option>
+    }
   };
 
   return (
