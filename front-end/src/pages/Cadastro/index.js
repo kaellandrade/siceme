@@ -139,7 +139,7 @@ function Main(props) {
                 </Row>
 
                 <Row>
-                  <Col md={5}>
+                  <Col md={4}>
                     <FormGroup>
 
                       <Input
@@ -153,7 +153,7 @@ function Main(props) {
                       </FormText>
                     </FormGroup>
                   </Col>
-                  <Col md={7}>
+                  <Col md={8}>
                     <FormGroup floating>
                       <Categoria_Dropdown />
                     </FormGroup>

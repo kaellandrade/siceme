@@ -38,14 +38,15 @@ function Categoria_Dropdown() {
   }, [ctgSelect]);
 
   return (
-    <div className="categorias col-md-8 d-flex">
-      <select id="inputCategoriaP" className="form-select" onChange={handleCtgS} >
-        <option disabled selected>Categoria/Aplicação</option>
-        {renderizarCategorias(categorias)}
-      </select>
-      {subCat && <SubCategoria_Dropdown subCateg={ctgSelect} /> }
-
-    </div>
+    <>
+      <div className="categorias col-md-12 d-flex">
+        <select id="inputCategoriaP" className="form-select" onChange={handleCtgS} >
+          <option disabled selected>Categoria/Aplicação</option>
+          {renderizarCategorias(categorias)}
+        </select>
+        {subCat && <SubCategoria_Dropdown subCateg={ctgSelect} /> }
+      </div>
+    </>
   );
 }
 
