@@ -17,7 +17,7 @@ function SubCategoria_Dropdown(props) {
   return (
     <div className="categorias col-md-6 d-flex">
       <select id="inputSubCategoria" className="form-select subCategoria" >
-        <option disabled selected>Subcategoria</option>
+        <option disabled selected>Subcategoriaaa</option>
         {renderizarCategorias(props.subCateg.sub_categoria)}
       </select>
     </div>
