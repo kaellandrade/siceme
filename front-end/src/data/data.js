@@ -293,15 +293,15 @@ export const materiais = [
 export const categorias = [
   {
     "id": "1",
-    "sub_categoria": "1.1"
+    "sub_categoria": ["1.1", "1.2", "1.3"]
   },
   {
     "id": "2",
-    "sub_categoria": "2.1"
+    "sub_categoria": ["2.1", "2.2", "2.3"]
   },
   {
     "id": "3",
-    "sub_categoria": "null"
+    "sub_categoria": []
   }
 ];
 
