@@ -153,7 +153,7 @@ function Main(props) {
                       </FormText>
                     </FormGroup>
                   </Col>
-                  <Col md={4}>
+                  <Col md={7}>
                     <FormGroup floating>
                       <Categoria_Dropdown />
                     </FormGroup>
