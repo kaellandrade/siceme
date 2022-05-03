@@ -1,4 +1,5 @@
 import React from "react";
+import subCategoria_Dropdown from "./subCategoria_Dropdown.css"
 
 function SubCategoria_Dropdown(props) {
 
@@ -15,7 +16,7 @@ function SubCategoria_Dropdown(props) {
 
   return (
     <div className="categorias col-md-6 d-flex">
-      <select id="inputSubCategoria" className="form-select" >
+      <select id="inputSubCategoria" className="form-select subCategoria" >
         <option disabled selected>Subcategoria</option>
         {renderizarCategorias(props.subCateg.sub_categoria)}
       </select>
