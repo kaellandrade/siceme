@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import User from '../app/models/User';
+import authConfig from '../config/auth';
 
 /**
  * Criação do controller para a session
@@ -21,16 +22,16 @@ class SessionController {
       return res.status(401).json({ error: 'Senha errada' });
     }
 
-    const { id, uso_nome } = user;
+    const { uso_id, uso_nome } = user;
 
     return res.json({
       user: {
-        id,
+        uso_id,
         uso_nome,
         uso_email,
       },
-      token: jwt.sign({ id }, '40ef4ed18074f8f100dbf546955a2e85', {
-        expiresIn: '30d',
+      token: jwt.sign({ uso_id }, authConfig.secret, {
+        expiresIn: authConfig.expiresIn,
       }),
     });
   }

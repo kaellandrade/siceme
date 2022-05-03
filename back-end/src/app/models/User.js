@@ -10,6 +10,7 @@ class User extends Model {
   static init(sequelize) {
     super.init(
       {
+        uso_id: Sequelize.INTEGER,
         uso_nome: Sequelize.STRING,
         uso_cargo: Sequelize.STRING,
         uso_email: Sequelize.STRING,
