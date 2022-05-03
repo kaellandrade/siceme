@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 import Header from "../../components/header/Header"
-import Listagemstyle from "./ButtonSubStyle"
-import { Input, Form, Row, Col, FormGroup, Label, Button, Dropdown, DropdownToggle, DropdownItem, DropdownMenu, FormText } from "reactstrap"
+import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "reactstrap"
 import ButtonSubMenu from "./ButtonSubMenu"
-import index from "./index.css"
-import { materiais } from "../../data/data"
+import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
 
 function Main(props) {
@@ -14,6 +11,10 @@ function Main(props) {
 
   const handleCadastrar = (event) => {
     event.preventDefault();
+    let subCat = document.getElementById("inputSubCategoria").value;
+    if(subCat === 'Subcategoria' || subCat === 'None') 
+      subCat = []; 
+
     var novoMaterial = {
       nomeMaterial: document.getElementById("nome do material").value,
       fabricante: document.getElementById("fabricante").value,
@@ -21,8 +22,10 @@ function Main(props) {
       descricao: document.getElementById("descricao").value,
       qtde: document.getElementById("quantidade").value,
       imagem: document.getElementById("file image").value,
-      categoria: document.getElementById("inputCategoriaP").value
+      categoria: document.getElementById("inputCategoria").value,
+      subCategoria: subCat
     };
+    console.log(novoMaterial);
   }
 
 
@@ -153,7 +156,7 @@ function Main(props) {
                       </FormText>
                     </FormGroup>
                   </Col>
-                  <Col md={4}>
+                  <Col md={7}>
                     <FormGroup floating>
                       <Categoria_Dropdown />
                     </FormGroup>

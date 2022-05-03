@@ -297,7 +297,11 @@ export const categorias = [
   },
   {
     "id": "2",
+<<<<<<< HEAD
     "sub_categoria": ["2.1", "2.2", "2.3"]
+=======
+    "sub_categoria": ["2.1", "2.2"]
+>>>>>>> Front-End-Marcus
   },
   {
     "id": "3",

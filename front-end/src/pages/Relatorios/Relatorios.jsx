@@ -1,8 +1,7 @@
 import React from "react";
 import Header from "../../components/header/Header"
-import relatorios from "./relatorios.css"
+import "./relatorios.css"
 import { Input } from "reactstrap"
-import { BiSearch } from "react-icons/bi";
 
 function Relatorios(props) {
   return (

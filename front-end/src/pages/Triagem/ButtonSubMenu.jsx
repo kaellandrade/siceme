@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { ButtonSubM } from "./ButtonSubStyle";
-import TabelaTriagem from "./TabelaTriagem";
-
 
 function ButtonSubMenu(props) {
 
