@@ -1,6 +1,4 @@
 import React from "react";
-import { ButtonSubM } from "./ButtonSubStyle";
-
 
 function RowTabelaTriagem(props) {
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import categoria_Dropdown from "./categoria_Dropdown.css"
+import "./categoria_Dropdown.css"
 import { categorias } from "../../data/data"
 import SubCategoria_Dropdown from "./SubCategoria_Dropdown";
 

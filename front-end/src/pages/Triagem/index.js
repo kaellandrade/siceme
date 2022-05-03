@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Header from "../../components/header/Header"
-import Listagemstyle from "./ButtonSubStyle"
-import { Input, Table } from "reactstrap"
+import { Input } from "reactstrap"
 import ButtonSubMenu from "./ButtonSubMenu"
-import index from "./index.css"
+import "./index.css"
 import TabelaTriagem from "./TabelaTriagem";
 import { materiais } from "../../data/data"
 

@@ -1,5 +1,5 @@
 import React from "react";
-import subCategoria_Dropdown from "./subCategoria_Dropdown.css"
+import "./subCategoria_Dropdown.css"
 
 function SubCategoria_Dropdown(props) {
 

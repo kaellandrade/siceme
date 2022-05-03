@@ -1,8 +1,6 @@
 import React from "react";
 import { Table } from "reactstrap";
 import RowTabelaTriagem from "./RowTabelaTriagem";
-import index from "./index"
-
 
 function TabelaTriagem(props) {
 

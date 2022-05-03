@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 import Header from "../../components/header/Header"
-import Listagemstyle from "./ButtonSubStyle"
-import { Input, Form, Row, Col, FormGroup, Label, Button, Dropdown, DropdownToggle, DropdownItem, DropdownMenu, FormText } from "reactstrap"
+import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "reactstrap"
 import ButtonSubMenu from "./ButtonSubMenu"
-import index from "./index.css"
-import { materiais } from "../../data/data"
+import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
 
 function Main(props) {
