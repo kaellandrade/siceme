@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Docker: Attach to Node",
+            "type": "node",
+            "request": "attach",
+            "remoteRoot": "/app/siceme/src",
+            "port": 9229,
+            "address": "localhost",
+            "localRoot": "${workspaceFolder}/back-end/src",
+            "protocol": "inspector",
+            "restart": true,
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**/*.js",
+                "<node_internals>/**/*.js"
+            ],
+        }
+    ]
+}

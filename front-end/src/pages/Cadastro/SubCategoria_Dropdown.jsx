@@ -1,9 +1,28 @@
 import React from "react";
+<<<<<<< HEAD
+
+=======
 import "./subCategoria_Dropdown.css"
+>>>>>>> Front-End-Marcus
 
 function SubCategoria_Dropdown(props) {
 
 
+<<<<<<< HEAD
+  // const renderizarCategorias = (categorias) => {
+  //   return (
+  //     categorias.map(({ obj }) => {
+  //       return <option>{obj}</option>
+  //     })
+  //   )
+  // };
+
+  return (
+    <div className="categorias col-md-8 d-flex">
+      <select id="inputSubCategoria" className="form-select" >
+        <option>sadpomasdpmo</option>
+        {/* {renderizarCategorias(props.categoria)} */}
+=======
   const renderizarCategorias = (subCategorias) => {
     if(subCategorias.length > 0){
       return (
@@ -19,6 +38,7 @@ function SubCategoria_Dropdown(props) {
       <select id="inputSubCategoria" className="form-select subCategoria" >
         <option disabled selected>Subcategoriaaa</option>
         {renderizarCategorias(props.subCateg.sub_categoria)}
+>>>>>>> Front-End-Marcus
       </select>
     </div>
   );
