@@ -297,7 +297,7 @@ export const categorias = [
   },
   {
     "id": "2",
-    "sub_categoria": ["2.1", "2.2"]
+    "sub_categoria": ["2.1", "2.2", "2.3"]
   },
   {
     "id": "3",
