@@ -74,6 +74,7 @@ svg {
   border-radius: 5px;
   font-size: small;
   align-items: center;
+  
   overflow-y: auto;
   max-height: 650px;
   display: block;
@@ -88,6 +89,7 @@ thead {
 th,
 td {
   text-align: center;
+  vertical-align: middle;
 }
 
 
