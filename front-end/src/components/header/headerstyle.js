@@ -16,6 +16,7 @@ export const HeaderStyle = styled.header`
     justify-content: center;
 
   }
+  
 `;
 
 export const ButtonH = styled(Button)`
@@ -24,9 +25,11 @@ export const ButtonH = styled(Button)`
   font-size: small;
   color: ${props => props.texto === props.buttonSelect ? "#316B83" : "#fff" };
   font-weight: 500;
-  border: 0;
+  border: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   border-color: #316B83; 
-  position: relative;
+  
   
   :hover{
     background-color: #316B83;  
