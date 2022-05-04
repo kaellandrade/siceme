@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 function Modal_detalhes(props) {
   const [modal, setModal] = useState(false);  
+  
   return (
     <div>
       <Button
@@ -17,10 +18,10 @@ function Modal_detalhes(props) {
         centered
         fullscreen=""
         size="xl"
-        toggle={function noRefCheck(){}}
         isOpen={modal}
+        toggle={() => setModal(false)}
       >
-        <ModalHeader toggle={function noRefCheck(){}}>
+        <ModalHeader toggle={() => setModal(false)}>
           Modal title
         </ModalHeader>
         <ModalBody>
