@@ -3,7 +3,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     return queryInterface.createTable('uso_usuario', {
-      id: {
+      uso_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: this,
