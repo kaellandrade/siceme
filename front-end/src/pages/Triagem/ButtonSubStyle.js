@@ -15,7 +15,8 @@ export const ButtonSubM = styled(Button)`
   border-color: #316B83; 
   text-transform: none;
   :hover{
-    background-color: #6497b1;  
+    background-color: #316B83;
+    box-shadow: 0px 0px 3px 0px rgba(184,175,184,1);
   }
 `;
   
