@@ -6,7 +6,8 @@ export default createGlobalStyle`
     padding: 0px;
     outline: 0;
     box-sizing: border-box;    
-    
+    /* overflow: hidden; //desativar barra de rolagem */
   }
+
   
 `;
