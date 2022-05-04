@@ -5,7 +5,8 @@ import { Input } from "reactstrap"
 import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import TabelaTriagem from "./TabelaTriagem";
-import { materiais } from "../../data/data"
+import { materiais } from "../../data/data";
+import Modal_detalhes from "../../components/Modal/Modal_detalhes";
 
 function Main(props) {
 
@@ -108,6 +109,7 @@ function Main(props) {
               </div>
 
               <div className="col-md-10">
+                <Modal_detalhes/>
                 <TabelaTriagem buttonSelect={buttonSelect} dataMaterias={dataMateriais} />
               </div>
             </div>

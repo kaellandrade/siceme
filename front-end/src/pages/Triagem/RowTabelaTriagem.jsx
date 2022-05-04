@@ -1,4 +1,5 @@
 import React from "react";
+import Modal_detalhes from "../../components/Modal/Modal_detalhes";
 
 function RowTabelaTriagem(props) {
   return (
@@ -17,6 +18,9 @@ function RowTabelaTriagem(props) {
       </td>
       <td>
         Em {props.status}
+      </td>
+      <td>
+        <Modal_detalhes/>
       </td>
     </tr>
   );
