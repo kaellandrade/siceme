@@ -48,15 +48,24 @@ function Main(props) {
           <div className="row">
 
             <div className="col-md-1">
-              <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar materiais") }} >
-                <ButtonSubMenu texto={"Cadastrar materiais"} buttonSelect={buttonSelect} />
-              </button>
-              <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar kit") }} >
-                <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect={buttonSelect} />
-              </button>
-              <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar colaboradores") }} >
-                <ButtonSubMenu texto={"Cadastrar colaboradores"} buttonSelect={buttonSelect} />
-              </button>
+              <div className="row">
+                <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar materiais") }} >
+                  <ButtonSubMenu texto={"Cadastrar materiais"} buttonSelect={buttonSelect} />
+                </button>
+
+              </div>
+              <div className="row">
+                <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar kit") }} >
+                  <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect={buttonSelect} />
+                </button>
+
+              </div>
+              <div className="row">
+                <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar categoria") }} >
+                  <ButtonSubMenu texto={"Cadastrar categoria"} buttonSelect={buttonSelect} />
+                </button>
+
+              </div>
 
             </div>
 

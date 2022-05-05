@@ -10,7 +10,8 @@ function Modal_detalhes(props) {
   return (
     <div>
       <Button
-        color="danger"
+        className='button mais-detalhes'
+        color="link"
         onClick={() => setModal(true)}
       >
         Mais detalhes
@@ -39,6 +40,7 @@ function Modal_detalhes(props) {
                       name="nome"
                       type="name"
                       placeholder="Nome do material"
+                      readOnly
                     />
                     <Label for="nome do material">
                       Nome do material
@@ -52,6 +54,7 @@ function Modal_detalhes(props) {
                       name="name"
                       type="name"
                       placeholder="Fabricante"
+                      readOnly
                     />
                     <Label for="fabricante">
                       Fabricante
@@ -65,6 +68,7 @@ function Modal_detalhes(props) {
                       name="validade"
                       type="date"
                       placeholder="Validade"
+                      readOnly
                     />
                     <Label for="validade">
                       Validade
@@ -83,6 +87,7 @@ function Modal_detalhes(props) {
                       type="textarea"
                       maxLength={250}
                       placeholder="Descrição do material"
+                      readOnly
                     />
                     <Label for="descricao">
                       Descrição do material
@@ -109,44 +114,7 @@ function Modal_detalhes(props) {
                 </Col>
               </Row>
 
-              <Row>
-                <Col md={5}>
-                  <FormGroup>
-
-                    <Input
-                      id="file image"
-                      name="file image"
-                      type="file"
-                      placeholder="imagem"
-                    />
-                    <FormText>
-                      Escolha uma imagem com tamanho máximo de 2 MB.
-                    </FormText>
-                  </FormGroup>
-                </Col>
-                <Col md={7}>
-                  <FormGroup floating>
-
-                  </FormGroup>
-                </Col>
-              </Row>
-
-              <FormGroup check>
-                <Input
-                  id="check"
-                  name="check"
-                  type="checkbox"
-                />
-                <Label
-                  check
-                  for="check"
-                >
-                  Li e confirmo as informações acima.
-                </Label>
-              </FormGroup>
-              <Button className="button cadastrar material" type="submit" >
-                Cadastrar
-              </Button>
+              
 
             </Form>
           </div>
