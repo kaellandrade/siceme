@@ -1,10 +1,15 @@
 import { Router } from 'express';
+import multer from 'multer';
+import multerConfig from './config/multer';
+
 import Material from './app/models/Material';
 import UserController from './controllers/UserController';
 import SessionController from './controllers/SessionController';
 import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
+const upload = multer(multerConfig);
+
 routes.get('/material', async (req, res) => {
   const materiais = await Material.findAll();
 
@@ -21,6 +26,9 @@ routes.post('/sessao', SessionController.store);
 // rotas a seguir)
 routes.use(authMiddleware);
 
+routes.post('/arquivos', upload.single('arquivo'), (req, res) =>
+  res.json({ ok: true }),
+);
 // // PUT update
 // routes.put('/usuario', UserController.update);
 
