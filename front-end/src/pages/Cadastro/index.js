@@ -7,7 +7,7 @@ import Categoria_Dropdown from "./Categoria_Dropdown";
 
 function Main(props) {
 
-  const [buttonSelect, setButtonSelect] = useState("Cadastrar materiais");
+  const [buttonSelect, setButtonSelect] = useState("Cadastrar material");
 
   const handleCadastrar = (event) => {
     event.preventDefault();
@@ -50,7 +50,7 @@ function Main(props) {
             <div className="col-md-1">
               <div className="row">
                 <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar materiais") }} >
-                  <ButtonSubMenu texto={"Cadastrar materiais"} buttonSelect={buttonSelect} />
+                  <ButtonSubMenu texto={"Cadastrar material"} buttonSelect={buttonSelect} />
                 </button>
 
               </div>
@@ -61,8 +61,10 @@ function Main(props) {
 
               </div>
               <div className="row">
-                <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar categoria") }} >
-                  <ButtonSubMenu texto={"Cadastrar categoria"} buttonSelect={buttonSelect} />
+                <button type="button" className="buttonMenu" >
+                  <ButtonSubMenu texto={"Cadastrar categoria"} buttonSelect={buttonSelect} 
+                    href="/cadastro/categoria"
+                  />
                 </button>
 
               </div>

@@ -21,7 +21,7 @@ function Header(props) {
            
           </div>
           <div className="col">
-            <Button texto="Cadastro" href="/cadastro" buttonS="Cadastro" buttonSelect={props.buttonSelect} />
+            <Button texto="Cadastro" href="/cadastro/material" buttonS="Cadastro" buttonSelect={props.buttonSelect} />
            
           </div>
           <div className="col">
