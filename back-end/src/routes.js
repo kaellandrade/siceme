@@ -20,8 +20,7 @@ routes.post('/sessao', SessionController.store);
 // Middleware de autenticação (válido apenas para as
 // rotas a seguir)
 routes.use(authMiddleware);
+routes.put('/usuario', UserController.update);
 
-// // PUT update
-// routes.put('/usuario', UserController.update);
 
 export default routes;
