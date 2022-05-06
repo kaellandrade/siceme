@@ -7,6 +7,12 @@ Corrige um código com base no padrão escolhido no ESLint:
 ```npx eslint --fix arquivo.js```
 
 ## Docker
+Subir container:
+```docker compose up -d```
+
+Derrubar container:
+```docker compose down```
+
 Entrar no container:
 ```docker exec -it id_conteiner bash```
 

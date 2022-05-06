@@ -23,7 +23,7 @@ routes.post('/sessao', SessionController.store);
 // rotas a seguir)
 routes.use(authMiddleware);
 
-// PUT update
-routes.put('/usuario', UserController.update);
+// // PUT update
+// routes.put('/usuario', UserController.update);
 
 export default routes;
