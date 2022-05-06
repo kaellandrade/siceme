@@ -24,9 +24,8 @@ main.container.flex-column {
 div.col-md-1 {
   background-color: #316B83;
   border-radius: 5px;
-  width: 10%;
   padding-top: 5px;
-  max-height: 700px;
+  height: 60vh;
   align-items: center;
 }
 
@@ -76,7 +75,7 @@ svg {
   align-items: center;
   
   overflow-y: auto;
-  max-height: 650px;
+  height: 60vh;
   display: block;
   width: 100%;
 }
