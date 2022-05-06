@@ -26,9 +26,7 @@ div.col-md-1 {
   border-radius: 5px;
   min-width: 120px;
   padding-top: 5px;
-  /* height: 800px; */
-  
-
+  height: 800px;
   align-items: center;
 }
 

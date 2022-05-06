@@ -20,7 +20,9 @@ function RowTabelaTriagem(props) {
         Em {props.status}
       </td>
       <td>
-        <Modal_detalhes/>
+        <Modal_detalhes codigo={props.codigo} nome={props.nome} qtde={props.qtde} 
+                        aplicacao={props.aplicacao} status={props.status}
+        />
       </td>
     </tr>
   );

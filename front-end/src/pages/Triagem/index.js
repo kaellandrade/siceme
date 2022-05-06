@@ -74,24 +74,12 @@ function Main(props) {
             <div className="row">
 
               <div className="col-md-1">
-                <div>
-                  <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Listagem Geral")} }  >
-                    <ButtonSubMenu texto={"Listagem Geral"} buttonSelect={buttonSelect} />
-                  </button>
+                
+                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Listagem Geral")} }  >
+                  <ButtonSubMenu texto={"Listagem Geral"} buttonSelect={buttonSelect} />
+                </button>
 
-                </div>
-                <div>
-                  
-                </div>
-                <div>
-                  
-                </div>
-                <div>
-                  
-                </div>
-                <div>
-                  
-                </div>
+                
                 <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Limpeza")} }  > 
                   <ButtonSubMenu texto={"Limpeza"} buttonSelect={buttonSelect} />
                 </button>
