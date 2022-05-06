@@ -91,14 +91,16 @@ function Main(props) {
                   </Col>
                   <Col md={5}>
                     <FormGroup floating>
+
                       <Input
-                        id="fabricante"
-                        name="name"
-                        type="name"
-                        placeholder="Fabricante"
+                        id="quantidade"
+                        name="quantidade"
+                        type="number"
+                        min={1}
+                        placeholder="Quantidade"
                       />
-                      <Label for="fabricante">
-                        Fabricante
+                      <Label for="quantidade">
+                        Quantidade
                       </Label>
                     </FormGroup>
                   </Col>
@@ -118,7 +120,7 @@ function Main(props) {
                 </Row>
 
                 <Row>
-                  <Col md={10}>
+                  <Col md={12}>
                     <FormGroup floating>
 
                       <Input
@@ -135,21 +137,7 @@ function Main(props) {
                   </Col>
 
 
-                  <Col md={2}>
-                    <FormGroup floating>
-
-                      <Input
-                        id="quantidade"
-                        name="quantidade"
-                        type="number"
-                        min={1}
-                        placeholder="Quantidade"
-                      />
-                      <Label for="quantidade">
-                        Quantidade
-                      </Label>
-                    </FormGroup>
-                  </Col>
+                  
                 </Row>
 
                 <Row>
