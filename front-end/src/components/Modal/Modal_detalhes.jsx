@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { Input, Form, Row, Col, FormGroup, Label, FormText } from "reactstrap"
 import { useState } from 'react';
-
+import "./modal_detalhes.css";
 
 
 function Modal_detalhes(props) {
