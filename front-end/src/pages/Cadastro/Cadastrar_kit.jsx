@@ -7,25 +7,11 @@ import Categoria_Dropdown from "./Categoria_Dropdown";
 
 function Main(props) {
 
-  const [buttonSelect, setButtonSelect] = useState("Cadastrar material");
-
   const handleCadastrar = (event) => {
     event.preventDefault();
-    let subCat = document.getElementById("inputSubCategoria").value;
-    if(subCat === 'Subcategoria' || subCat === 'None') 
-      subCat = []; 
+    
 
-    var novoMaterial = {
-      nomeMaterial: document.getElementById("nome do material").value,
-      fabricante: document.getElementById("fabricante").value,
-      validade: document.getElementById("validade").value,
-      descricao: document.getElementById("descricao").value,
-      qtde: document.getElementById("quantidade").value,
-      imagem: document.getElementById("file image").value,
-      categoria: document.getElementById("inputCategoria").value,
-      subCategoria: subCat
-    };
-    console.log(novoMaterial);
+    
   }
 
 
@@ -38,7 +24,7 @@ function Main(props) {
         <div className="container">
 
           <div className="row title">
-            <h1 className="body">{buttonSelect}</h1>
+            <h1 className="body">Cadastrar kit</h1>
           </div>
 
 
@@ -49,14 +35,16 @@ function Main(props) {
 
             <div className="col-md-1">
               <div className="row">
-                <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar materiais") }} >
-                  <ButtonSubMenu texto={"Cadastrar material"} buttonSelect={buttonSelect} />
+                <button type="button" className="buttonMenu" >
+                  <ButtonSubMenu texto={"Cadastrar material"} buttonSelect="Cadastrar kit" 
+                    href="/cadastro/material"
+                  />
                 </button>
 
               </div>
               <div className="row">
                 <button type="button" className="buttonMenu" >
-                  <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect={buttonSelect} 
+                  <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect="Cadastrar kit" 
                     href="/cadastro/kit"
                   />
                 </button>
@@ -64,7 +52,7 @@ function Main(props) {
               </div>
               <div className="row">
                 <button type="button" className="buttonMenu" >
-                  <ButtonSubMenu texto={"Cadastrar categoria"} buttonSelect={buttonSelect} 
+                  <ButtonSubMenu texto={"Cadastrar categoria"} buttonSelect="Cadastrar kit" 
                     href="/cadastro/categoria"
                   />
                 </button>
@@ -81,13 +69,13 @@ function Main(props) {
 
                     <FormGroup floating>
                       <Input
-                        id="nome do material"
+                        id="nome do kit"
                         name="nome"
                         type="name"
-                        placeholder="Nome do material"
+                        placeholder="Nome do kit"
                       />
-                      <Label for="nome do material">
-                        Nome do material
+                      <Label for="nome do kit">
+                        Nome do kit
                       </Label>
                     </FormGroup>
                   </Col>
@@ -126,14 +114,14 @@ function Main(props) {
                     <FormGroup floating>
 
                       <Input
-                        id="descricao"
-                        name="descricao"
+                        id="materiais-inclusos"
+                        name="materiais-inclusos"
                         type="textarea"
                         maxLength={250}
-                        placeholder="Descrição do material"
+                        placeholder="Materiais inclusos"
                       />
-                      <Label for="descricao">
-                        Descrição do material
+                      <Label for="materiais-inclusos">
+                        Materiais inclusos
                       </Label>
                     </FormGroup>
                   </Col>
@@ -177,7 +165,7 @@ function Main(props) {
                     Li e confirmo as informações acima.
                   </Label>
                 </FormGroup>
-                <Button className="button cadastrar material" type="submit" >
+                <Button className="button cadastrar kit" type="submit" >
                   Cadastrar
                 </Button>
 

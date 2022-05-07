@@ -153,3 +153,6 @@ td {
   display: block;
 }
 
+#materiais-inclusos{
+  resize: none;
+}

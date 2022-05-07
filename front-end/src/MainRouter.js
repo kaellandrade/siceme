@@ -6,6 +6,7 @@ import Cadastrar_categoria from './pages/Cadastro/Cadastrar_categoria';
 import Relatorios from './pages/Relatorios/Relatorios';
 import Triagem from './pages/Triagem/index'
 import Login from './pages/Login/index'
+import Cadastrar_kit from "./pages/Cadastro/Cadastrar_kit"
 
 function MainRouter() {
 
@@ -31,6 +32,10 @@ function MainRouter() {
         />
         <Route path="/cadastro/categoria" element={
           <Cadastrar_categoria buttonSelect="Cadastro" />
+          } 
+        />
+        <Route path="/cadastro/kit" element={
+          <Cadastrar_kit buttonSelect="Cadastro" />
           } 
         />
         <Route path="/relatorios" element={

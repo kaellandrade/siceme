@@ -38,7 +38,9 @@ function Cadastrar_categoria(props) {
               </div>
               <div className="row">
                 <button type="button" className="buttonMenu" >
-                  <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect="Cadastrar categoria" />
+                  <ButtonSubMenu texto={"Cadastrar kit"} buttonSelect="Cadastrar categoria" 
+                    href="/cadastro/kit"
+                  />
                 </button>
 
               </div>
