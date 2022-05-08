@@ -19,7 +19,9 @@ routes.use(authMiddleware);
 routes.put('/usuario', UserController.update);
 
 // Rotas para Material
-routes.put('/material', MaterialController.store);
+routes.post('/material', MaterialController.store);
 routes.get('/material', MaterialController.index);
+routes.delete('/material/:id', MaterialController.delete);
+
 
 export default routes;
