@@ -28,47 +28,46 @@ class UserController {
     });
   }
 
-  // =========================================================
-  // ========= Update de usuário suspenso no momento =========
-  // =========================================================
+  async update(req, res) {
+    const { uso_email, oldPassword, uso_nome } = req.body;
 
-  // async update(req, res) {
-  //   const { uso_email, oldPassword } = req.body;
+    console.log(`userId: ${req.userId}`);
 
-  //   // TODO: Apagar depois
-  //   console.log(`userId: ${req.userId}`);
+    // const user = await User.findByPk(req.userId);
+    const usuario = await User.findOne({ where: { uso_id: req.userId } });
 
-  //   // const user = await User.findByPk(req.userId);
-  //   const user = await User.findOne({ where: { uso_id: req.userId } });
+    /**
+     * TODO: Verirficar pois era ela que estava dando error essa parte pois era o que estava causando error na aplicação.
+     if (uso_email !== usuario.uso_email) {
+       const emailExists = await User.findOne({ where: { uso_email } });
 
-  //   // Verifica se o email a ser atualizado já existe
-  //   // eslint-disable-next-line eqeqeq
-  //   if (uso_email != user.uso_email) {
-  //     const emailExists = await User.findOne({ where: { uso_email } });
+      if (emailExists) {
+        return res
+          .status(400)
+          .json({ error: 'Usuário com esse email já existe' });
+      }
+    }
+    */
 
-  //     if (emailExists) {
-  //       return res
-  //         .status(400)
-  //         .json({ error: 'Usuário com esse email já existe' });
-  //     }
-  //   }
+    if (oldPassword && !(await usuario.checkPassword(oldPassword))) {
+      return res.status(401).json({ error: 'A senha está errada' });
+    }
 
-  //   if (oldPassword && !(await user.checkPassword(oldPassword))) {
-  //     return res.status(401).json({ error: 'A senha está errada' });
-  //   }
+    const {
+      uso_id,
+      uso_nome: novo_nome,
+      uso_cargo,
+      uso_tipo_user,
+    } = await usuario.update({ uso_nome });
 
-  //   // eslint-disable-next-line prettier/prettier
-  //   const { uso_id, uso_nome, uso_cargo, uso_tipo_user } = await user.update({uso_nome:'Teste'});
-  //   await user.save();
-
-  //   return res.json({
-  //     uso_id,
-  //     uso_nome,
-  //     uso_email,
-  //     uso_cargo,
-  //     uso_tipo_user,
-  //   });
-  // }
+    return res.json({
+      uso_id,
+      uso_nome: novo_nome,
+      uso_email,
+      uso_cargo,
+      uso_tipo_user,
+    });
+  }
 }
 
 export default new UserController();
