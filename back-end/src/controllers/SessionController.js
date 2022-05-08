@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import * as Yup from 'yup';
-import User from '../app/models/User';
+import User from '../app/models/Usuario';
 import authConfig from '../config/auth';
 
 /**
@@ -28,15 +28,15 @@ class SessionController {
       return res.status(401).json({ error: 'Senha errada' });
     }
 
-    const { uso_id, uso_nome } = user;
+    const { id, uso_nome } = user;
 
     return res.json({
       user: {
-        uso_id,
+        id,
         uso_nome,
         uso_email,
       },
-      token: jwt.sign({ uso_id }, authConfig.secret, {
+      token: jwt.sign({ id }, authConfig.secret, {
         expiresIn: authConfig.expiresIn,
       }),
     });

@@ -23,7 +23,7 @@ class MaterialController {
    * @param {*} res resposta ser repassada
    * @returns void
    */
-   async index(req, res) {
+  async index(req, res) {
     return res.body;
   }
 
@@ -33,7 +33,7 @@ class MaterialController {
    * @param {*} res resposta ser repassada
    * @returns void
    */
-   async index(req, res) {
+  async index(req, res) {
     return res.body;
   }
 

@@ -22,5 +22,4 @@ routes.post('/sessao', SessionController.store);
 routes.use(authMiddleware);
 routes.put('/usuario', UserController.update);
 
-
 export default routes;
