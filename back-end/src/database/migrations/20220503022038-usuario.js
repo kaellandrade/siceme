@@ -3,10 +3,10 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     return queryInterface.createTable('uso_usuario', {
-      uso_id: {
+      id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        autoIncrement: this,
+        autoIncrement: true,
         primaryKey: true,
       },
       uso_nome: {
@@ -20,12 +20,13 @@ module.exports = {
       uso_email: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       uso_tipo_user: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      password_hash: {
+      senha_hash: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -40,7 +41,7 @@ module.exports = {
     });
   },
 
-  async down(queryInterface, Sequelize) {
-    return queryInterface.dropTable('users');
+  async down(queryInterface) {
+    return queryInterface.dropTable('uso_usuario');
   },
 };

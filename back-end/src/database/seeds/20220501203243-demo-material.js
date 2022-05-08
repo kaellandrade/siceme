@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('mrl_material', [
+  async up(queryInterface) {
+    return queryInterface.bulkInsert('mtl_material', [
       {
         mrl_nome: 'Agulha',
         mrl_quantidade: 5,
@@ -78,7 +78,7 @@ module.exports = {
     ]);
   },
 
-  async down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('mrl_material', null, {});
+  async down(queryInterface) {
+    return queryInterface.bulkDelete('mtl_material', null, {});
   },
 };
