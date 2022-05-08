@@ -10,8 +10,8 @@ class Material extends Model {
   static init(sequelize) {
     super.init(
       {
-        mrl_nome: Sequelize.STRING,
-        mrl_quantidade: Sequelize.INTEGER,
+        mtl_nome: Sequelize.STRING,
+        mtl_quantidade: Sequelize.INTEGER,
       },
       {
         sequelize,

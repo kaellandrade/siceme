@@ -4,19 +4,33 @@ import User from '../app/models/Usuario';
 import authConfig from '../config/auth';
 
 /**
- * Criação do controller para a session
+ * Criação do controller parao login;
  * e autenticação dos usuários
  * @author Manoel
  * @version 1.0.0 Realizando conexão
+ * @version 1.1.0 Realizando validação
  */
 class SessionController {
+  /**
+   * Método responsável pelo pelo Login
+   * @param {*} req requisição
+   * @param {*} res resposta
+   * @returns JSON
+   *
+   * @since 1.0.0 Realizando validação.
+   */
   async store(req, res) {
     const schema = Yup.object().shape({
       uso_email: Yup.string().email().required(),
-      password: Yup.string().required(),
+      uso_senha: Yup.string().required(),
     });
-
-    const { uso_email, password } = req.body;
+    const dadosValidos = await schema.isValid(req.body);
+    if (!dadosValidos) {
+      return res.status(400).json({
+        error: 'Requisição iniválida. Passe os campos uso_email:, e uso_senha:',
+      });
+    }
+    const { uso_email, uso_senha } = req.body;
 
     const user = await User.findOne({ where: { uso_email } });
 
@@ -24,7 +38,7 @@ class SessionController {
       return res.status(401).json({ error: 'Usuário não encontrado ' });
     }
 
-    if (!(await user.checkPassword(password))) {
+    if (!(await user.checkPassword(uso_senha))) {
       return res.status(401).json({ error: 'Senha errada' });
     }
 
