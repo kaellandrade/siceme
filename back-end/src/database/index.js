@@ -2,8 +2,9 @@ import Sequelize from 'sequelize';
 import databaseConfig from '../config/database';
 import Material from '../app/models/Material';
 import User from '../app/models/User';
+import Arquivo from '../app/models/Arquivo';
 
-const models = [Material, User];
+const models = [Material, User, Arquivo];
 
 /**
  * Realizando conexão com o banco de dados
