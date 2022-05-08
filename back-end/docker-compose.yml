@@ -1,7 +1,6 @@
 version: "3"
 
 services:
-
   nodejs:
     build:
       context: .
@@ -18,7 +17,7 @@ services:
       - siceme-network
     links:
       -  postgresdb
-
+      
 
   postgresdb:
     container_name: pg_container
