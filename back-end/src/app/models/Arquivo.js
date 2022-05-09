@@ -9,7 +9,7 @@ class Arquivo extends Model {
   static init(sequelize) {
     super.init(
       {
-        ars_id: Sequelize.INTEGER,
+        // ars_id: Sequelize.INTEGER,
         ars_nome: Sequelize.STRING,
         ars_path: Sequelize.STRING,
       },
