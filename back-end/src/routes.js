@@ -19,32 +19,38 @@ routes.get('/material', async (req, res) => {
   return res.json({ materiais });
 });
 
-// Cria usuário
-routes.post('/usuario', UserController.store);
-
-// Inicializa sessão do usuário
+// ======== USUÁRIO ========
 // Criação de novos usuários
 routes.post('/usuario', UserController.store);
 
-// Login
+// Inicializa sessão do usuário
 routes.post('/sessao', SessionController.store);
+
+// Listagem dos usuários
+routes.get('/usuario', UserController.index);
 
 // Middleware de autenticação (válido apenas para as rotas a seguir)
 routes.use(authMiddleware);
 // PS: Apartir daqui todas as rotas são protegidas.
 
-// Rotas para usuários;
+// Atualização de um usuário
 routes.put('/usuario', UserController.update);
 
-// Rotas para Material
+// ======== MATERIAL ========
+// Criação de um material
 routes.post('/material', MaterialController.store);
+
+// Listagem dos materiais
 routes.get('/material', MaterialController.index);
+
+// Remoção de um material
 routes.delete('/material/:id', MaterialController.delete);
 
+// Atualização de um material
+routes.put('/material/:id', MaterialController.update);
+
+// ======== ARQUIVOS ========
 // Upload de arquivos
 routes.post('/arquivos', upload.single('arquivo'), FileController.store);
-
-// Atualiza usuário
-routes.put('/usuario', UserController.update);
 
 export default routes;
