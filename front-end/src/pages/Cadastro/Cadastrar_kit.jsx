@@ -109,26 +109,6 @@ function Main(props) {
                   </Col>
                 </Row>
 
-                <Row>
-                  <Col md={12}>
-                    <FormGroup floating>
-
-                      <Input
-                        id="materiais-inclusos"
-                        name="materiais-inclusos"
-                        type="textarea"
-                        maxLength={250}
-                        placeholder="Materiais inclusos"
-                      />
-                      <Label for="materiais-inclusos">
-                        Materiais inclusos
-                      </Label>
-                    </FormGroup>
-                  </Col>
-
-
-                  
-                </Row>
 
                 <Row>
                   <Col md={5}>
@@ -148,6 +128,22 @@ function Main(props) {
                   <Col md={7}>
                     <FormGroup floating>
                       <Categoria_Dropdown />
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={12}>
+                    <FormGroup floating>
+                      <Input
+                        id="materiais-inclusos"
+                        name="materiais-inclusos"
+                        type="textarea"
+                        maxLength={250}
+                        placeholder="Materiais inclusos"
+                      />
+                      <Label for="materiais-inclusos">
+                        Materiais inclusos
+                      </Label>
                     </FormGroup>
                   </Col>
                 </Row>
