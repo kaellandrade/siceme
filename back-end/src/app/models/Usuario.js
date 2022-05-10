@@ -34,7 +34,7 @@ class Usuario extends Model {
         try {
           usuario.senha_hash = await bcrypt.hash(usuario.uso_senha, 8);
         } catch (error) {
-          console.log('error!');
+          console.log(`Error: ${error}`);
         }
       }
     });
