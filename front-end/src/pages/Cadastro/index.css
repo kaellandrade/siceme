@@ -117,11 +117,11 @@ td {
   box-shadow: none;
 }
 
-.button.cadastrar.material {
+.button.cadastrar {
   background-color: #316b83;
 }
 
-.button.cadastrar.material:hover {
+.button.cadastrar:hover {
   background-color: #3d84a2;
   ;
 }

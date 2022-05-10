@@ -65,7 +65,7 @@ function Main(props) {
 
               <Form inline onSubmit={handleCadastrar} >
                 <Row>
-                  <Col md={5}>
+                  <Col md={6}>
 
                     <FormGroup floating>
                       <Input
@@ -79,7 +79,7 @@ function Main(props) {
                       </Label>
                     </FormGroup>
                   </Col>
-                  <Col md={5}>
+                  <Col md={3}>
                     <FormGroup floating>
 
                       <Input
@@ -94,41 +94,21 @@ function Main(props) {
                       </Label>
                     </FormGroup>
                   </Col>
-                  <Col md={2}>
+                  <Col md={3}>
                     <FormGroup floating>
                       <Input
-                        id="validade"
-                        name="validade"
-                        type="date"
-                        placeholder="Validade"
+                        id="etiqueta"
+                        name="etiqueta"
+                        type="text"
+                        placeholder="Etiqueta"
                       />
-                      <Label for="validade">
-                        Validade
+                      <Label for="etiqueta">
+                        Etiqueta
                       </Label>
                     </FormGroup>
                   </Col>
                 </Row>
 
-                <Row>
-                  <Col md={12}>
-                    <FormGroup floating>
-
-                      <Input
-                        id="materiais-inclusos"
-                        name="materiais-inclusos"
-                        type="textarea"
-                        maxLength={250}
-                        placeholder="Materiais inclusos"
-                      />
-                      <Label for="materiais-inclusos">
-                        Materiais inclusos
-                      </Label>
-                    </FormGroup>
-                  </Col>
-
-
-                  
-                </Row>
 
                 <Row>
                   <Col md={5}>
@@ -151,6 +131,22 @@ function Main(props) {
                     </FormGroup>
                   </Col>
                 </Row>
+                <Row>
+                  <Col md={12}>
+                    <FormGroup floating>
+                      <Input
+                        id="materiais-inclusos"
+                        name="materiais-inclusos"
+                        type="textarea"
+                        maxLength={250}
+                        placeholder="Materiais inclusos"
+                      />
+                      <Label for="materiais-inclusos">
+                        Materiais inclusos
+                      </Label>
+                    </FormGroup>
+                  </Col>
+                </Row>
 
                 <FormGroup check>
                   <Input
@@ -165,7 +161,7 @@ function Main(props) {
                     Li e confirmo as informações acima.
                   </Label>
                 </FormGroup>
-                <Button className="button cadastrar kit" type="submit" >
+                <Button className="button cadastrar" type="submit" >
                   Cadastrar
                 </Button>
 
