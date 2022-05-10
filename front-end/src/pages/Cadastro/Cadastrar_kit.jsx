@@ -99,7 +99,7 @@ function Main(props) {
                       <Input
                         id="etiqueta"
                         name="etiqueta"
-                        type="date"
+                        type="text"
                         placeholder="Etiqueta"
                       />
                       <Label for="etiqueta">
