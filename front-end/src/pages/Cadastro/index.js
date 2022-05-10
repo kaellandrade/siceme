@@ -175,7 +175,7 @@ function Main(props) {
                     Li e confirmo as informações acima.
                   </Label>
                 </FormGroup>
-                <Button className="button cadastrar material" type="submit" >
+                <Button className="button cadastrar" type="submit" >
                   Cadastrar
                 </Button>
 

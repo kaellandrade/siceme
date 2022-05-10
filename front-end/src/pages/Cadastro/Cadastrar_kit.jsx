@@ -65,7 +65,7 @@ function Main(props) {
 
               <Form inline onSubmit={handleCadastrar} >
                 <Row>
-                  <Col md={5}>
+                  <Col md={6}>
 
                     <FormGroup floating>
                       <Input
@@ -79,7 +79,7 @@ function Main(props) {
                       </Label>
                     </FormGroup>
                   </Col>
-                  <Col md={5}>
+                  <Col md={3}>
                     <FormGroup floating>
 
                       <Input
@@ -94,16 +94,16 @@ function Main(props) {
                       </Label>
                     </FormGroup>
                   </Col>
-                  <Col md={2}>
+                  <Col md={3}>
                     <FormGroup floating>
                       <Input
-                        id="validade"
-                        name="validade"
+                        id="etiqueta"
+                        name="etiqueta"
                         type="date"
-                        placeholder="Validade"
+                        placeholder="Etiqueta"
                       />
-                      <Label for="validade">
-                        Validade
+                      <Label for="etiqueta">
+                        Etiqueta
                       </Label>
                     </FormGroup>
                   </Col>
@@ -165,7 +165,7 @@ function Main(props) {
                     Li e confirmo as informações acima.
                   </Label>
                 </FormGroup>
-                <Button className="button cadastrar kit" type="submit" >
+                <Button className="button cadastrar" type="submit" >
                   Cadastrar
                 </Button>
 
