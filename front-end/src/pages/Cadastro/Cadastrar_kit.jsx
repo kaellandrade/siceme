@@ -1,23 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/header/Header"
 import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "reactstrap"
 import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
+import Select_CadastroKit from "./Select_CadastroKit";
+import Select from 'react-select';
 import { materiais } from "../../data/data";
+
 
 
 function Main(props) {
 
+  const [selectedValue, setSelectedValue] = useState([]);
+
   const handleCadastrar = (event) => {
     event.preventDefault();
-    var select = document.getElementById("select-materiais-kit");
-    var materiaisInclusos = [];
-    for(let i = 0; i < select.options.length; i++){
-      if (select.options[i].selected)
-        materiaisInclusos.push(select.options[i].value);
-    }
-
     let subCat = document.getElementById("inputSubCategoria").value;
     if(subCat === 'Subcategoria' || subCat === 'None') 
       subCat = []; 
@@ -25,7 +23,7 @@ function Main(props) {
     var novoKit = {
       nomeKit: document.getElementById("nome do kit").value,
       etiqueta: document.getElementById("etiqueta").value,
-      materiais: materiaisInclusos,
+      materiais: selectedValue,
       qtde: document.getElementById("quantidade").value,
       imagem: document.getElementById("file image").value,
       categoria: document.getElementById("inputCategoria").value,
@@ -34,34 +32,18 @@ function Main(props) {
     console.log(novoKit);    
   }
   
-  const gerarMateriaisKit = (materiais) => {
-    return (
-        materiais.map(({ id, nome }) => {
-          return <option value={nome}>{nome}</option>
-        })
-      );
-  } 
-
-
-
   return (
 
     <div className="Main">
       <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
       <section className="col-md-12 nav d-flex align-items-center justify-content-around">
-
         <div className="container">
-
           <div className="row title">
             <h1 className="body">Cadastrar kit</h1>
           </div>
-
-
         </div>
-
         <main className="container-fluid flex-column" >
           <div className="row">
-
             <div className="col-md-1">
               <div className="row">
                 <button type="button" className="buttonMenu" >
@@ -69,7 +51,6 @@ function Main(props) {
                     href="/cadastro/material"
                   />
                 </button>
-
               </div>
               <div className="row">
                 <button type="button" className="buttonMenu" >
@@ -77,7 +58,6 @@ function Main(props) {
                     href="/cadastro/kit"
                   />
                 </button>
-
               </div>
               <div className="row">
                 <button type="button" className="buttonMenu" >
@@ -110,7 +90,6 @@ function Main(props) {
                   </Col>
                   <Col md={3}>
                     <FormGroup floating>
-
                       <Input
                         id="quantidade"
                         name="quantidade"
@@ -137,8 +116,6 @@ function Main(props) {
                     </FormGroup>
                   </Col>
                 </Row>
-
-
                 <Row>
                   <Col md={5}>
                     <FormGroup>
@@ -162,19 +139,7 @@ function Main(props) {
                 </Row>
                 <Row>
                   <Col md={12}>
-                    <form id="form-materiais-kit">
-                      <select multiple id="select-materiais-kit" name="select-multiplo" className="ls-select"
-                        placeholder="Insira os materiais">
-                        {gerarMateriaisKit(materiais)}
-                        {/* <option value="PC">Pinça</option>
-                        <option value="MT">Manta</option>
-                        <option value="TS">Tesoura</option>
-                        <option value="AL">Alicate</option>
-                        <option value="CB">Cuba</option>
-                        <option value="LE">Lençol</option>
-                        <option value="LV">Luva descartável</option> */}
-                      </select>
-                    </form>
+                    <Select_CadastroKit setProps={setSelectedValue} value={selectedValue} />    
                   </Col>
                 </Row>
 
@@ -194,12 +159,8 @@ function Main(props) {
                 <Button className="button cadastrar" type="submit" >
                   Cadastrar
                 </Button>
-
               </Form>
-              
-
-            </div>
-              
+            </div>             
           </div>
         </main>
       </section>
