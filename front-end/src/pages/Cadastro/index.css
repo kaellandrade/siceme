@@ -153,11 +153,10 @@ td {
   display: block;
 }
 
-#materiais-inclusos{
-  resize: none;
-}
-
 .ls-select{
-  width: 300px;
+  width: 100%;
 }
 
+#form-materiais-kit{
+  width: 100%;
+}

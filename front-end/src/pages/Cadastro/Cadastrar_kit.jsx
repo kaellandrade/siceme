@@ -133,35 +133,20 @@ function Main(props) {
                   </Col>
                 </Row>
                 <Row>
-                  <Col md={6}>
-                    <FormGroup floating>
-                      <Input
-                        id="materiais-inclusos"
-                        name="materiais-inclusos"
-                        type="textarea"
-                        maxLength={250}
-                        placeholder="Materiais inclusos"
-                      />
-                      <Label for="materiais-inclusos">
-                        Materiais inclusos
-                      </Label>
-                      
-                    </FormGroup>
-                    
+                  <Col md={12}>
+                    <form id="form-materiais-kit">
+                      <select multiple id="select-materiais-kit" name="select-multiplo" className="ls-select"
+                        placeholder="Insira os materiais" >
+                        <option value="PC">Pinça</option>
+                        <option value="MT">Manta</option>
+                        <option value="TS">Tesoura</option>
+                        <option value="AL">Alicate</option>
+                        <option value="CB">Cuba</option>
+                        <option value="LE">Lençol</option>
+                        <option value="LV">Luva descartável</option>
+                      </select>
+                    </form>
                   </Col>
-                  <Col md={6}>
-                    <FormGroup floating onSubmit="">
-                      <Input
-                        id="search-materiais"
-                        name="search-materiais"
-                        type="text"
-                        placeholder="Buscar material"
-                      />
-                      <Label for="search-materiais">
-                        Buscar material
-                      </Label>
-                    </FormGroup>
-                  </Col> 
                 </Row>
 
                 <FormGroup check>
@@ -183,22 +168,6 @@ function Main(props) {
 
               </Form>
               
-              <form id="form-materiais-kit">
-                <select multiple id="select-materiais-kit" name="select-multiplo" className="ls-select" >
-                  <option value="MG">Minas Gerais</option>
-                  <option value="SP">São Paulo</option>
-                  <option value="RJ">Rio de Janeiro</option>
-                  <option value="MG">Minas Gerais</option>
-                  <option value="SP">São Paulo</option>
-                  <option value="RJ">Rio de Janeiro</option>
-                  <option value="MG">Minas Gerais</option>
-                  <option value="SP">São Paulo</option>
-                  <option value="RJ">Rio de Janeiro</option>
-                  <option value="MG">Minas Gerais</option>
-                  <option value="SP">São Paulo</option>
-                  <option value="RJ">Rio de Janeiro</option>
-                </select>
-              </form>
 
             </div>
               
