@@ -5,6 +5,7 @@ import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
 
+
 function Main(props) {
 
   const handleCadastrar = (event) => {
@@ -132,7 +133,7 @@ function Main(props) {
                   </Col>
                 </Row>
                 <Row>
-                  <Col md={12}>
+                  <Col md={6}>
                     <FormGroup floating>
                       <Input
                         id="materiais-inclusos"
@@ -144,8 +145,23 @@ function Main(props) {
                       <Label for="materiais-inclusos">
                         Materiais inclusos
                       </Label>
+                      
                     </FormGroup>
+                    
                   </Col>
+                  <Col md={6}>
+                    <FormGroup floating onSubmit="">
+                      <Input
+                        id="search-materiais"
+                        name="search-materiais"
+                        type="text"
+                        placeholder="Buscar material"
+                      />
+                      <Label for="search-materiais">
+                        Buscar material
+                      </Label>
+                    </FormGroup>
+                  </Col> 
                 </Row>
 
                 <FormGroup check>
@@ -166,16 +182,31 @@ function Main(props) {
                 </Button>
 
               </Form>
+              
+              <form >
+                <select multiple id="select-materiais-kit" name="select-multiplo" class="ls-select" >
+                  <option value="MG">Minas Gerais</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                </select>
+              </form>
 
             </div>
+              
           </div>
-
         </main>
       </section>
-
+      
     </div>
-
-
   );
 }
 

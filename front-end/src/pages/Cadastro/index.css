@@ -156,3 +156,8 @@ td {
 #materiais-inclusos{
   resize: none;
 }
+
+#select-materiais-kit{
+  width: 300px;
+  background-color: black;
+}
