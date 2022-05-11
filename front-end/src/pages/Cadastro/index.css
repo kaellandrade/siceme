@@ -157,7 +157,7 @@ td {
   resize: none;
 }
 
-#select-materiais-kit{
+.ls-select{
   width: 300px;
-  background-color: black;
 }
+

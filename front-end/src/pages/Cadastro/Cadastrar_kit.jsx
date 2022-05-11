@@ -183,8 +183,8 @@ function Main(props) {
 
               </Form>
               
-              <form >
-                <select multiple id="select-materiais-kit" name="select-multiplo" class="ls-select" >
+              <form id="form-materiais-kit">
+                <select multiple id="select-materiais-kit" name="select-multiplo" className="ls-select" >
                   <option value="MG">Minas Gerais</option>
                   <option value="SP">São Paulo</option>
                   <option value="RJ">Rio de Janeiro</option>
