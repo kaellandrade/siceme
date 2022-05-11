@@ -37,3 +37,8 @@ yarn add react-icons
 ```
 yarn add react-select
 ```
+-Instalar axios
+
+```
+yarn add axios
+```
