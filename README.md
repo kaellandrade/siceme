@@ -33,3 +33,7 @@ yarn add styled-components
 ```
 yarn add react-icons
 ```
+-Instalar react select
+```
+yarn add react-select
+```
