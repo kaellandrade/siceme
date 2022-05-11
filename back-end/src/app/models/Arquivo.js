@@ -18,8 +18,6 @@ class Arquivo extends Model {
         tableName: 'ars_arquivos',
       },
     );
-    this.removeAttribute('id');
-
     return this;
   }
 }

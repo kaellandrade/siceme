@@ -97,12 +97,16 @@ class MaterialController {
 
     const material = await Material.findByPk(req.params.id);
 
-    const { mtl_nome: nome, mtl_quantidade: quantidade } =
-      await material.update(req.body);
+    const {
+      mtl_nome: nome,
+      mtl_quantidade: quantidade,
+      id_imagem,
+    } = await material.update(req.body);
 
     return res.json({
       mtl_nome: nome,
       mtl_quantidade: quantidade,
+      id_imagem,
     });
   }
 }
