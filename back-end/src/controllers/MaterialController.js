@@ -46,9 +46,9 @@ class MaterialController {
 
   /** Remove um material através do id
    * @author Micael
-   * @param {id} req requisição
-   * @param {*} res resposta ser repassada
-   * @returns void
+   * @param {id} req
+   * @param {*} res
+   * @returns JSON
    */
   async delete(req, res) {
     const shape = Yup.object().shape({

@@ -1,28 +1,35 @@
 import React from "react";
 import Button from "./ButtonHeader";
-import { HeaderStyle } from "./headerstyle.js" 
+import { HeaderStyle } from "./headerstyle.js"
 
 function Header(props) {
-  //window.location.reload(false);
   return (
     <div>
       {/* Header */}
       <HeaderStyle className="container-fluid" >
-        
-        <section className="container">
-          
-          <article className="row d-flex align-items-center">
-            
-            <ul className="col-md-12 nav d-flex align-items-center justify-content-around">
-              <h1>SICEME</h1>
-              <Button texto="Triagem" href="/triagem" buttonS="Triagem" buttonSelect={props.buttonSelect} />
-              <Button texto="Arsenal" href="/arsenal" buttonS="Arsenal" buttonSelect={props.buttonSelect} />
-              <Button texto="Cadastro" href="/cadastro" buttonS="Cadastro" buttonSelect={props.buttonSelect}  />
-              <Button texto="Relatórios" href="/relatorios" buttonS="Relatorios" buttonSelect={props.buttonSelect} />
-            </ul>
 
-          </article>
-        </section>
+        <div className="row d-flex align-items-center">
+          <div className="col title-header">
+            <h1>SICEME</h1>
+          </div>
+          <div className="col">
+            <Button texto="Triagem" href="/triagem" buttonS="Triagem" buttonSelect={props.buttonSelect} />
+           
+          </div>
+          <div className="col">
+            <Button texto="Arsenal" href="/arsenal" buttonS="Arsenal" buttonSelect={props.buttonSelect} />
+           
+          </div>
+          <div className="col">
+            <Button texto="Cadastro" href="/cadastro/material" buttonS="Cadastro" buttonSelect={props.buttonSelect} />
+           
+          </div>
+          <div className="col">
+            <Button texto="Relatórios" href="/relatorios" buttonS="Relatorios" buttonSelect={props.buttonSelect} />
+           
+          </div>
+
+        </div>
       </HeaderStyle>
       {/* Header */}
     </div>

@@ -6,6 +6,7 @@
 .page-login {
   height: 93vh;
   background: url("../../../public/background-login-original.png") no-repeat center center fixed;
+  height: 100vh;
 }
 
 .container {
@@ -16,6 +17,7 @@
 body {
   background-color: #ffffff;
   font-family: 'Ubuntu', sans-serif;
+  overflow: hidden;
 }
 
 .main {

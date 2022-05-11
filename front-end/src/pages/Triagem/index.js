@@ -5,7 +5,7 @@ import { Input } from "reactstrap"
 import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import TabelaTriagem from "./TabelaTriagem";
-import { materiais } from "../../data/data"
+import { materiais } from "../../data/data";
 
 function Main(props) {
 
@@ -74,24 +74,36 @@ function Main(props) {
             <div className="row">
 
               <div className="col-md-1">
-                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Listagem Geral")} }  >
-                  <ButtonSubMenu texto={"Listagem Geral"} buttonSelect={buttonSelect} />
-                </button>
-                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Limpeza")} }  > 
-                  <ButtonSubMenu texto={"Limpeza"} buttonSelect={buttonSelect} />
-                </button>
-                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Desinfecção")} } >
-                  <ButtonSubMenu texto={"Desinfecção"} buttonSelect={buttonSelect} />
-                </button>
-                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Esterilização")} } >
-                  <ButtonSubMenu texto={"Esterilização"} buttonSelect={buttonSelect} />
-                </button>
-                <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Distribuição")} } >
-                  <ButtonSubMenu texto={"Distribuição"} buttonSelect={buttonSelect} />
-                </button>
-                
-              </div>
+                <div className="row">
+                  <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Listagem Geral")} }  >
+                    <ButtonSubMenu texto={"Listagem Geral"} buttonSelect={buttonSelect} />
+                  </button>
+                </div>
 
+                <div className="row">
+                  <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Limpeza")} }  > 
+                    <ButtonSubMenu texto={"Limpeza"} buttonSelect={buttonSelect} />
+                  </button>
+                </div>
+
+                <div className="row">
+                  <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Desinfecção")} } >
+                    <ButtonSubMenu texto={"Desinfecção"} buttonSelect={buttonSelect} />
+                  </button>
+                </div>
+
+                <div className="row">
+                  <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Esterilização")} } >
+                    <ButtonSubMenu texto={"Esterilização"} buttonSelect={buttonSelect} />
+                  </button>
+                </div>
+
+                <div className="row">
+                  <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Distribuição")} } >
+                    <ButtonSubMenu texto={"Distribuição"} buttonSelect={buttonSelect} />
+                  </button>
+                </div>
+              </div>
               <div className="col-md-10">
                 <TabelaTriagem buttonSelect={buttonSelect} dataMaterias={dataMateriais} />
               </div>
