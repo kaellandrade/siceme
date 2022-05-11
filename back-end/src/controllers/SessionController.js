@@ -7,7 +7,6 @@ import authConfig from '../config/auth';
  * Criação do controller parao login;
  * e autenticação dos usuários
  * @author Manoel
- * @version 1.0.0 Realizando conexão
  * @version 1.1.0 Realizando validação
  */
 class SessionController {
