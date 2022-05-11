@@ -86,11 +86,7 @@ function Cadastrar_categoria(props) {
                       </Label>
                     </FormGroup>
                   </Col>
-                  <Col>
-                    <FormGroup floating>
-                      <Categoria_Dropdown />
-                    </FormGroup>
-                  </Col>
+                  
                 </Row>
                 <FormGroup check>
                   <Input
