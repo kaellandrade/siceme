@@ -1,7 +1,14 @@
 # siceme
 Projeto Engenhria Software II
 
-Processo de instalação das dependências
+
+-Instalar todas as dependências necessárias
+
+```
+npm install package.json
+```
+--------------------------------------------------------
+Processo de instalação individual das dependências
 
 -Instalar react
 ```
