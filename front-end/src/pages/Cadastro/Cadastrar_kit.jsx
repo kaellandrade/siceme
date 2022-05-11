@@ -4,10 +4,12 @@ import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "react
 import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
-import { materiais } from "../../data/data";
+import Select_CadastroKit from "./Select_CadastroKit";
+
 
 
 function Main(props) {
+  
 
   const handleCadastrar = (event) => {
     event.preventDefault();
@@ -162,19 +164,7 @@ function Main(props) {
                 </Row>
                 <Row>
                   <Col md={12}>
-                    <form id="form-materiais-kit">
-                      <select multiple id="select-materiais-kit" name="select-multiplo" className="ls-select"
-                        placeholder="Insira os materiais">
-                        {gerarMateriaisKit(materiais)}
-                        {/* <option value="PC">Pinça</option>
-                        <option value="MT">Manta</option>
-                        <option value="TS">Tesoura</option>
-                        <option value="AL">Alicate</option>
-                        <option value="CB">Cuba</option>
-                        <option value="LE">Lençol</option>
-                        <option value="LV">Luva descartável</option> */}
-                      </select>
-                    </form>
+                    <Select_CadastroKit />    
                   </Col>
                 </Row>
 
