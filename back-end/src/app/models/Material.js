@@ -18,6 +18,11 @@ class Material extends Model {
         tableName: 'mtl_material',
       },
     );
+    return this;
+  }
+
+  static associate(models) {
+    this.belongsTo(models.Arquivo, { foreignKey: 'id_imagem' });
   }
 }
 

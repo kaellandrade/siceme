@@ -4,8 +4,8 @@ import Material from '../app/models/Material';
 
 /**
  * Controller responsável por Materiais.
- * @author Micael
- * @version 1.0.0
+ * @author Micael e Manoel
+ * @version 1.0.1
  */
 class MaterialController {
   /** Cadastra um novo material
@@ -14,7 +14,6 @@ class MaterialController {
    * @param {*} res resposta ser repassada
    * @returns void
    */
-
   async store(req, res) {
     const shape = Yup.object().shape({
       mtl_nome: Yup.string().required(),
@@ -74,6 +73,41 @@ class MaterialController {
           ? { mensagem: 'Material deletado com sucesso' }
           : { mensagem: `Não existe material com id ${req.params.id}` },
       );
+  }
+
+  /** Atualização de um material
+   * @author Manoel
+   * @param {*} req requisição
+   * @param {*} res resposta ser repassada
+   * @returns void
+   */
+  async update(req, res) {
+    const schema = Yup.object().shape({
+      mtl_nome: Yup.string(),
+      mtl_quantidade: Yup.number().integer(),
+      id_imagem: Yup.number().integer(),
+    });
+    const dadosValidos = await schema.isValid({ id: req.params.id });
+
+    if (!dadosValidos) {
+      return res.status(400).json({
+        erro: 'Informações inválidas',
+      });
+    }
+
+    const material = await Material.findByPk(req.params.id);
+
+    const {
+      mtl_nome: nome,
+      mtl_quantidade: quantidade,
+      id_imagem,
+    } = await material.update(req.body);
+
+    return res.json({
+      mtl_nome: nome,
+      mtl_quantidade: quantidade,
+      id_imagem,
+    });
   }
 }
 

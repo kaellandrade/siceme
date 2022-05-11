@@ -1,26 +1,56 @@
 import { Router } from 'express';
+import multer from 'multer';
+
+import multerConfig from './config/multer';
+import Material from './app/models/Material';
+import authMiddleware from './app/middlewares/auth';
+
 import MaterialController from './controllers/MaterialController';
 import UserController from './controllers/UserController';
 import SessionController from './controllers/SessionController';
-import authMiddleware from './app/middlewares/auth';
+import FileController from './controllers/FileController';
 
 const routes = new Router();
+const upload = multer(multerConfig);
+
+routes.get('/material', async (req, res) => {
+  const materiais = await Material.findAll();
+
+  return res.json({ materiais });
+});
+
+// ======== USUÁRIO ========
 // Criação de novos usuários
 routes.post('/usuario', UserController.store);
 
-// Login
+// Inicializa sessão do usuário
 routes.post('/sessao', SessionController.store);
+
+// Listagem dos usuários
+routes.get('/usuario', UserController.index);
 
 // Middleware de autenticação (válido apenas para as rotas a seguir)
 routes.use(authMiddleware);
 // PS: Apartir daqui todas as rotas são protegidas.
 
-// Rotas para usuários;
+// Atualização de um usuário
 routes.put('/usuario', UserController.update);
 
-// Rotas para Material
+// ======== MATERIAL ========
+// Criação de um material
 routes.post('/material', MaterialController.store);
+
+// Listagem dos materiais
 routes.get('/material', MaterialController.index);
+
+// Remoção de um material
 routes.delete('/material/:id', MaterialController.delete);
+
+// Atualização de um material
+routes.put('/material/:id', MaterialController.update);
+
+// ======== ARQUIVOS ========
+// Upload de arquivos
+routes.post('/arquivos', upload.single('arquivo'), FileController.store);
 
 export default routes;

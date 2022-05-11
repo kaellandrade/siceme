@@ -6,7 +6,7 @@ const TAMANHO_MINIMO_SENHA = 2;
 /**
  * Controller do Usuário
  * @author Manoel e Micael
- * @version 1.0.0 Versão inicial
+ * @version 1.0.1 Adição do GET usuário
  */
 class UserController {
   /**
@@ -18,6 +18,12 @@ class UserController {
    * @since 1.0.0 Versão inicial
    * @since 1.0.0 Tranto erros ao pesistir no banco.
    */
+
+  async index(req, res) {
+    const todosUsuarios = await User.findAll();
+    return res.status(200).json(todosUsuarios);
+  }
+
   async store(req, res) {
     // Validação do usuário utilizando um schema
     const schema = Yup.object().shape({
