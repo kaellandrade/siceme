@@ -1,17 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import { materiais } from '../../data/data';
 
 
-function Select_CadastroKit(){
-  var options = [];
+function Select_CadastroKit({ setProps, value }){
+
+  const [options, setOptions] = useState([]);
 
   const tratarMateriais = (materiais) => {
     return (
       materiais.map(({ codigo, nome }) => {
         let aux = codigo + " - " + nome;
         let obj = {value: aux, label: aux}
-        return options.push(obj);
+        return setOptions(options => [...options, obj]);
       })
     );
   }
@@ -23,12 +24,13 @@ function Select_CadastroKit(){
   return(
     <Select
       isMulti
-      name="colors"
+      id="select-materiais-kit"
       options={options}
       className="basic-multi-select"
       classNamePrefix="select"
       placeholder="Incluir materiais"
-    />
+      onChange={(e) => setProps(Array.isArray(e) ? e.map(x => x.value) : [])}
+    /> 
   );
 }
 
