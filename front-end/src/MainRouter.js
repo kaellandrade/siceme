@@ -3,10 +3,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Arsenal from './pages/Arsenal/Arsenal';
 import Cadastro from './pages/Cadastro/index';
 import Cadastrar_categoria from './pages/Cadastro/Cadastrar_categoria';
-import Relatorios from './pages/Relatorios/Relatorios';
+import Entregas from './pages/Relatorios/Entregas';
 import Triagem from './pages/Triagem/index'
 import Login from './pages/Login/index'
 import Cadastrar_kit from "./pages/Cadastro/Cadastrar_kit"
+
 
 function MainRouter() {
 
@@ -38,10 +39,22 @@ function MainRouter() {
           <Cadastrar_kit buttonSelect="Cadastro" />
           } 
         />
-        <Route path="/relatorios" element={
+        <Route path="/relatorios/entregas" element={
+          <Entregas buttonSelect="Relatórios" />
+          } 
+        />
+        {/* <Route path="/relatorios/devolucoes" element={
           <Relatorios buttonSelect="Relatorios" />
           } 
         />
+        <Route path="/relatorios/materiais-disponiveis" element={
+          <Relatorios buttonSelect="Relatorios" />
+          } 
+        />
+        <Route path="/relatorios/composicao-kits" element={
+          <Relatorios buttonSelect="Relatorios" />
+          } 
+        /> */}
         
     
       </Routes>
