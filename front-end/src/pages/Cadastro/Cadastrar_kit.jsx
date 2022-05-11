@@ -10,6 +10,10 @@ function Main(props) {
 
   const handleCadastrar = (event) => {
     event.preventDefault();
+    var novoKit = {
+      materiai: document.getElementById("select2-choices").value
+    }
+    console.log(novoKit)
     
 
     
