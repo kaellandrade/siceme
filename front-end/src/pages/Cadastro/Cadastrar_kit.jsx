@@ -4,20 +4,44 @@ import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "react
 import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
+import { materiais } from "../../data/data";
 
 
 function Main(props) {
 
   const handleCadastrar = (event) => {
     event.preventDefault();
-    var novoKit = {
-      materiai: document.getElementById("select2-choices").value
+    var select = document.getElementById("select-materiais-kit");
+    var materiaisInclusos = [];
+    for(let i = 0; i < select.options.length; i++){
+      if (select.options[i].selected)
+        materiaisInclusos.push(select.options[i].value);
     }
-    console.log(novoKit)
-    
 
-    
+    let subCat = document.getElementById("inputSubCategoria").value;
+    if(subCat === 'Subcategoria' || subCat === 'None') 
+      subCat = []; 
+
+    var novoKit = {
+      nomeKit: document.getElementById("nome do kit").value,
+      etiqueta: document.getElementById("etiqueta").value,
+      materiais: materiaisInclusos,
+      qtde: document.getElementById("quantidade").value,
+      imagem: document.getElementById("file image").value,
+      categoria: document.getElementById("inputCategoria").value,
+      subCategoria: subCat
+    };
+    console.log(novoKit);    
   }
+  
+  const gerarMateriaisKit = (materiais) => {
+    return (
+        materiais.map(({ id, nome }) => {
+          return <option value={nome}>{nome}</option>
+        })
+      );
+  } 
+
 
 
   return (
@@ -140,14 +164,15 @@ function Main(props) {
                   <Col md={12}>
                     <form id="form-materiais-kit">
                       <select multiple id="select-materiais-kit" name="select-multiplo" className="ls-select"
-                        placeholder="Insira os materiais" >
-                        <option value="PC">Pinça</option>
+                        placeholder="Insira os materiais">
+                        {gerarMateriaisKit(materiais)}
+                        {/* <option value="PC">Pinça</option>
                         <option value="MT">Manta</option>
                         <option value="TS">Tesoura</option>
                         <option value="AL">Alicate</option>
                         <option value="CB">Cuba</option>
                         <option value="LE">Lençol</option>
-                        <option value="LV">Luva descartável</option>
+                        <option value="LV">Luva descartável</option> */}
                       </select>
                     </form>
                   </Col>
