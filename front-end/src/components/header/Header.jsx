@@ -25,7 +25,7 @@ function Header(props) {
            
           </div>
           <div className="col">
-            <Button texto="Relatórios" href="/relatorios" buttonS="Relatorios" buttonSelect={props.buttonSelect} />
+            <Button texto="Relatórios" href="/relatorios/entregas" buttonS="Relatorios" buttonSelect={props.buttonSelect} />
            
           </div>
 
