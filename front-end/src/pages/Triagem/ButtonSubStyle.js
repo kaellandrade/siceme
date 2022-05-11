@@ -13,9 +13,11 @@ export const ButtonSubM = styled(Button)`
   border-bottom: 2px;
   border-width: 2px;
   border-color: #316B83; 
-  text-transform: none;
+  margin-bottom: 5px;
+  text-align: center;
   :hover{
-    background-color: #6497b1;  
+    background-color: #316B83;
+    box-shadow: 0px 0px 3px 0px rgba(184,175,184,1);
   }
 `;
   

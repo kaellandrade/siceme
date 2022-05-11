@@ -54,6 +54,9 @@ function TabelaTriagem(props) {
               <th>
                 Status
               </th>
+              <th>
+                Detalhes 
+              </th>
             </tr>
           </thead>
           <tbody>

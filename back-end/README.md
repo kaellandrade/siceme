@@ -34,4 +34,3 @@ Executando uma seed
 
 Desfazendo a últia seed
 ```npx sequelize-cli db:seed:undo```
-

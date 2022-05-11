@@ -23,5 +23,4 @@ routes.post('/material', MaterialController.store);
 routes.get('/material', MaterialController.index);
 routes.delete('/material/:id', MaterialController.delete);
 
-
 export default routes;
