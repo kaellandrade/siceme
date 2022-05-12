@@ -7,56 +7,32 @@ import Categoria_Dropdown from "../Cadastro/Categoria_Dropdown";
 
 function Main(props) {
 
-  const [buttonSelect, setButtonSelect] = useState("Cadastrar material");
-
-  const handleCadastrar = (event) => {
-    event.preventDefault();
-    let subCat = document.getElementById("inputSubCategoria").value;
-    if(subCat === 'Subcategoria' || subCat === 'None') 
-      subCat = []; 
-
-    var novoMaterial = {
-      nomeMaterial: document.getElementById("nome do material").value,
-      etiqueta: document.getElementById("etiqueta").value,
-      descricao: document.getElementById("descricao").value,
-      qtde: document.getElementById("quantidade").value,
-      imagem: document.getElementById("file image").value,
-      categoria: document.getElementById("inputCategoria").value,
-      subCategoria: subCat
-    };
-    console.log(novoMaterial);
-  }
-
+  const [buttonSelect, setButtonSelect] = useState("Entregas");
 
   return (
 
     <div className="Main">
-      <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
+      <Header optionButton="Relatórios" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
       <section className="col-md-12 nav d-flex align-items-center justify-content-around">
-
         <div className="container">
-
           <div className="row title">
             <h1 className="body">{buttonSelect}</h1>
           </div>
-
-
         </div>
 
         <main className="container-fluid flex-column" >
           <div className="row">
-
-            <div className="col-md-1">
+            <div className="col-md-2">
               <div className="row">
-                <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar materiais") }} >
+                <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Entregas") }} >
                   <ButtonSubMenu texto={"Entregas"} buttonSelect={buttonSelect} />
                 </button>
 
               </div>
               <div className="row">
                 <button type="button" className="buttonMenu" >
-                  <ButtonSubMenu texto={"Devoluções"} buttonSelect={buttonSelect} 
-                    href="/cadastro/kit"
+                  <ButtonSubMenu texto={"Devoluções"} buttonSelect={buttonSelect}
+                    href=""
                   />
                 </button>
 
@@ -64,14 +40,14 @@ function Main(props) {
               <div className="row">
                 <button type="button" className="buttonMenu" >
                   <ButtonSubMenu texto={"Materiais Disponíveis"} buttonSelect={buttonSelect} 
-                    href="/cadastro/categoria"
+                    href=""
                   />
                 </button>
               </div>
               <div className="row">
                 <button type="button" className="buttonMenu" >
                   <ButtonSubMenu texto={"Composição dos kits"} buttonSelect={buttonSelect} 
-                    href="/cadastro/categoria"
+                    href=""
                   />
                 </button>
 
@@ -81,7 +57,7 @@ function Main(props) {
 
             <div className="col-md-10">
 
-              <Form inline onSubmit={handleCadastrar} >
+              <Form inline >
                 <Row>
                   <Col md={6}>
 
