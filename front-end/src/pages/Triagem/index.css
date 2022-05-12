@@ -18,7 +18,7 @@ main.container.flex-column {
   border-radius: 5px;
 }
 
-div.col-md-2 {
+div.col-md-auto {
   background-color: #316B83;
   border-radius: 5px;
   padding-top: 5px;

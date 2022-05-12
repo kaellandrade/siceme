@@ -72,7 +72,7 @@ function Main(props) {
 
           <main className="container-fluid flex-column" >
             <div className="row">
-              <div className="col-md-2">
+              <div className="col-md-auto">
                 <div className="row">
                   <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Listagem Geral")} }  >
                     <ButtonSubMenu texto={"Listagem Geral"} buttonSelect={buttonSelect} />
