@@ -31,15 +31,15 @@ function Cadastrar_categoria(props) {
   return (
     <div className="Cadastrar_categoria">
       <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
-      <section className="col-md-12 nav d-flex align-items-center justify-content-around">
+      <section className="nav d-flex align-items-center justify-content-center">
         <div className="container">
           <div className="row title">
             <h1 className="body">Cadastrar categoria</h1>
           </div>
         </div>
         <main className="container-fluid flex-column" >
-          <div className="row">
-            <div className="col-md-1">
+          <div className="row justify-content-center">
+            <div className="col-md-auto">
               <div className="row">
                 <button type="button" className="buttonMenu" >
                   <ButtonSubMenu texto={"Cadastrar material"} buttonSelect="Cadastrar categoria" 
@@ -65,7 +65,7 @@ function Cadastrar_categoria(props) {
 
             </div>
 
-            <div className="col-md-10">
+            <div className="col-md-8">
 
               <Form inline onSubmit={handleCadastrar} >
                   

@@ -47,7 +47,7 @@ function Main(props) {
 
     <div className="Main">
       <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
-      <section className="col-md-12 nav d-flex align-items-center justify-content-around">
+      <section className="nav d-flex align-items-center justify-content-center">
 
         <div className="container">
 
@@ -59,9 +59,9 @@ function Main(props) {
         </div>
 
         <main className="container-fluid flex-column" >
-          <div className="row">
+          <div className="row justify-content-center">
 
-            <div className="col-md-1">
+            <div className="col-md-auto">
               <div className="row">
                 <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Cadastrar materiais") }} >
                   <ButtonSubMenu texto={"Cadastrar material"} buttonSelect={buttonSelect} />
@@ -87,7 +87,7 @@ function Main(props) {
 
             </div>
 
-            <div className="col-md-10">
+            <div className="col-md-8">
 
               <Form inline onSubmit={handleCadastrar} >
                 <Row>
