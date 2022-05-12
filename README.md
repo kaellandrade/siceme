@@ -1,7 +1,14 @@
 # siceme
 Projeto Engenhria Software II
 
-Processo de instalação das dependências
+
+-Instalar todas as dependências necessárias
+
+```
+npm install package.json
+```
+--------------------------------------------------------
+Processo de instalação individual das dependências
 
 -Instalar react
 ```
@@ -32,4 +39,13 @@ yarn add styled-components
 -Instalar react icones
 ```
 yarn add react-icons
+```
+-Instalar react select
+```
+yarn add react-select
+```
+-Instalar axios
+
+```
+yarn add axios
 ```
