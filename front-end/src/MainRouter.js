@@ -7,7 +7,9 @@ import Entregas from './pages/Relatorios/Entregas';
 import Triagem from './pages/Triagem/index'
 import Login from './pages/Login/index'
 import Cadastrar_kit from "./pages/Cadastro/Cadastrar_kit"
-
+import Devolucoes from "./pages/Relatorios/Devolucoes";
+import Materiais_disponiveis from "./pages/Relatorios/Materiais_disponiveis";
+import Composicao_kits from "./pages/Relatorios/Composicao_kits";
 
 function MainRouter() {
 
@@ -43,18 +45,18 @@ function MainRouter() {
           <Entregas buttonSelect="Relatórios" />
           } 
         />
-        {/* <Route path="/relatorios/devolucoes" element={
-          <Relatorios buttonSelect="Relatorios" />
+        <Route path="/relatorios/devolucoes" element={
+          <Devolucoes buttonSelect="Relatórios" />
           } 
         />
         <Route path="/relatorios/materiais-disponiveis" element={
-          <Relatorios buttonSelect="Relatorios" />
+          <Materiais_disponiveis buttonSelect="Relatórios" />
           } 
         />
         <Route path="/relatorios/composicao-kits" element={
-          <Relatorios buttonSelect="Relatorios" />
+          <Composicao_kits buttonSelect="Relatórios" />
           } 
-        /> */}
+        />
         
     
       </Routes>

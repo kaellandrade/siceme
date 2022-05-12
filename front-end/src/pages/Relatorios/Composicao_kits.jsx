@@ -7,7 +7,7 @@ import Categoria_Dropdown from "../Cadastro/Categoria_Dropdown";
 
 function Main(props) {
 
-  const [buttonSelect, setButtonSelect] = useState("Entregas");
+  const [buttonSelect, setButtonSelect] = useState("Composição dos kits");
 
   return (
 
@@ -22,7 +22,7 @@ function Main(props) {
 
         <main className="container-fluid flex-column" >
           <div className="row">
-            <div className="col-md-2">
+          <div className="col-md-2">
               <div className="row">
                 <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Entregas") }} >
                   <ButtonSubMenu texto={"Entregas"} buttonSelect={buttonSelect} />
