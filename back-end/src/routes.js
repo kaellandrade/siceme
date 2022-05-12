@@ -13,12 +13,6 @@ import FileController from './controllers/FileController';
 const routes = new Router();
 const upload = multer(multerConfig);
 
-routes.get('/material', async (req, res) => {
-  const materiais = await Material.findAll();
-
-  return res.json({ materiais });
-});
-
 // ======== USUÁRIO ========
 // Criação de novos usuários
 routes.post('/usuario', UserController.store);
