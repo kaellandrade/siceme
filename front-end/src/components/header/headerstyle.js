@@ -26,8 +26,8 @@ export const ButtonH = styled(Button)`
   color: ${props => props.texto === props.buttonSelect ? "#316B83" : "#fff" };
   font-weight: 500;
   border: 0px;
-  /* border-bottom-left-radius: 0px; */
-  /* border-bottom-right-radius: 0px; */
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   border-color: #316B83; 
   
   
