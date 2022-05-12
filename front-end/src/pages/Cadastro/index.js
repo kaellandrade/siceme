@@ -7,6 +7,7 @@ import Categoria_Dropdown from "./Categoria_Dropdown";
 const axios = require('axios').default;
 
 
+
 function Main(props) {
 
   const [buttonSelect, setButtonSelect] = useState("Cadastrar material");
@@ -29,12 +30,12 @@ function Main(props) {
       subCategoria: subCat
     };
     console.log(novoMaterial);
-    // postarMaterial();
+    postarMaterial();
   }
 
   const postarMaterial = async () => {  
     try {
-      axios.post('http://localhost:3001/cadastro/material', novoMaterial);
+      axios.post('http://localhost:3001/material', novoMaterial);
     }catch (ex) {
       console.log(ex);
     }
