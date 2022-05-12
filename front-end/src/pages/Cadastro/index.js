@@ -4,10 +4,13 @@ import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "react
 import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
+const axios = require('axios').default;
+
 
 function Main(props) {
 
   const [buttonSelect, setButtonSelect] = useState("Cadastrar material");
+  var novoMaterial;
 
   const handleCadastrar = (event) => {
     event.preventDefault();
@@ -15,16 +18,26 @@ function Main(props) {
     if(subCat === 'Subcategoria' || subCat === 'None') 
       subCat = []; 
 
-    var novoMaterial = {
+    novoMaterial = {
       nomeMaterial: document.getElementById("nome do material").value,
       etiqueta: document.getElementById("etiqueta").value,
       descricao: document.getElementById("descricao").value,
       qtde: document.getElementById("quantidade").value,
       imagem: document.getElementById("file image").value,
       categoria: document.getElementById("inputCategoria").value,
+      status: "Em Limpeza",
       subCategoria: subCat
     };
     console.log(novoMaterial);
+    // postarMaterial();
+  }
+
+  const postarMaterial = async () => {  
+    try {
+      axios.post('http://localhost:3001/cadastro/material', novoMaterial);
+    }catch (ex) {
+      console.log(ex);
+    }
   }
 
 

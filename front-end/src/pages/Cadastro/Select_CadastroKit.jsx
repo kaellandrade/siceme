@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import { materiais } from '../../data/data';
 
-
 function Select_CadastroKit({ setProps, value }){
 
   const [options, setOptions] = useState([]);

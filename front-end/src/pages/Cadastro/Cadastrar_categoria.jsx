@@ -3,17 +3,29 @@ import Header from "../../components/header/Header"
 import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "reactstrap"
 import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
-import Categoria_Dropdown from "./Categoria_Dropdown";
+const axios = require('axios').default;
+
 
 function Cadastrar_categoria(props) {
 
+  var novaCategoria;
+
   const handleCadastrar = (event) => {
     event.preventDefault();
-    let novaCategoria = {
+    novaCategoria = {
       categoria: document.getElementById("nova-categoria").value,
       subcategoria: document.getElementById("nova-sub-categoria").value
     };
-    console.log(novaCategoria)
+    console.log(novaCategoria);
+    // postarCategoria();
+  }
+
+  const postarCategoria = async () => {  
+    try {
+      axios.post('http://localhost:3001/cadastro/categoria', novaCategoria);
+    }catch (ex) {
+      console.log(ex);
+    }
   }
 
   return (

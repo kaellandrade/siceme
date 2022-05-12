@@ -5,14 +5,12 @@ import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
 import Select_CadastroKit from "./Select_CadastroKit";
-import Select from 'react-select';
-import { materiais } from "../../data/data";
-
-
+const axios = require('axios').default;
 
 function Main(props) {
 
   const [selectedValue, setSelectedValue] = useState([]);
+  var novoKit;
 
   const handleCadastrar = (event) => {
     event.preventDefault();
@@ -20,7 +18,7 @@ function Main(props) {
     if(subCat === 'Subcategoria' || subCat === 'None') 
       subCat = []; 
 
-    var novoKit = {
+    novoKit = {
       nomeKit: document.getElementById("nome do kit").value,
       etiqueta: document.getElementById("etiqueta").value,
       materiais: selectedValue,
@@ -30,6 +28,15 @@ function Main(props) {
       subCategoria: subCat
     };
     console.log(novoKit);    
+    // postarKit();
+  }
+
+  const postarKit = async () => {  
+    try {
+      axios.post('http://localhost:3001/cadastro/kit', novoKit);
+    }catch (ex) {
+      console.log(ex);
+    }
   }
   
   return (
