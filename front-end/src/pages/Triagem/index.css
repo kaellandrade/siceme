@@ -16,16 +16,13 @@ main.container.flex-column {
   background-color: white;
   position: relative;
   border-radius: 5px;
-
-
 }
 
-
-div.col-md-1 {
+div.col-md-2 {
   background-color: #316B83;
   border-radius: 5px;
   padding-top: 5px;
-  height: 60vh;
+  /* height: 60vh; */
   align-items: center;
 }
 
@@ -36,7 +33,6 @@ button.button.search {
   border: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-
 }
 
 .row.search {
@@ -55,8 +51,6 @@ button.button.search {
   width: 900px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-
-
 }
 
 .input.search:focus {

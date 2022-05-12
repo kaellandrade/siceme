@@ -18,20 +18,16 @@ function Main(props) {
     if(subCat === 'Subcategoria' || subCat === 'None') 
       subCat = []; 
 
-    // novoMaterial = {
-    //   nomeMaterial: document.getElementById("nome do material").value,
-    //   etiqueta: document.getElementById("etiqueta").value,
-    //   descricao: document.getElementById("descricao").value,
-    //   qtde: document.getElementById("quantidade").value,
-    //   imagem: document.getElementById("file image").value,
-    //   categoria: document.getElementById("inputCategoria").value,
-    //   status: "Em Limpeza",
-    //   subCategoria: subCat
-    // };
-    // console.log(novoMaterial);
     novoMaterial = {
       mtl_nome: document.getElementById("nome do material").value,
       mtl_quantidade: document.getElementById("quantidade").value,
+    //   mtl_etiqueta: document.getElementById("etiqueta").value,
+    //   mtl_descricao: document.getElementById("descricao").value,
+    //   mtl_imagem: document.getElementById("file image").value,
+    //   mtl_categoria: document.getElementById("inputCategoria").value,
+    //   mtl_subCategoria: subCat,
+    //   mtl_status: "Em Limpeza"
+
     };
     console.log(novoMaterial);
 

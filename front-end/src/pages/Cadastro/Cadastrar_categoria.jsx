@@ -72,7 +72,6 @@ function Cadastrar_categoria(props) {
                 <Row>
                   <Col md={3}>
                     <FormGroup floating>
-
                       <Input
                         id="nova-categoria"
                         name="nova-categoria"
