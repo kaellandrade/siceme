@@ -7,7 +7,6 @@ import Categoria_Dropdown from "./Categoria_Dropdown";
 const axios = require('axios').default;
 
 
-
 function Main(props) {
 
   const [buttonSelect, setButtonSelect] = useState("Cadastrar material");
@@ -19,23 +18,29 @@ function Main(props) {
     if(subCat === 'Subcategoria' || subCat === 'None') 
       subCat = []; 
 
+    // novoMaterial = {
+    //   nomeMaterial: document.getElementById("nome do material").value,
+    //   etiqueta: document.getElementById("etiqueta").value,
+    //   descricao: document.getElementById("descricao").value,
+    //   qtde: document.getElementById("quantidade").value,
+    //   imagem: document.getElementById("file image").value,
+    //   categoria: document.getElementById("inputCategoria").value,
+    //   status: "Em Limpeza",
+    //   subCategoria: subCat
+    // };
+    // console.log(novoMaterial);
     novoMaterial = {
-      nomeMaterial: document.getElementById("nome do material").value,
-      etiqueta: document.getElementById("etiqueta").value,
-      descricao: document.getElementById("descricao").value,
-      qtde: document.getElementById("quantidade").value,
-      imagem: document.getElementById("file image").value,
-      categoria: document.getElementById("inputCategoria").value,
-      status: "Em Limpeza",
-      subCategoria: subCat
+      mtl_nome: document.getElementById("nome do material").value,
+      mtl_quantidade: document.getElementById("quantidade").value,
     };
     console.log(novoMaterial);
+
     postarMaterial();
   }
 
   const postarMaterial = async () => {  
     try {
-      axios.post('http://localhost:3001/material', novoMaterial);
+      axios.post('http://localhost:3000/material', novoMaterial);  
     }catch (ex) {
       console.log(ex);
     }

@@ -23,12 +23,9 @@ routes.post('/sessao', SessionController.store);
 // Listagem dos usuários
 routes.get('/usuario', UserController.index);
 
-// Middleware de autenticação (válido apenas para as rotas a seguir)
-routes.use(authMiddleware);
-// PS: Apartir daqui todas as rotas são protegidas.
-
 // Atualização de um usuário
 routes.put('/usuario', UserController.update);
+
 
 // ======== MATERIAL ========
 // Criação de um material
@@ -42,6 +39,14 @@ routes.delete('/material/:id', MaterialController.delete);
 
 // Atualização de um material
 routes.put('/material/:id', MaterialController.update);
+
+
+// ======== AUTENTICAÇÃO ========
+// Middleware de autenticação (válido apenas para as rotas a seguir)
+routes.use(authMiddleware);
+// PS: Apartir daqui todas as rotas são protegidas.
+
+
 
 // ======== ARQUIVOS ========
 // Upload de arquivos
