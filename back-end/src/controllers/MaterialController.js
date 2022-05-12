@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 
 import Material from '../app/models/Material';
+import Arquivo from '../app/models/Arquivo';
 
 /**
  * Controller responsável por Materiais.
@@ -40,8 +41,17 @@ class MaterialController {
    * @returns void
    */
   async index(req, res) {
-    const todosMateriais = await Material.findAll();
-    return res.status(200).json(todosMateriais);
+    const todosMateriais = await Material.findAll({
+      attributes: ['id', 'mtl_nome', 'mtl_quantidade'],
+      include: [
+        {
+          model: Arquivo,
+          as: 'imagem',
+          attributes: ['ars_nome', 'ars_path', 'url'],
+        },
+      ],
+    });
+    return res.json(todosMateriais);
   }
 
   /** Remove um material através do id
