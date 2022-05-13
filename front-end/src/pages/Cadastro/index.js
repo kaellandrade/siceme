@@ -32,6 +32,15 @@ function Main(props) {
     console.log(novoMaterial);
 
     postarMaterial();
+  
+    alert("Material cadastrado com sucesso!");
+    document.getElementById("nome do material").value = "";
+    document.getElementById("quantidade").value = "";
+    document.getElementById("etiqueta").value = "";
+    document.getElementById("descricao").value = "";
+    document.getElementById("file image").value = "";
+    document.getElementById("inputCategoria").value = "";
+    document.getElementById("inputSubCategoria").value = "";
   }
 
   const postarMaterial = async () => {  
