@@ -28,7 +28,6 @@ function Select_ModalRequisicoes({ setProps, value }){
       className="basic-multi-select"
       classNamePrefix="select"
       placeholder="Incluir materiais"
-      onChange={(e) => setProps(Array.isArray(e) ? e.map(x => x.value) : [])}
     /> 
   );
 }
