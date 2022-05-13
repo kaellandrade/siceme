@@ -58,7 +58,7 @@ function Main(props) {
                 className='button imprimir modelo materiais disponiveis' 
                 href="/relatorios/materiais-disponiveis/imprimir " target="_blank"
               >
-                  Imprimir
+                  Gerar Relatório
               </Button>
 
             </div>
