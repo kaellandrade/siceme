@@ -49,7 +49,6 @@ function Main(props) {
                   />
                 </button>
               </div>
-
             </div>
 
             <div className="col-md-8">

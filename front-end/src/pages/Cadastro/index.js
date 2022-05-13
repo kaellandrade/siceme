@@ -4,6 +4,7 @@ import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "react
 import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
+import { AxiosError } from "axios";
 const axios = require('axios').default;
 
 
@@ -33,19 +34,19 @@ function Main(props) {
 
     postarMaterial();
   
-    alert("Material cadastrado com sucesso!");
-    document.getElementById("nome do material").value = "";
-    document.getElementById("quantidade").value = "";
-    document.getElementById("etiqueta").value = "";
-    document.getElementById("descricao").value = "";
-    document.getElementById("file image").value = "";
-    document.getElementById("inputCategoria").value = "";
-    document.getElementById("inputSubCategoria").value = "";
+    
   }
 
   const postarMaterial = async () => {  
     try {
-      axios.post('http://localhost:3000/material', novoMaterial);  
+      axios.post('http://localhost:3000/material', novoMaterial)
+      .then(res => {
+        if(res.data)  {
+          alert("Material cadastrado com sucesso!")
+        }
+      }).catch(e => {
+        alert(e.message)
+      }); 
     }catch (ex) {
       console.log(ex);
     }
