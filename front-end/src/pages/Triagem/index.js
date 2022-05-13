@@ -6,6 +6,7 @@ import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import TabelaTriagem from "./TabelaTriagem";
 import { materiais } from "../../data/data";
+import Modal_requisicoes from "../../components/Modal/Modal_requisicoes";
 
 function Main(props) {
 
@@ -64,7 +65,8 @@ function Main(props) {
               }} >
                 Limpar busca
               </button>
-              
+
+              <Modal_requisicoes codigo={props.codigo} nome={props.nome}/>
               
             </div>
 
