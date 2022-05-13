@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/header/Header"
 import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "reactstrap"
 import ButtonSubMenu from "../Cadastro/ButtonSubMenu"
-import "./entregas.css"
+import "./index.css"
 import Categoria_Dropdown from "../Cadastro/Categoria_Dropdown";
 
 function Main(props) {
@@ -13,7 +13,7 @@ function Main(props) {
 
     <div className="Main">
       <Header optionButton="Relatórios" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
-      <section className="col-md-12 nav d-flex align-items-center justify-content-around">
+      <section className="nav d-flex align-items-center justify-content-center">
         <div className="container">
           <div className="row title">
             <h1 className="body">{buttonSelect}</h1>
@@ -21,7 +21,7 @@ function Main(props) {
         </div>
 
         <main className="container-fluid flex-column" >
-          <div className="row">
+          <div className="row justify-content-center">
             <div className="col-md-auto">
               <div className="row">
                 <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Entregas") }} >
@@ -54,7 +54,7 @@ function Main(props) {
 
             </div>
 
-            <div className="col-md-10">
+            <div className="col-md-8">
               <Form inline >
                 <Row>
                   <Col md={6}>

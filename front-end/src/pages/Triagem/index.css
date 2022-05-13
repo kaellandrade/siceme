@@ -12,8 +12,8 @@ view {
 }
 
 
-main.container.flex-column {
-  background-color: white;
+main.container-fluid.flex-column {
+  background-color: rgb(255, 255, 255);
   position: relative;
   border-radius: 5px;
 }

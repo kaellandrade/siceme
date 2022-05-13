@@ -36,7 +36,7 @@ function Main(props) {
     
     <div className="Main">
       <Header optionButton="Triagem" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
-      <section className="col-md-12 nav d-flex align-items-center justify-content-around">
+      <section className="nav d-flex align-items-center justify-content-center">
           
           <div className="container">
             
@@ -72,8 +72,8 @@ function Main(props) {
 
           </div>
 
-          <main className="container-fluid flex-column" >
-            <div className="row">
+          <main className="container-fluid flex-column " >
+            <div className="row justify-content-center"> 
               <div className="col-md-auto">
                 <div className="row">
                   <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Listagem Geral")} }  >
@@ -112,7 +112,7 @@ function Main(props) {
                   </button>
                 </div>
               </div>
-              <div className="col-md-10">
+              <div className="col-md-8">
                 <TabelaTriagem buttonSelect={buttonSelect} dataMaterias={dataMateriais} />
               </div>
             </div>
