@@ -101,7 +101,7 @@ class MaterialController {
 
     if (!dadosValidos) {
       return res.status(400).json({
-        erro: 'Informações inválidas',
+        error: 'Informações inválidas',
       });
     }
 

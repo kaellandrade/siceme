@@ -3,8 +3,9 @@ import databaseConfig from '../config/database';
 import Material from '../app/models/Material';
 import Arquivo from '../app/models/Arquivo';
 import Usuario from '../app/models/Usuario';
+import Kit from '../app/models/Kit';
 
-const models = [Material, Usuario, Arquivo];
+const models = [Material, Usuario, Arquivo, Kit];
 
 /**
  * Realizando conexão com o banco de dados
