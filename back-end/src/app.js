@@ -1,9 +1,8 @@
 import express from 'express';
 import path from 'path';
-import routes from './routes';
 import cors from 'cors';
+import routes from './routes';
 import './database';
-
 
 /**
  * Classe responsável por configurar o servidor juntamente com os
