@@ -44,7 +44,7 @@ function Main(props) {
               <h1 className="body">{buttonSelect}</h1>
             </div>
             <div className="row search">
-              <form className="form-inline" onSubmit={handlePesquisar} >
+              <form className="form-inline search" onSubmit={handlePesquisar} >
                 <Input  
                   className="input search"
                   type="search"

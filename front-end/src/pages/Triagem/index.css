@@ -39,12 +39,11 @@ button.button.search {
 .row.search {
   padding-bottom: 30px;
   width: 1200px;
-
   margin-left: auto;
   margin-right: auto;
 }
 
-.form-inline{
+.form-inline.search{
   width: 100%;
   display: flex;
   flex-flow: row wrap;
