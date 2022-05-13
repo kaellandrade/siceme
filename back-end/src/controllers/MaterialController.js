@@ -37,7 +37,7 @@ class MaterialController {
 
   /** Lista todos os materiais.
    * @author Micael
-   * @param {pagina} req requisição
+   * @param {iPagina} req requisição
    * @param {*} res resposta ser repassada
    * @returns void
    * @since 1.0.0 Inicial
