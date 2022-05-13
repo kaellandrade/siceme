@@ -3,7 +3,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { Form } from "reactstrap"
 import { useState } from 'react';
 import Select_ModalRequisicoes from './Select_ModalRequisicoes';
-import "./modal_requisicoes.css";
+import "./modal_requisicoes.css"
 
 
 function Modal_requisicoes(props) {
@@ -12,8 +12,9 @@ function Modal_requisicoes(props) {
   return (
     <div>
       <Button
+        id="button-modal-requisitar"
         className='button requisitar'
-        color="danger"
+        color="light"
         onClick={() => setModal(true)}
       >
         Requisitar
