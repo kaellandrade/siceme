@@ -4,11 +4,19 @@ module.exports = {
       id_mtl_material: {
         type: Sequelize.INTEGER,
         reference: { model: 'mtl_material', key: 'id' },
-        allowNull: false,
+        allowNull: true,
       },
       id_ktt_kit: {
         type: Sequelize.INTEGER,
-        reference: { model: 'mtl_material', key: 'id' },
+        reference: { model: 'ktt_kit', key: 'id' },
+        allowNull: true,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      created_at: {
+        type: Sequelize.DATE,
         allowNull: false,
       },
     });

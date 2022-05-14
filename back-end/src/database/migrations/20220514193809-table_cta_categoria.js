@@ -1,30 +1,16 @@
-'use_strict';
-
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('mtl_material', {
+    return queryInterface.createTable('cta_categoria', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
-      mtl_nome: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      mtl_quantidade: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      mtl_codigo: {
+      cta_nome: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
-      },
-      mtl_descricao: {
-        type: Sequelize.TEXT,
-        allowNull: true,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -38,6 +24,6 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable('mtl_material');
+    return queryInterface.dropTable('cta_categoria');
   },
 };

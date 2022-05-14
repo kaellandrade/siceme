@@ -23,8 +23,8 @@ class MaterialController {
       mtl_quantidade: Yup.number().integer().min(1).required(),
       mtl_descricao: Yup.string(),
       mtl_codigo: Yup.string().required(),
-      mtl_categoria: Yup.string().required(),
-      mtl_subcategoria: Yup.string(),
+      mtl_categoria: Yup.number().integer().min(1).required(),
+      mtl_status_id: Yup.number().integer().min(1).required(),
     });
 
     const dadosValidos = await shape.isValid(req.body);
@@ -38,7 +38,7 @@ class MaterialController {
       mtl_descricao,
       mtl_codigo,
       mtl_categoria,
-      // mtl_subcategoria,
+      mtl_status_id,
     } = req.body;
 
     const oMaterial = await Material.create({
@@ -47,7 +47,7 @@ class MaterialController {
       mtl_descricao,
       mtl_codigo,
       mtl_categoria,
-      // mtl_subcategoria,
+      mtl_status_id,
     });
 
     return res.status(200).json(oMaterial);
@@ -69,9 +69,9 @@ class MaterialController {
       iPagina <= 0
         ? {}
         : {
-            limit: LIMITE_POR_PAGINA,
-            offset: iOffSet,
-          };
+          limit: LIMITE_POR_PAGINA,
+          offset: iOffSet,
+        };
 
     try {
       const materiaisPorPagina = await Material.findAll({
@@ -82,7 +82,6 @@ class MaterialController {
           'mtl_codigo',
           'mtl_descricao',
           'mtl_categoria',
-          'mtl_subcategoria',
         ],
         include: [
           {
