@@ -24,6 +24,9 @@ function RowTabelaTriagem(props) {
                         aplicacao={props.aplicacao} status={props.status}
         />
       </td>
+      <td>
+        {props.solicitante}
+      </td>
     </tr>
   );
 }

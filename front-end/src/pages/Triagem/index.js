@@ -118,8 +118,8 @@ function Main(props) {
                   </button>
                 </div>
                 <div className="row">
-                  <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Disponível")} } >
-                    <ButtonSubMenu texto={"Disponível"} buttonSelect={buttonSelect} />
+                  <button type="button" className="buttonMenu" onClick={ (event) => { event.preventDefault(); setButtonSelect("Devolvido")} } >
+                    <ButtonSubMenu texto={"Devolvido"} buttonSelect={buttonSelect} />
                   </button>
                 </div>
               </div>
