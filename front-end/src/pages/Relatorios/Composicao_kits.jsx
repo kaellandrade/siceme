@@ -12,10 +12,9 @@ function Main(props) {
   const [buttonSelect, setButtonSelect] = useState("Composição dos kits");
   const [selectedValue, setSelectedValue] = useState([]);
 
-  // useEffect(() => {
-  //   var kits_impressao = JSON.string(selectedValue);
-  //   sessionStorage.setItem(kits_impressao);
-  // },[selectedValue]);
+  useEffect(() => {
+    sessionStorage.setItem('kits_impressao', selectedValue);
+  },[selectedValue]);
   
   return (
     <div className="Main">
