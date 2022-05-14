@@ -79,6 +79,8 @@ function Main(props) {
 
             <div className="col-md-8">
 
+              
+
               <Form inline onSubmit={handleCadastrar} >
                 <Row>
                   <Col md={6}>
