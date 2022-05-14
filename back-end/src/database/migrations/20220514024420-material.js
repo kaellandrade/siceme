@@ -9,13 +9,30 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      mrl_nome: {
+      mtl_nome: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      mrl_quantidade: {
+      mtl_quantidade: {
         type: Sequelize.INTEGER,
         allowNull: false,
+      },
+      mtl_codigo: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      mtl_descricao: {
+        type: Sequelize.TEXT,
+        allowNull: true,
+      },
+      mtl_categoria: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      mtl_subcategoria: {
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       created_at: {
         type: Sequelize.DATE,
