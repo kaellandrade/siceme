@@ -39,22 +39,18 @@ class KitController {
     }
   }
 
-  // TODO: Criar a coluna id_imagem no banco
-  // Descomenter o método que faz a associação no model Kit
   async index(req, res) {
-    const todosKits = await Kit.findAll();
-    return res.status(200).json(todosKits);
-    // const todosKits = await Kit.findAll({
-    //   attribuites: ['id', 'ktt_nome', 'ktt_codigo', 'ktt_quantidade'],
-    //   include: [
-    //     {
-    //       model: Arquivo,
-    //       as: 'imagem',
-    //       attribuites: ['ars_nome', 'ars_path', 'url'],
-    //     },
-    //   ],
-    // });
-    // return res.json(todosKits);
+    const todosKits = await Kit.findAll({
+      attribuites: ['id', 'ktt_nome', 'ktt_codigo', 'ktt_quantidade'],
+      include: [
+        {
+          model: Arquivo,
+          as: 'imagem',
+          attribuites: ['ars_nome', 'ars_path', 'url'],
+        },
+      ],
+    });
+    return res.json(todosKits);
   }
 
   async delete(req, res) {

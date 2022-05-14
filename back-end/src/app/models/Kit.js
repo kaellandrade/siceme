@@ -21,9 +21,9 @@ class Kit extends Model {
     return this;
   }
 
-  // static associate(models) {
-  //   this.belongsTo(models.Arquivo, { foreignKey: 'id_imagem', as: 'imagem' });
-  // }
+  static associate(models) {
+    this.belongsTo(models.Arquivo, { foreignKey: 'id_imagem', as: 'imagem' });
+  }
 }
 
 export default Kit;
