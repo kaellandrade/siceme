@@ -1,20 +1,33 @@
-'use_strict';
+'use strict';
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('mtl_material', {
+    return queryInterface.createTable('uso_usuario', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
-      mrl_nome: {
+      uso_nome: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      mrl_quantidade: {
+      uso_cargo: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      uso_email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      uso_tipo_user: {
         type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      senha_hash: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       created_at: {
@@ -29,6 +42,6 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable('mtl_material');
+    return queryInterface.dropTable('uso_usuario');
   },
 };

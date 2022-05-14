@@ -12,6 +12,10 @@ class Material extends Model {
       {
         mtl_nome: Sequelize.STRING,
         mtl_quantidade: Sequelize.INTEGER,
+        mtl_descricao: Sequelize.STRING,
+        mtl_codigo: Sequelize.STRING,
+        mtl_categoria: Sequelize.STRING,
+        mtl_subcategoria: Sequelize.STRING,
       },
       {
         sequelize,

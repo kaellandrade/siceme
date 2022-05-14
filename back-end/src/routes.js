@@ -2,13 +2,13 @@ import { Router } from 'express';
 import multer from 'multer';
 
 import multerConfig from './config/multer';
-import Material from './app/models/Material';
 import authMiddleware from './app/middlewares/auth';
 
 import MaterialController from './controllers/MaterialController';
 import UserController from './controllers/UserController';
 import SessionController from './controllers/SessionController';
 import FileController from './controllers/FileController';
+import KitController from './controllers/KitController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -26,7 +26,6 @@ routes.get('/usuario', UserController.index);
 // Atualização de um usuário
 routes.put('/usuario', UserController.update);
 
-
 // ======== MATERIAL ========
 // Criação de um material
 routes.post('/material', MaterialController.store);
@@ -40,13 +39,22 @@ routes.delete('/material/:id', MaterialController.delete);
 // Atualização de um material
 routes.put('/material/:id', MaterialController.update);
 
+// ======== KIT ========
+// Criação de um kit
+routes.post('/kit', KitController.store);
+
+// Listagem dos kit
+routes.get('/kit', KitController.index);
+
+// Remoção de um kit
+routes.delete('/kit/:id', KitController.delete);
+
+// Atualização de um kit
+routes.put('/kit/:id', KitController.update);
 
 // ======== AUTENTICAÇÃO ========
 // Middleware de autenticação (válido apenas para as rotas a seguir)
 routes.use(authMiddleware);
-// PS: Apartir daqui todas as rotas são protegidas.
-
-
 
 // ======== ARQUIVOS ========
 // Upload de arquivos

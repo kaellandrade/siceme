@@ -2,33 +2,17 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.createTable('uso_usuario', {
+    return queryInterface.createTable('tps_tipos_usuarios', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
-      uso_nome: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      uso_cargo: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      uso_email: {
+      tps_nome: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
-      },
-      uso_tipo_user: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      senha_hash: {
-        type: Sequelize.STRING,
-        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -40,8 +24,7 @@ module.exports = {
       },
     });
   },
-
   async down(queryInterface) {
-    return queryInterface.dropTable('uso_usuario');
+    return queryInterface.dropTable('tps_tipos_usuarios', 'id_imagem');
   },
 };
