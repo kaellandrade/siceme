@@ -4,7 +4,6 @@ import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "react
 import ButtonSubMenu from "./ButtonSubMenu"
 import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
-import { AxiosError } from "axios";
 const axios = require('axios').default;
 
 
@@ -17,7 +16,7 @@ function Main(props) {
     event.preventDefault();
     let subCat = document.getElementById("inputSubCategoria").value;
     if(subCat === 'Subcategoria' || subCat === 'None') 
-      subCat = []; 
+      subCat = ""; 
 
     novoMaterial = {
       mtl_nome: document.getElementById("nome do material").value,
@@ -28,7 +27,6 @@ function Main(props) {
     //   mtl_categoria: document.getElementById("inputCategoria").value,
     //   mtl_subCategoria: subCat,
     //   mtl_status: "Em Limpeza"
-
     };
     console.log(novoMaterial);
 
