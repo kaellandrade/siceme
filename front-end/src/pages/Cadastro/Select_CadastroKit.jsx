@@ -10,7 +10,7 @@ function Select_CadastroKit({ setProps, value }){
     return (
       materiais.map(({ codigo, nome }) => {
         let aux = codigo + " - " + nome;
-        let obj = {value: aux, label: aux}
+        let obj = {value: codigo, label: aux}
         return setOptions(options => [...options, obj]);
       })
     );
