@@ -15,7 +15,7 @@ class KitController {
     const schema = Yup.object().shape({
       ktt_nome: Yup.string().required(),
       ktt_codigo: Yup.string().required(),
-      ktt_quantidade: Yup.number().integer().required(),
+      ktt_quantidade: Yup.number().integer().min(1).required(),
       ktt_categoria: Yup.string().required(),
       ktt_subcategoria: Yup.string().required(),
     });
@@ -100,7 +100,7 @@ class KitController {
     const schema = Yup.object().shape({
       ktt_nome: Yup.string(),
       ktt_codigo: Yup.string(),
-      ktt_quantidade: Yup.number().integer(),
+      ktt_quantidade: Yup.number().integer().min(1),
       ktt_categoria: Yup.string(),
       ktt_subcategoria: Yup.string(),
     });

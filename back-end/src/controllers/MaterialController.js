@@ -20,7 +20,7 @@ class MaterialController {
   async store(req, res) {
     const shape = Yup.object().shape({
       mtl_nome: Yup.string().required(),
-      mtl_quantidade: Yup.number().required(),
+      mtl_quantidade: Yup.number().integer().min(1).required(),
       mtl_descricao: Yup.string(),
       mtl_codigo: Yup.string().required(),
       mtl_categoria: Yup.string().required(),
@@ -139,7 +139,7 @@ class MaterialController {
   async update(req, res) {
     const schema = Yup.object().shape({
       mtl_nome: Yup.string(),
-      mtl_quantidade: Yup.number(),
+      mtl_quantidade: Yup.number().integer().min(1),
       mtl_descricao: Yup.string(),
       mtl_codigo: Yup.string(),
       mtl_categoria: Yup.string(),
