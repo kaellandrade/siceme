@@ -3,10 +3,12 @@ import * as Yup from 'yup';
 import Material from '../app/models/Material';
 import Arquivo from '../app/models/Arquivo';
 
+const LIMITE_POR_PAGINA = 20;
+
 /**
  * Controller responsável por Materiais.
  * @author Micael e Manoel
- * @version 1.0.1
+ * @version 1.0.2
  */
 class MaterialController {
   /** Cadastra um novo material
@@ -34,24 +36,41 @@ class MaterialController {
   }
 
   /** Lista todos os materiais.
-   * TODO: Realizar paginação.
    * @author Micael
-   * @param {*} req requisição
+   * @param {iPagina} req requisição
    * @param {*} res resposta ser repassada
    * @returns void
+   * @since 1.0.0 Inicial
+   * @since 1.0.1 Realizando paginação caso o usuário passe uma página
    */
   async index(req, res) {
-    const todosMateriais = await Material.findAll({
-      attributes: ['id', 'mtl_nome', 'mtl_quantidade'],
-      include: [
-        {
-          model: Arquivo,
-          as: 'imagem',
-          attributes: ['ars_nome', 'ars_path', 'url'],
-        },
-      ],
-    });
-    return res.json(todosMateriais);
+    const iPagina = Number(req.query.pagina ? req.query.pagina : 0);
+    const iOffSet = (iPagina - 1) * LIMITE_POR_PAGINA;
+    // Configurando o limite caso o usuário passe uma pagina válida
+    const limiteObject =
+      iPagina <= 0
+        ? {}
+        : {
+            limit: LIMITE_POR_PAGINA,
+            offset: iOffSet,
+          };
+
+    try {
+      const materiaisPorPagina = await Material.findAll({
+        attributes: ['id', 'mtl_nome', 'mtl_quantidade'],
+        include: [
+          {
+            model: Arquivo,
+            as: 'imagem',
+            attributes: ['ars_nome', 'ars_path', 'url'],
+          },
+        ],
+        ...limiteObject,
+      });
+      return res.json(materiaisPorPagina);
+    } catch (error) {
+      return res.status(500).json({ error: 'Error ao consultar materiais!' });
+    }
   }
 
   /** Remove um material através do id
