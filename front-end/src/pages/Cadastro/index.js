@@ -16,7 +16,7 @@ function Main(props) {
     event.preventDefault();
     let subCat = document.getElementById("inputSubCategoria").value;
     if(subCat === 'Subcategoria' || subCat === 'None') 
-      subCat = []; 
+      subCat = ""; 
 
     novoMaterial = {
       mtl_nome: document.getElementById("nome do material").value,
@@ -27,16 +27,31 @@ function Main(props) {
     //   mtl_categoria: document.getElementById("inputCategoria").value,
     //   mtl_subCategoria: subCat,
     //   mtl_status: "Em Limpeza"
-
     };
     console.log(novoMaterial);
 
     postarMaterial();
+  
+    
   }
 
   const postarMaterial = async () => {  
     try {
-      axios.post('http://localhost:3000/material', novoMaterial);  
+      axios.post('http://localhost:3000/material', novoMaterial)
+      .then(res => {
+        if(res.data)  {
+          alert("Material cadastrado com sucesso!");
+          document.getElementById("nome do material").value = "";
+          document.getElementById("quantidade").value = "";
+          document.getElementById("etiqueta").value = "";
+          document.getElementById("descricao").value = "";
+          document.getElementById("file image").value = "";
+          document.getElementById("inputCategoria").value = "";
+          document.getElementById("inputSubCategoria").value = "";
+        }
+      }).catch(e => {
+        alert(e.message)
+      }); 
     }catch (ex) {
       console.log(ex);
     }

@@ -10,6 +10,7 @@ import Cadastrar_kit from "./pages/Cadastro/Cadastrar_kit"
 import Devolucoes from "./pages/Relatorios/Devolucoes";
 import Materiais_disponiveis from "./pages/Relatorios/Materiais_disponiveis";
 import Composicao_kits from "./pages/Relatorios/Composicao_kits";
+import Modelo_Mat_Disponiveis from './pages/Relatorios/modelo-materiais-disponiveis/Modelo_Mat_Disponiveis';
 
 function MainRouter() {
 
@@ -51,6 +52,10 @@ function MainRouter() {
         />
         <Route path="/relatorios/materiais-disponiveis" element={
           <Materiais_disponiveis buttonSelect="Relatórios" />
+          } 
+        />
+        <Route path="/relatorios/materiais-disponiveis/imprimir" element={
+          <Modelo_Mat_Disponiveis/>
           } 
         />
         <Route path="/relatorios/composicao-kits" element={

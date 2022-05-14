@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-use-before-define */
 import * as Yup from 'yup';
 import Kit from '../app/models/Kit';
 import Arquivo from '../app/models/Arquivo';

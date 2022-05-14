@@ -20,7 +20,9 @@ class UserController {
    */
 
   async index(req, res) {
-    const todosUsuarios = await User.findAll();
+    const todosUsuarios = await User.findAll({
+      attributes: ['uso_nome', 'id', 'uso_tipo_user'],
+    });
     return res.status(200).json(todosUsuarios);
   }
 

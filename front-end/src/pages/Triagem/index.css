@@ -39,17 +39,19 @@ button.button.search {
 .row.search {
   padding-bottom: 30px;
   width: 1200px;
-
   margin-left: auto;
   margin-right: auto;
 }
 
-.form.search {
-  width: 900px;
+.form-inline.search{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 
 .input.search {
-  width: 900px;
+  width: 70%;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -68,7 +70,6 @@ svg {
   border-radius: 5px;
   font-size: small;
   align-items: center;
-  
   overflow-y: auto;
   height: 60vh;
   display: block;
@@ -105,6 +106,7 @@ td {
   margin-left: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 3px 0px rgba(184, 175, 184, 1);
+  margin-right: 10px;
 
 }
 
