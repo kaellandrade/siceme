@@ -126,3 +126,11 @@ td {
 .button.editar.material{
   background-color: #316B83;
 }
+
+.paginacao{
+  margin-top: 5px;
+}
+
+ul.pagination{
+  justify-content: center;
+}

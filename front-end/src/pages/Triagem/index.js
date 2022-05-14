@@ -7,6 +7,7 @@ import "./index.css"
 import TabelaTriagem from "./TabelaTriagem";
 import { materiais } from "../../data/data";
 import Modal_requisicoes from "../../components/Modal/Modal_requisicoes";
+import Paginacao from "./Paginacao";
 
 function Main(props) {
 
@@ -114,6 +115,7 @@ function Main(props) {
               </div>
               <div className="col-md-8">
                 <TabelaTriagem buttonSelect={buttonSelect} dataMaterias={dataMateriais} />
+                <Paginacao/>
               </div>
             </div>
             
