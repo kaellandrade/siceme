@@ -20,7 +20,11 @@ class MaterialController {
   async store(req, res) {
     const shape = Yup.object().shape({
       mtl_nome: Yup.string().required(),
-      mtl_quantidade: Yup.number().required(),
+      mtl_quantidade: Yup.number().integer().min(1).required(),
+      mtl_descricao: Yup.string(),
+      mtl_codigo: Yup.string().required(),
+      mtl_categoria: Yup.string().required(),
+      mtl_subcategoria: Yup.string(),
     });
 
     const dadosValidos = await shape.isValid(req.body);
@@ -28,9 +32,23 @@ class MaterialController {
     if (!dadosValidos) {
       return res.status(400).json({ error: 'Dados inválidos!' });
     }
-    const { mtl_nome, mtl_quantidade } = req.body;
+    const {
+      mtl_nome,
+      mtl_quantidade,
+      mtl_descricao,
+      mtl_codigo,
+      mtl_categoria,
+      // mtl_subcategoria,
+    } = req.body;
 
-    const oMaterial = await Material.create({ mtl_nome, mtl_quantidade });
+    const oMaterial = await Material.create({
+      mtl_nome,
+      mtl_quantidade,
+      mtl_descricao,
+      mtl_codigo,
+      mtl_categoria,
+      // mtl_subcategoria,
+    });
 
     return res.status(200).json(oMaterial);
   }
@@ -57,7 +75,15 @@ class MaterialController {
 
     try {
       const materiaisPorPagina = await Material.findAll({
-        attributes: ['id', 'mtl_nome', 'mtl_quantidade'],
+        attributes: [
+          'id',
+          'mtl_nome',
+          'mtl_quantidade',
+          'mtl_codigo',
+          'mtl_descricao',
+          'mtl_categoria',
+          'mtl_subcategoria',
+        ],
         include: [
           {
             model: Arquivo,
@@ -113,8 +139,11 @@ class MaterialController {
   async update(req, res) {
     const schema = Yup.object().shape({
       mtl_nome: Yup.string(),
-      mtl_quantidade: Yup.number().integer(),
-      id_imagem: Yup.number().integer(),
+      mtl_quantidade: Yup.number().integer().min(1),
+      mtl_descricao: Yup.string(),
+      mtl_codigo: Yup.string(),
+      mtl_categoria: Yup.string(),
+      mtl_subcategoria: Yup.string(),
     });
     const dadosValidos = await schema.isValid({ id: req.params.id });
 
@@ -129,12 +158,20 @@ class MaterialController {
     const {
       mtl_nome: nome,
       mtl_quantidade: quantidade,
+      mtl_descricao: descricao,
+      mtl_codigo: codigo,
+      mtl_categoria: categoria,
+      mtl_subcategoria: subcategoria,
       id_imagem,
     } = await material.update(req.body);
 
     return res.json({
       mtl_nome: nome,
       mtl_quantidade: quantidade,
+      mtl_descricao: descricao,
+      mtl_codigo: codigo,
+      mtl_categoria: categoria,
+      mtl_subcategoria: subcategoria,
       id_imagem,
     });
   }

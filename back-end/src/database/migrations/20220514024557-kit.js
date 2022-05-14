@@ -13,14 +13,22 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      ktt_quantidade: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       ktt_codigo: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
       },
-      ktt_quantidade: {
-        type: Sequelize.INTEGER,
+      ktt_categoria: {
+        type: Sequelize.STRING,
         allowNull: false,
+      },
+      ktt_subcategoria: {
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       created_at: {
         type: Sequelize.DATE,
