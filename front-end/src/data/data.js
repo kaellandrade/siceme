@@ -54,6 +54,41 @@ export const materiais = [
     "qtde": "15",
     "aplicacao": "Cirurgia ginecológica",
     "status": "Esterilização - Pronto"
+  },
+  {
+    "id": "8",
+    "codigo": "566505",
+    "nome": "Kit médico ginecológico",
+    "qtde": "15",
+    "aplicacao": "Cirurgia ginecológica",
+    "status": "Entregue"
+  }
+  ,
+  {
+    "id": "9",
+    "codigo": "987254",
+    "nome": "Kit médico ginecológico",
+    "qtde": "15",
+    "aplicacao": "Cirurgia ginecológica",
+    "status": "Entregue"
+  }
+  ,
+  {
+    "id": "10",
+    "codigo": "9809809",
+    "nome": "Kit médico ginecológico",
+    "qtde": "15",
+    "aplicacao": "Cirurgia ginecológica",
+    "status": "Disponível"
+  }
+  ,
+  {
+    "id": "8",
+    "codigo": "131100",
+    "nome": "Kit médico ginecológico",
+    "qtde": "15",
+    "aplicacao": "Cirurgia ginecológica",
+    "status": "Disponível"
   }
 ];
 
@@ -69,6 +104,30 @@ export const categorias = [
   {
     "id": "3",
     "sub_categoria": []
+  }
+];
+
+export const relatorio_entregas = [
+  {
+    "id": "23",
+    "status": "Entregue",
+    "solicitante": "João Vitor",
+    "data": "02/04/2022",
+    "hora": "15:30"
+  },
+  {
+    "id": "996",
+    "solicitante": "Maria do Carmo",
+    "status": "Devolvido",
+    "data": "05/02/2022",
+    "hora": "07:46"
+  },
+  {
+    "id": "879",
+    "solicitante": "Jorge da Silva",
+    "status": "Devolvido",
+    "data": "05/03/2022",
+    "hora": "07:22"
   }
 ];
 
