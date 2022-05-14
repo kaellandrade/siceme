@@ -117,13 +117,21 @@ td {
   box-shadow: none;
 }
 
-.button.cadastrar {
+.button.button.imprimir.modelo.materiais.disponiveis{
   background-color: #316b83;
 }
 
-.button.cadastrar:hover {
+.button.button.imprimir.modelo.materiais.disponiveis:hover {
   background-color: #3d84a2;
-  ;
+}
+
+.button.button.imprimir.modelo.composicao.kits{
+  margin-top: 5px;
+  background-color: #316b83;
+}
+
+.button.button.imprimir.modelo.composicao.kits:hover {
+  background-color: #3d84a2;
 }
 
 .btn.btn-primary.dropdown-toggle{

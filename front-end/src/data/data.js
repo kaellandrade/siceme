@@ -46,6 +46,14 @@ export const materiais = [
     "qtde": "45",
     "aplicacao": "Cirurgia oftalmológica",
     "status": "Limpeza - Pronto"
+  },
+  {
+    "id": "7",
+    "codigo": "131100",
+    "nome": "Kit médico ginecológico",
+    "qtde": "15",
+    "aplicacao": "Cirurgia ginecológica",
+    "status": "Esterilização - Pronto"
   }
 ];
 

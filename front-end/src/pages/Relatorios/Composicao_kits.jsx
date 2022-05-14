@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header"
 import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "reactstrap"
-import ButtonSubMenu from "../Cadastro/ButtonSubMenu"
-import "./index.css"
-import Categoria_Dropdown from "../Cadastro/Categoria_Dropdown";
+import ButtonSubMenu from "../Cadastro/ButtonSubMenu";
+import "./index.css";
+import Select_Composicao_Kits from "./Select_Composicao_Kits";
+
+
 
 function Main(props) {
 
   const [buttonSelect, setButtonSelect] = useState("Composição dos kits");
+  const [selectedValue, setSelectedValue] = useState([]);
 
+  useEffect(() => {
+    sessionStorage.setItem('kits_impressao', selectedValue);
+  },[selectedValue]);
+  
   return (
-
     <div className="Main">
       <Header optionButton="Relatórios" buttonS={props.buttonS} buttonSelect={props.buttonSelect} />
       <section className="nav d-flex align-items-center justify-content-center">
@@ -58,108 +64,20 @@ function Main(props) {
             <div className="col-md-8">
               <Form inline >
                 <Row>
-                  <Col md={6}>
-                    <FormGroup floating>
-                      <Input
-                        id="nome do material"
-                        name="nome"
-                        type="name"
-                        placeholder="Nome do material"
-                      />
-                      <Label for="nome do material">
-                        Nome do material
-                      </Label>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup floating>
-                      <Input
-                        id="quantidade"
-                        name="quantidade"
-                        type="number"
-                        min={1}
-                        placeholder="Quantidade"
-                      />
-                      <Label for="quantidade">
-                        Quantidade
-                      </Label>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup floating>
-                      <Input
-                        id="etiqueta"
-                        name="etiqueta"
-                        type="text"
-                        placeholder="Etiqueta"
-                      />
-                      <Label for="etiqueta">
-                        Etiqueta
-                      </Label>
-                    </FormGroup>
-                  </Col>
-                </Row>
-
-                <Row>
                   <Col md={12}>
-                    <FormGroup floating>
-
-                      <Input
-                        id="descricao"
-                        name="descricao"
-                        type="textarea"
-                        maxLength={250}
-                        placeholder="Descrição do material"
-                      />
-                      <Label for="descricao">
-                        Descrição do material
-                      </Label>
-                    </FormGroup>
+                  <Select_Composicao_Kits setProps={setSelectedValue} value={selectedValue} />
                   </Col>
-
-
-                  
                 </Row>
-
                 <Row>
-                  <Col md={5}>
-                    <FormGroup>
-
-                      <Input
-                        id="file image"
-                        name="file image"
-                        type="file"
-                        placeholder="imagem"
-                      />
-                      <FormText>
-                        Escolha uma imagem com tamanho máximo de 2 MB.
-                      </FormText>
-                    </FormGroup>
-                  </Col>
-                  <Col md={7}>
-                    <FormGroup floating>
-                      <Categoria_Dropdown />
-                    </FormGroup>
+                  <Col md={3}>
+                    <Button 
+                      className='button imprimir modelo composicao kits' 
+                      href="" target="_blank"
+                    >
+                        Gerar Relatório
+                    </Button>
                   </Col>
                 </Row>
-
-                <FormGroup check>
-                  <Input
-                    id="check"
-                    name="check"
-                    type="checkbox"
-                  />
-                  <Label
-                    check
-                    for="check"
-                  >
-                    Li e confirmo as informações acima.
-                  </Label>
-                </FormGroup>
-                <Button className="button cadastrar" type="submit" >
-                  Cadastrar
-                </Button>
-
               </Form>
 
             </div>
@@ -173,5 +91,6 @@ function Main(props) {
 
   );
 }
+
 
 export default Main;

@@ -27,7 +27,6 @@ function Main(props) {
                 <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Entregas") }} >
                   <ButtonSubMenu texto={"Entregas"} buttonSelect={buttonSelect} />
                 </button>
-
               </div>
               <div className="row">
                 <button type="button" className="buttonMenu" >
@@ -35,7 +34,6 @@ function Main(props) {
                     href="/relatorios/devolucoes"
                   />
                 </button>
-
               </div>
               <div className="row">
                 <button type="button" className="buttonMenu" >
@@ -51,7 +49,6 @@ function Main(props) {
                   />
                 </button>
               </div>
-
             </div>
 
             <div className="col-md-8">

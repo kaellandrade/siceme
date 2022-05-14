@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Header from "../../components/header/Header"
-import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "reactstrap"
+import { Button } from "reactstrap"
 import ButtonSubMenu from "../Cadastro/ButtonSubMenu"
 import "./index.css"
-import Categoria_Dropdown from "../Cadastro/Categoria_Dropdown";
 
 function Main(props) {
 
@@ -27,7 +26,6 @@ function Main(props) {
                 <button type="button" className="buttonMenu" onClick={(event) => { event.preventDefault(); setButtonSelect("Entregas") }} >
                   <ButtonSubMenu texto={"Entregas"} buttonSelect={buttonSelect} />
                 </button>
-
               </div>
               <div className="row">
                 <button type="button" className="buttonMenu" >
@@ -56,111 +54,12 @@ function Main(props) {
             </div>
 
             <div className="col-md-8">
-              <Form inline >
-                <Row>
-                  <Col md={6}>
-                    <FormGroup floating>
-                      <Input
-                        id="nome do material"
-                        name="nome"
-                        type="name"
-                        placeholder="Nome do material"
-                      />
-                      <Label for="nome do material">
-                        Nome do material
-                      </Label>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup floating>
-                      <Input
-                        id="quantidade"
-                        name="quantidade"
-                        type="number"
-                        min={1}
-                        placeholder="Quantidade"
-                      />
-                      <Label for="quantidade">
-                        Quantidade
-                      </Label>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup floating>
-                      <Input
-                        id="etiqueta"
-                        name="etiqueta"
-                        type="text"
-                        placeholder="Etiqueta"
-                      />
-                      <Label for="etiqueta">
-                        Etiqueta
-                      </Label>
-                    </FormGroup>
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col md={12}>
-                    <FormGroup floating>
-
-                      <Input
-                        id="descricao"
-                        name="descricao"
-                        type="textarea"
-                        maxLength={250}
-                        placeholder="Descrição do material"
-                      />
-                      <Label for="descricao">
-                        Descrição do material
-                      </Label>
-                    </FormGroup>
-                  </Col>
-
-
-                  
-                </Row>
-
-                <Row>
-                  <Col md={5}>
-                    <FormGroup>
-
-                      <Input
-                        id="file image"
-                        name="file image"
-                        type="file"
-                        placeholder="imagem"
-                      />
-                      <FormText>
-                        Escolha uma imagem com tamanho máximo de 2 MB.
-                      </FormText>
-                    </FormGroup>
-                  </Col>
-                  <Col md={7}>
-                    <FormGroup floating>
-                      <Categoria_Dropdown />
-                    </FormGroup>
-                  </Col>
-                </Row>
-
-                <FormGroup check>
-                  <Input
-                    id="check"
-                    name="check"
-                    type="checkbox"
-                  />
-                  <Label
-                    check
-                    for="check"
-                  >
-                    Li e confirmo as informações acima.
-                  </Label>
-                </FormGroup>
-                <Button className="button cadastrar" type="submit" >
-                  Cadastrar
-                </Button>
-
-              </Form>
+              <Button 
+                className='button imprimir modelo materiais disponiveis' 
+                href="/relatorios/materiais-disponiveis/imprimir " target="_blank"
+              >
+                  Gerar Relatório
+              </Button>
 
             </div>
           </div>
