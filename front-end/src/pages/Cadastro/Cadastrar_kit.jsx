@@ -14,10 +14,6 @@ function Main(props) {
 
   const handleCadastrar = (event) => {
     event.preventDefault();
-    let subCat = document.getElementById("inputSubCategoria").value;
-    if(subCat === 'Subcategoria' || subCat === 'None') 
-      subCat = []; 
-
     novoKit = {
       nomeKit: document.getElementById("nome do kit").value,
       etiqueta: document.getElementById("etiqueta").value,
@@ -25,7 +21,6 @@ function Main(props) {
       qtde: document.getElementById("quantidade").value,
       imagem: document.getElementById("file image").value,
       categoria: document.getElementById("inputCategoria").value,
-      subCategoria: subCat
     };
     console.log(novoKit);    
     // postarKit();
