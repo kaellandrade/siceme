@@ -12,11 +12,7 @@ module.exports = {
       tps_nome: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true
-      },
-      tps_descricao: {
-        type: Sequelize.STRING,
-        allowNull: true,
+        unique: true,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -26,11 +22,9 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-    }
     });
-},
-
+  },
   async down(queryInterface) {
-  return queryInterface.dropTable('tps_tipos_usuarios', 'id_imagem');
-},
+    return queryInterface.dropTable('tps_tipos_usuarios', 'id_imagem');
+  },
 };

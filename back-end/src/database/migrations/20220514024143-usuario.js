@@ -23,7 +23,7 @@ module.exports = {
         unique: true,
       },
       uso_tipo_user: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       senha_hash: {
