@@ -69,9 +69,9 @@ class MaterialController {
       iPagina <= 0
         ? {}
         : {
-          limit: LIMITE_POR_PAGINA,
-          offset: iOffSet,
-        };
+            limit: LIMITE_POR_PAGINA,
+            offset: iOffSet,
+          };
 
     try {
       const materiaisPorPagina = await Material.findAll({
@@ -82,6 +82,7 @@ class MaterialController {
           'mtl_codigo',
           'mtl_descricao',
           'mtl_categoria',
+          'mtl_status_id',
         ],
         include: [
           {
@@ -142,7 +143,7 @@ class MaterialController {
       mtl_descricao: Yup.string(),
       mtl_codigo: Yup.string(),
       mtl_categoria: Yup.string(),
-      mtl_subcategoria: Yup.string(),
+      mtl_status_id: Yup.number().integer().min(1),
     });
     const dadosValidos = await schema.isValid({ id: req.params.id });
 
@@ -160,7 +161,7 @@ class MaterialController {
       mtl_descricao: descricao,
       mtl_codigo: codigo,
       mtl_categoria: categoria,
-      mtl_subcategoria: subcategoria,
+      mtl_status_id: status_id,
       id_imagem,
     } = await material.update(req.body);
 
@@ -170,7 +171,7 @@ class MaterialController {
       mtl_descricao: descricao,
       mtl_codigo: codigo,
       mtl_categoria: categoria,
-      mtl_subcategoria: subcategoria,
+      mtl_status_id: status_id,
       id_imagem,
     });
   }
