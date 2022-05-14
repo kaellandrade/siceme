@@ -3,6 +3,7 @@
 import * as Yup from 'yup';
 import Kit from '../app/models/Kit';
 import Arquivo from '../app/models/Arquivo';
+import Material from '../app/models/Material';
 
 /**
  * Controller responsável por Materiais.
@@ -15,6 +16,8 @@ class KitController {
       ktt_nome: Yup.string().required(),
       ktt_codigo: Yup.string().required(),
       ktt_quantidade: Yup.number().integer().required(),
+      ktt_categoria: Yup.string().required(),
+      ktt_subcategoria: Yup.string().required(),
     });
 
     const dadosValidos = await schema.isValid(req.body);
@@ -24,15 +27,22 @@ class KitController {
     }
 
     try {
-      const { id, ktt_nome, ktt_codigo, ktt_quantidade } = await Kit.create(
-        req.body,
-      );
+      const {
+        id,
+        ktt_nome,
+        ktt_codigo,
+        ktt_quantidade,
+        ktt_categoria,
+        ktt_subcategoria,
+      } = await Kit.create(req.body);
 
       return res.json({
         id,
         ktt_nome,
         ktt_codigo,
         ktt_quantidade,
+        ktt_categoria,
+        ktt_subcategoria,
       });
     } catch (error) {
       return res.status(400).json({ error: 'Erro ao salvar!' });
@@ -41,7 +51,14 @@ class KitController {
 
   async index(req, res) {
     const todosKits = await Kit.findAll({
-      attribuites: ['id', 'ktt_nome', 'ktt_codigo', 'ktt_quantidade'],
+      attribuites: [
+        'id',
+        'ktt_nome',
+        'ktt_codigo',
+        'ktt_quantidade',
+        'ktt_categoria',
+        'ktt_subcategoria',
+      ],
       include: [
         {
           model: Arquivo,
@@ -84,6 +101,8 @@ class KitController {
       ktt_nome: Yup.string(),
       ktt_codigo: Yup.string(),
       ktt_quantidade: Yup.number().integer(),
+      ktt_categoria: Yup.string(),
+      ktt_subcategoria: Yup.string(),
     });
 
     const dadosValidos = await schema.isValid({ id: req.params.id });
@@ -100,6 +119,8 @@ class KitController {
       ktt_nome: nome,
       ktt_codigo: codigo,
       ktt_quantidade: quantidade,
+      ktt_categoria: categoria,
+      ktt_subcategoria: subcategoria,
       id_imagem,
     } = await kit.update(req.body);
 
@@ -107,6 +128,8 @@ class KitController {
       ktt_nome: nome,
       ktt_codigo: codigo,
       ktt_quantidade: quantidade,
+      ktt_categoria: categoria,
+      ktt_subcategoria: subcategoria,
       id_imagem,
     });
   }
