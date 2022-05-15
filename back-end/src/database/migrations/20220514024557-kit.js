@@ -13,10 +13,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      // ktt_quantidade: {
-      //   type: Sequelize.INTEGER,
-      //   allowNull: false,
-      // },
       ktt_codigo: {
         type: Sequelize.STRING,
         allowNull: false,

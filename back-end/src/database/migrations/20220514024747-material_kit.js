@@ -5,6 +5,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         reference: { model: 'mtl_material', key: 'id' },
         allowNull: true,
+        unique: true,
       },
       id_ktt_kit: {
         type: Sequelize.INTEGER,
