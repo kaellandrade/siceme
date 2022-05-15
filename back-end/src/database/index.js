@@ -4,8 +4,9 @@ import Material from '../app/models/Material';
 import Arquivo from '../app/models/Arquivo';
 import Usuario from '../app/models/Usuario';
 import Kit from '../app/models/Kit';
+import MaterialKit from '../app/models/MaterialKit';
 
-const models = [Material, Usuario, Arquivo, Kit];
+const models = [Material, Usuario, Arquivo, Kit, MaterialKit];
 
 /**
  * Realizando conexão com o banco de dados
@@ -15,11 +16,12 @@ const models = [Material, Usuario, Arquivo, Kit];
  */
 class Database {
   constructor() {
+    this.sequelize = new Sequelize(databaseConfig);
     this.init();
   }
 
   init() {
-    this.connection = new Sequelize(databaseConfig);
+    this.connection = this.sequelize;
     models
       .map((model) => model.init(this.connection))
       .map(
