@@ -27,6 +27,7 @@ class Material extends Model {
 
   static associate(models) {
     this.belongsTo(models.Arquivo, { foreignKey: 'id_imagem', as: 'imagem' });
+    this.belongsTo(models.Status, { foreignKey: 'mtl_status_id', as: 'status' });
   }
 }
 

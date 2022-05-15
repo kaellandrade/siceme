@@ -64,7 +64,7 @@ class KitController {
 
   async index(req, res) {
     const todosKits = await Kit.findAll({
-      attribuites: ['id', 'ktt_nome', 'ktt_codigo', 'ktt_categoria'],
+      attribuites: ['id'],
       include: [
         {
           model: Arquivo,

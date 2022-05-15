@@ -2,6 +2,7 @@ import * as Yup from 'yup';
 
 import Material from '../app/models/Material';
 import Arquivo from '../app/models/Arquivo';
+import Status from '../app/models/Status';
 
 const LIMITE_POR_PAGINA = 20;
 
@@ -69,9 +70,9 @@ class MaterialController {
       iPagina <= 0
         ? {}
         : {
-            limit: LIMITE_POR_PAGINA,
-            offset: iOffSet,
-          };
+          limit: LIMITE_POR_PAGINA,
+          offset: iOffSet,
+        };
 
     try {
       const materiaisPorPagina = await Material.findAll({
@@ -89,6 +90,11 @@ class MaterialController {
             model: Arquivo,
             as: 'imagem',
             attributes: ['ars_nome', 'ars_path', 'url'],
+          },
+          {
+            model: Status,
+            as: 'status',
+            attributes: ['sts_status_nome', 'id'],
           },
         ],
         ...limiteObject,
