@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Table } from "reactstrap";
 import RowTabelaTriagem from "./RowTabelaTriagem";
 
@@ -6,6 +7,19 @@ function TabelaTriagem(props) {
 
   var materiais = props.dataMaterias;
   var buttonSelect = props.buttonSelect;
+
+  const [categoria, setCategoria] = useState([]);
+
+  const getCategorias = async () => {  
+    try {
+      axios.get('http://localhost:3000/categoria')
+      .then(res => {
+        setCategoria(res.data);
+      }); 
+    }catch (ex){
+      console.log(ex);
+    }
+  }
 
   const tratarButtonSelect = (buttonSelect) => {
     switch (buttonSelect) {
@@ -33,28 +47,55 @@ function TabelaTriagem(props) {
       case 'Devolvido':
         buttonSelect = 'DEVOLVIDO';
         break;
-      
-      // default:
-      //   buttonSelect = 'Limpeza - Processando';
+
     }
+  }
+
+  function tratarStatus(status_nome) {
+    switch (status_nome) {
+      case 'LIMPEZA:Processando':
+        return 'Limpeza - Processando';
+      case 'LIMPEZA:PRONTO':
+        return 'Limpeza - Pronto';
+      case 'DESINFECÇÃO:PROCESSANDO':
+       return 'Desinfecção - Processando';
+      case 'DESINFECÇÃO:PRONTO':
+        return 'Desinfecção - Pronto';
+      case 'ESTERILIZAÇÃO:PROCESSANDO':
+        return 'Esterilização - Processando';
+      case 'ESTERILIZAÇÃO:PRONTO':
+        return 'Esterilização - Pronto';
+      case 'ENTREGUE':
+        return 'Entregue';
+      case 'DEVOLVIDO':
+        return 'Devolvido'; 
+    }
+  }
+
+  const buscarCategoria = (id_categoria) => {
+    const cat = categoria.find(({id, cta_nome}) => id === id_categoria);
+    return cat.cta_nome;
   }
 
   const renderMateriais = (materiais) => {
     if(buttonSelect == "Listagem Geral"){
       return (
-        materiais.map(({ id, mtl_codigo, mtl_nome, mtl_quantidade, mtl_categoria, mtl_status_id, mtl_descricao,solicitante}) => {
+        materiais.map(({ id, mtl_codigo, mtl_nome, mtl_quantidade, mtl_categoria, status, mtl_descricao,solicitante}) => { 
+          let nome_categoria = buscarCategoria(mtl_categoria);
+          let sts = tratarStatus(status.sts_status_nome);
           return <RowTabelaTriagem id={id} codigo={mtl_codigo} nome={mtl_nome} 
-                    qtde={mtl_quantidade} aplicacao={mtl_categoria} status={mtl_status_id} 
+                    qtde={mtl_quantidade} aplicacao={nome_categoria} status={sts} 
                     solicitante={solicitante} descricao={mtl_descricao} />
         })
       )
     }
     else{
       return (
-        materiais.map(({ id, mtl_codigo, mtl_nome, mtl_quantidade, mtl_categoria, mtl_status_id, mtl_descricao,solicitante}) => {
-          if(mtl_status_id === buttonSelect){
+        materiais.map(({ id, mtl_codigo, mtl_nome, mtl_quantidade, mtl_categoria, status, mtl_descricao,solicitante}) => {
+          let sts = tratarStatus(status.sts_status_nome);
+          if(sts === buttonSelect){
             return <RowTabelaTriagem id={id} codigo={mtl_codigo} nome={mtl_nome} 
-                    qtde={mtl_quantidade} aplicacao={mtl_categoria} status={mtl_status_id} 
+                    qtde={mtl_quantidade} aplicacao={mtl_categoria} status={sts} 
                     solicitante={solicitante} descricao={mtl_descricao} />
           }
         })
@@ -62,6 +103,10 @@ function TabelaTriagem(props) {
     }
     
   } 
+
+  useEffect(() => {
+    getCategorias();
+  }, [])
 
   return (
     <>
