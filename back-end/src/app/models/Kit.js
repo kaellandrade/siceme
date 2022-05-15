@@ -11,9 +11,8 @@ class Kit extends Model {
       {
         ktt_nome: Sequelize.STRING,
         ktt_codigo: Sequelize.STRING,
-        ktt_quantidade: Sequelize.STRING,
         ktt_categoria: Sequelize.STRING,
-        ktt_subcategoria: Sequelize.STRING,
+        ktt_array_materiais: Sequelize.VIRTUAL,
       },
       {
         sequelize,
