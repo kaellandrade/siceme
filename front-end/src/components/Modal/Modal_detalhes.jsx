@@ -160,7 +160,7 @@ function Modal_detalhes(props) {
           <Button className='button imprimir detalhes' onClick={() => window.print()} >
             Imprimir
           </Button>
-          <Button className='button editar material' onClick={() => window.print()} >
+          <Button className='button editar material' >
             Editar(admin)
           </Button>
         </ModalFooter>

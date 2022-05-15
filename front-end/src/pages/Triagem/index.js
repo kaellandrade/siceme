@@ -125,7 +125,7 @@ function Main(props) {
               </div>
               <div className="col-md-8">
                 <TabelaTriagem buttonSelect={buttonSelect} dataMaterias={dataMateriais} />
-                <Paginacao/>
+                {/* <Paginacao/> */}
               </div>
             </div>
             

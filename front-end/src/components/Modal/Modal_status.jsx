@@ -2,11 +2,31 @@ import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { Form } from "reactstrap"
 import { useState } from 'react';
-import "./modal_triagem.css"
+import "./modal_status.css"
 
 
-function Modal_triagem(props) {
+function Modal_status(props) {
   const [modal, setModal] = useState(false);
+
+  const renderizarStatus = (stSetado) => {
+    let status = [
+      'Limpeza - Processando',
+      'Limpeza - Pronto',
+      'Desinfecção - Processando',
+      'Desinfecção - Pronto',
+      'Esterelização - Processando',
+      'Esterelização - Pronto',
+      'Entregue',
+      'Devolvido'
+    ];
+    return (
+      status.map((sts) => {
+        if(sts != stSetado){
+          return <option>{sts}</option>
+        }
+      })
+    )
+  }
 
   return (
     <div>
@@ -30,16 +50,9 @@ function Modal_triagem(props) {
         <ModalBody>
           <div className="container-fluid">
             <Form>
-              <select className="form-select">
+              <select className="form-select">  
                 <option selected>{props.status}</option>
-                <option>Limpeza - Processando</option>
-                <option>Limpeza - Pronto</option>
-                <option>Desinfecção - Processando</option>
-                <option>Desinfecção - Pronto</option>
-                <option>Esterelização - Processando</option>
-                <option>Esterelização - Pronto</option>
-                <option>Entregue</option>
-                <option>Devolvido</option>
+                {renderizarStatus(props.status)}
               </select>
             </Form>
           </div>
@@ -56,4 +69,4 @@ function Modal_triagem(props) {
   );
 }
 
-export default Modal_triagem;
+export default Modal_status;
