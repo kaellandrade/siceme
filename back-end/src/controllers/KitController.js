@@ -74,7 +74,6 @@ class KitController {
         {
           model: MaterialKit,
           as: 'has_id_kit',
-          // attribuites: ['id_ktt_kit'],
         },
       ],
     });
