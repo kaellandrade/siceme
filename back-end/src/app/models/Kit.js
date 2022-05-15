@@ -24,6 +24,7 @@ class Kit extends Model {
 
   static associate(models) {
     this.belongsTo(models.Arquivo, { foreignKey: 'id_imagem', as: 'imagem' });
+    this.hasMany(models.MaterialKit, { foreignKey: 'id_ktt_kit', as: 'has_id_kit' });
   }
 }
 

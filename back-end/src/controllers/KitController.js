@@ -44,7 +44,6 @@ class KitController {
         id_ktt_kit: id,
       }));
 
-
       await MaterialKit.bulkCreate(composicao, { transaction: trans });
 
       await trans.commit();
@@ -57,7 +56,9 @@ class KitController {
       });
     } catch (error) {
       await trans.rollback();
-      return res.status(400).json({ error: 'Erro ao salvar!' });
+      return res
+        .status(400)
+        .json({ error: 'Erro ao salvar!', message: error.errors });
     }
   }
 
@@ -69,6 +70,11 @@ class KitController {
           model: Arquivo,
           as: 'imagem',
           attribuites: ['ars_nome', 'ars_path', 'url'],
+        },
+        {
+          model: MaterialKit,
+          as: 'has_id_kit',
+          // attribuites: ['id_ktt_kit'],
         },
       ],
     });
