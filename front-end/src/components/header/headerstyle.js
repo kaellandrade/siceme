@@ -14,8 +14,27 @@ export const HeaderStyle = styled.header`
   div.col{
     display: flex;
     justify-content: center;
-
+    align-items: center;
   }
+
+  div.col.user{
+    color: #fff;
+    font-size: small;
+    svg.bi.bi-person-circle{
+      margin-right: 7px;
+    }
+    button.button-sair{
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      margin-left: 50px;
+      svg.bi.bi-box-arrow-in-right{
+        margin-right: 7px;
+      }
+    }
+    
+  }
+ 
   
 `;
 

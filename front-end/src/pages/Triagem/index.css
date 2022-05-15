@@ -103,11 +103,9 @@ td {
   color: rgba(38, 50, 56, 0.734);
   background-color: white;
   border: none;
-  margin-left: 10px;
+  margin-left: 5px;
   border-radius: 5px;
   box-shadow: 0px 0px 3px 0px rgba(184, 175, 184, 1);
-  margin-right: 10px;
-
 }
 
 .btn.btn-primary:hover {

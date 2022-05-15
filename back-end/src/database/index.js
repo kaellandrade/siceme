@@ -5,8 +5,18 @@ import Arquivo from '../app/models/Arquivo';
 import Usuario from '../app/models/Usuario';
 import Kit from '../app/models/Kit';
 import MaterialKit from '../app/models/MaterialKit';
+import Status from '../app/models/Status';
+import Categoria from '../app/models/Categoria';
 
-const models = [Material, Usuario, Arquivo, Kit, MaterialKit];
+const models = [
+  Material,
+  Usuario,
+  Arquivo,
+  Kit,
+  MaterialKit,
+  Status,
+  Categoria,
+];
 
 /**
  * Realizando conexão com o banco de dados

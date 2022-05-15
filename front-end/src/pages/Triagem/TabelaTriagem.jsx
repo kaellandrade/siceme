@@ -10,22 +10,24 @@ function TabelaTriagem(props) {
   const renderMateriais = (materiais) => {
     if(buttonSelect == "Listagem Geral"){
       return (
-        materiais.map(({ id, codigo, nome, qtde, aplicacao, status}) => {
-          return <RowTabelaTriagem id={id} codigo={codigo} nome={nome} 
-                    qtde={qtde} aplicacao={aplicacao} status={status} />
+        materiais.map(({ id, mtl_codigo, mtl_nome, mtl_quantidade, mtl_categoria, mtl_status_id, mtl_descricao,solicitante}) => {
+          return <RowTabelaTriagem id={id} codigo={mtl_codigo} nome={mtl_nome} 
+                    qtde={mtl_quantidade} aplicacao={mtl_categoria} status={mtl_status_id} 
+                    solicitante={solicitante} descricao={mtl_descricao} />
         })
       )
     }
     else{
       return (
-        materiais.map(({ id, codigo, nome, qtde, aplicacao, status}) => {
+        materiais.map(({ id, codigo, nome, qtde, aplicacao, status, solicitante}) => {
           if(status === buttonSelect){
             return <RowTabelaTriagem id={id} codigo={codigo} nome={nome} 
-                      qtde={qtde} aplicacao={aplicacao} status={status} />
+                      qtde={qtde} aplicacao={aplicacao} status={status} solicitante={solicitante} />
           }
         })
       )
     }
+    
   } 
 
   return (
@@ -56,6 +58,9 @@ function TabelaTriagem(props) {
               </th>
               <th>
                 Detalhes 
+              </th>
+              <th>
+                Solicitante
               </th>
             </tr>
           </thead>

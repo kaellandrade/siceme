@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./categoria_Dropdown.css"
 import { categorias } from "../../data/data"
-import SubCategoria_Dropdown from "./SubCategoria_Dropdown";
 
 function Categoria_Dropdown() {
 
   const [ctgSelect, setCtgSelect] = useState({sub_categoria: []});
-  const [subCat, setSubCat] = useState(false);
 
   const renderizarCategorias = (categorias) => {
     return (
@@ -16,31 +13,15 @@ function Categoria_Dropdown() {
     )
   };
 
-  // const handleSubCat = (event) => {
-  //   event.preventDefault();
-  //   setSubCat(true);
-  // }
-
-  const renderSubCategorias = (categorias) => {
-    
-    console.log(ctgSelect);
-    
-  };
-
   const handleCtgS = event => {
     event.preventDefault();
     let ctg = document.getElementById("inputCategoria").value;
-    let categoria = categorias.find( ({id, sub_categoria}) => {
+    let categoria = categorias.find( ({id}) => {
       return id === ctg;
     } );
     setCtgSelect(categoria)
-    if(categoria.sub_categoria.length > 0)
-      setSubCat(true);
   }
 
-  useEffect(() => {
-    renderSubCategorias(categorias);
-  }, [ctgSelect]);
 
   return (
     <>
@@ -49,8 +30,7 @@ function Categoria_Dropdown() {
           <option disabled selected>Categoria/Aplicação</option>
           {renderizarCategorias(categorias)}
         </select>
-        {/* {subCat && <SubCategoria_Dropdown subCateg={ctgSelect} /> } */}
-        <SubCategoria_Dropdown subCateg={ctgSelect} />
+
 
       </div>
     </>
