@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Arsenal from './pages/Arsenal/Arsenal';
 import Cadastro from './pages/Cadastro/index';
 import Cadastrar_categoria from './pages/Cadastro/Cadastrar_categoria';
 import Entregas from './pages/Relatorios/Entregas';
@@ -24,10 +23,6 @@ function MainRouter() {
         />
         <Route path="/triagem" element={
           <Triagem buttonSelect="Triagem" />
-          } 
-        />
-        <Route path="/arsenal" element={
-          <Arsenal buttonSelect="Arsenal" />
           } 
         />
         <Route path="/cadastro/material" element={

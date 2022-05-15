@@ -11,14 +11,10 @@ function Modal_requisicoes(props) {
 
   return (
     <div>
-      <Button
-        id="button-modal-requisitar"
-        className='button requisitar'
-        color="light"
-        onClick={() => setModal(true)}
-      >
+
+      <button id="button-requisitar" type="button" class="btn btn-primary" onClick={() => setModal(true)} >
         Requisitar
-      </Button>
+      </button>
 
       <Modal
         id='imprimirDetalhes'
@@ -40,7 +36,7 @@ function Modal_requisicoes(props) {
           
         </ModalBody>
         <ModalFooter>
-          <Button className='button imprimir detalhes' onClick={() => window.print()} >
+          <Button className='button imprimir detalhes' >
             Confirmar
           </Button>
         </ModalFooter>

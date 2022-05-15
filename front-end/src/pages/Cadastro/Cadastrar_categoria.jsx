@@ -70,7 +70,7 @@ function Cadastrar_categoria(props) {
               <Form inline onSubmit={handleCadastrar} >
                   
                 <Row>
-                  <Col md={3}>
+                  <Col md={12}>
                     <FormGroup floating>
                       <Input
                         id="nova-categoria"
@@ -83,21 +83,6 @@ function Cadastrar_categoria(props) {
                       </Label>
                     </FormGroup>
                   </Col>
-
-                  <Col md={3}>
-                    <FormGroup floating>
-                      <Input
-                        id="nova-sub-categoria"
-                        name="nova-sub-categoria"
-                        type="text"
-                        placeholder="Nova subcategoria"
-                      />
-                      <Label for="nova-sub-categoria">
-                        Nova subcategoria
-                      </Label>
-                    </FormGroup>
-                  </Col>
-                  
                 </Row>
                 <FormGroup check>
                   <Input
