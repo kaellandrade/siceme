@@ -35,7 +35,7 @@ function Modal_detalhes(props) {
               <div className="row">
                 <Col md={8}>
                   <Row>
-                    <Col md={5}>
+                    <Col md={6}>
                       <FormGroup floating>
                         <Input
                           id="nome do material"
@@ -49,7 +49,7 @@ function Modal_detalhes(props) {
                         </Label>
                       </FormGroup>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                       <FormGroup floating>
                         <Input
                           id="quantidade"
@@ -62,21 +62,6 @@ function Modal_detalhes(props) {
                         />
                         <Label for="quantidade">
                           Quantidade
-                        </Label>
-                      </FormGroup>
-                    </Col>
-                    <Col md={3}>
-                      <FormGroup floating>
-                        <Input
-                          id="validade"
-                          name="validade"
-                          type="date"
-                          placeholder="Validade"
-                          value={props.validade}
-                          readOnly
-                        />
-                        <Label for="validade">
-                          Validade
                         </Label>
                       </FormGroup>
                     </Col>

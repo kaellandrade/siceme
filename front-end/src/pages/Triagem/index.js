@@ -8,12 +8,29 @@ import TabelaTriagem from "./TabelaTriagem";
 import { materiais } from "../../data/data";
 import Modal_requisicoes from "../../components/Modal/Modal_requisicoes";
 import Paginacao from "./Paginacao";
+const axios = require('axios').default;
 
 function Main(props) {
 
   const [buttonSelect, setButtonSelect] = useState("Listagem Geral");
-  const [dataMateriais, setDataMateriais] = useState(materiais);
+  const [dataMateriais, setDataMateriais] = useState([]);
   const [materialPesq, setMaterialPesq] = useState("");
+
+  const getMateriais = async () => {  
+    try {
+      axios.get('http://localhost:3000/material')
+      .then(res => {
+        setDataMateriais(res.data);
+        console.log(dataMateriais)
+      }); 
+    }catch (ex){
+      console.log(ex);
+    }
+  }
+
+  useEffect(() => {
+    getMateriais();
+  }, [])
   
   const handlePesquisar = event => {
     event.preventDefault();
@@ -24,6 +41,8 @@ function Main(props) {
     var regex = new RegExp(materialPesq, "i"); //ignorar maiusculas e minusculas
     return nome.search(regex);
   }
+
+  
 
   useEffect(() => {
     if(materialPesq.length != 0){
