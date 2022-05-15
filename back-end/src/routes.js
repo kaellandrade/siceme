@@ -9,6 +9,8 @@ import UserController from './controllers/UserController';
 import SessionController from './controllers/SessionController';
 import FileController from './controllers/FileController';
 import KitController from './controllers/KitController';
+import StatusController from './controllers/StatusController';
+import CategoriaController from './controllers/CategoriaController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -51,6 +53,12 @@ routes.delete('/kit/:id', KitController.delete);
 
 // Atualização de um kit
 routes.put('/kit/:id', KitController.update);
+
+// ======== STATUS ========
+routes.get('/status/:id', StatusController.index);
+
+// ======== CATEGORIA ========
+routes.get('/categoria/:id', CategoriaController.index);
 
 // ======== AUTENTICAÇÃO ========
 // Middleware de autenticação (válido apenas para as rotas a seguir)
