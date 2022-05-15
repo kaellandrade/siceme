@@ -11,6 +11,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Agulha"
       },
       {
         mtl_nome: 'Seringa',
@@ -20,6 +21,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Seringa",
       },
       {
         mtl_nome: 'Medidor de pressão',
@@ -29,6 +31,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Medidor de pressão"
       },
       {
         mtl_nome: 'Oxímetro',
@@ -38,15 +41,17 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Oxímetro"
       },
       {
-        mtl_nome: 'Estestocópio',
+        mtl_nome: 'Estetoscópio',
         mtl_quantidade: 8,
         mtl_codigo: '4',
         mtl_categoria: 2,
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Estetoscópio"
       },
       {
         mtl_nome: 'Torniquete',
@@ -56,6 +61,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Torniquete"
       },
       {
         mtl_nome: 'Termomêtro clínico',
@@ -65,6 +71,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Termomêtro clínico"
       },
       {
         mtl_nome: 'Bisturi',
@@ -74,6 +81,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Bisturi"
       },
       {
         mtl_nome: 'Gaze',
@@ -83,6 +91,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Gaze"
       },
       {
         mtl_nome: 'Atadura',
@@ -92,6 +101,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Atadura"
       },
       {
         mtl_nome: 'Tesoura',
@@ -101,6 +111,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Tesoura"
       },
       {
         mtl_nome: 'Esparadrapo',
@@ -110,6 +121,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
         mtl_status_id: 1,
+        mtl_descricao: "descrição de Esparadrapo"
       },
     ]);
   },
