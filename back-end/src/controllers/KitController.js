@@ -1,6 +1,8 @@
 import * as Yup from 'yup';
 import Kit from '../app/models/Kit';
 import Arquivo from '../app/models/Arquivo';
+import db from '../database/index';
+import MaterialKit from '../app/models/MaterialKit';
 
 /**
  * Controller responsável por Materiais.
@@ -8,11 +10,19 @@ import Arquivo from '../app/models/Arquivo';
  * @version 1.0.0
  */
 class KitController {
+  /**
+   * Realizando a composição dos kits.
+   * @param {ktt_nome,ktt_codigo,ktt_categoria,ktt_array_materiais} req
+   * @param {*} res
+   * @returns void
+   * @since 1.0.1
+   */
   async store(req, res) {
     const schema = Yup.object().shape({
       ktt_nome: Yup.string().required(),
       ktt_codigo: Yup.string().required(),
-      ktt_categoria: Yup.string().required(),
+      ktt_categoria: Yup.number().min(1).required(),
+      ktt_array_materiais: Yup.array().min(1).required(),
     });
 
     const dadosValidos = await schema.isValid(req.body);
@@ -21,10 +31,23 @@ class KitController {
       return res.status(400).json({ error: 'Dados inválidos!' });
     }
 
+    const trans = await db.sequelize.transaction();
+    const { ktt_array_materiais } = req.body;
+
     try {
       const { id, ktt_nome, ktt_codigo, ktt_categoria } = await Kit.create(
         req.body,
+        { transaction: trans },
       );
+      const composicao = ktt_array_materiais.map((id_mtl_material) => ({
+        id_mtl_material,
+        id_ktt_kit: id,
+      }));
+
+
+      await MaterialKit.bulkCreate(composicao, { transaction: trans });
+
+      await trans.commit();
 
       return res.json({
         id,
@@ -33,6 +56,7 @@ class KitController {
         ktt_categoria,
       });
     } catch (error) {
+      await trans.rollback();
       return res.status(400).json({ error: 'Erro ao salvar!' });
     }
   }
@@ -72,8 +96,8 @@ class KitController {
       .status(200)
       .json(
         deletado
-          ? { message: 'Material deletado com sucesso' }
-          : { message: `Não existe material com ID ${req.params.id}` },
+          ? { message: 'Kit deletado com sucesso' }
+          : { message: `Não existe Kit com ID ${req.params.id}` },
       );
   }
 
@@ -81,7 +105,7 @@ class KitController {
     const schema = Yup.object().shape({
       ktt_nome: Yup.string(),
       ktt_codigo: Yup.string(),
-      ktt_categoria: Yup.string(),
+      ktt_categoria: Yup.number().min(1),
     });
 
     const dadosValidos = await schema.isValid({ id: req.params.id });
