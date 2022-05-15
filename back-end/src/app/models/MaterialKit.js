@@ -19,14 +19,6 @@ class MaterialKit extends Model {
     );
     return this;
   }
-
-  static associate(models) {
-    this.hasOne(models.Material, {
-      foreignKey: 'id',
-      as: 'id_material',
-    });
-    this.hasMany(models.Kit, { foreignKey: 'id', as: 'id_kit' });
-  }
 }
 
 export default MaterialKit;
