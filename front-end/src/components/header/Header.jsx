@@ -13,22 +13,17 @@ function Header(props) {
             <h1>SICEME</h1>
           </div>
           <div className="col">
-            <Button texto="Triagem" href="/triagem" buttonS="Triagem" buttonSelect={props.buttonSelect} />
-           
-          </div>
-          <div className="col">
-            <Button texto="Arsenal" href="/arsenal" buttonS="Arsenal" buttonSelect={props.buttonSelect} />
-           
+            <Button texto="Triagem" href="/triagem" buttonS="Triagem" buttonSelect={props.buttonSelect} /> 
           </div>
           <div className="col">
             <Button texto="Cadastro" href="/cadastro/material" buttonS="Cadastro" buttonSelect={props.buttonSelect} />
-           
           </div>
           <div className="col">
             <Button texto="Relatórios" href="/relatorios/entregas" buttonS="Relatorios" buttonSelect={props.buttonSelect} />
-           
           </div>
-
+          <div className="col">
+            LOGIN
+          </div>
         </div>
       </HeaderStyle>
       {/* Header */}
