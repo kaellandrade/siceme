@@ -21,8 +21,11 @@ class MaterialKit extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Material, { foreignKey: 'id', as: 'id' });
-    this.belongsTo(models.Kit, { foreignKey: 'id', as: 'id' });
+    this.hasOne(models.Material, {
+      foreignKey: 'id',
+      as: 'id_material',
+    });
+    this.hasMany(models.Kit, { foreignKey: 'id', as: 'id_kit' });
   }
 }
 
