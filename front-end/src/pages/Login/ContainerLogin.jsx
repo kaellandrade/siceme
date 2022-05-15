@@ -1,27 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
+import DataContext from "../../data/DataContext";
 const axios = require('axios').default;
 
 function ContainerLogin() {
-  var userLogin;
+  
+  const [credenciais, setCredenciais] = useContext(DataContext);
 
   const handleLogar = (event) => {
     event.preventDefault();
-    userLogin = {
+    var userLogin = {
       uso_email: document.getElementById("in email").value,
       uso_senha: document.getElementById("in senha").value,
     };
-    console.log(userLogin);
-    enviarLogin();
-    
+    // console.log(userLogin);
+    setCredenciais(userLogin);
+    localStorage.setItem("userLogin", JSON.stringify(userLogin));
+    console.log(JSON.parse(localStorage.getItem('userLogin')));
+    // console.log(userLogin);
+    // enviarLogin(userLogin);  
   }
 
-  const enviarLogin = async () => {  
-    try {
-      axios.post('http://localhost:3000/sessao', userLogin);
-    }catch (ex) {
-      console.log(ex);
-    }
-  }
+  // const enviarLogin = async (credenciais) => {  
+  //   try {
+  //     axios.post('http://localhost:3000/sessao', credenciais)
+  //     .then(response => {
+  //       const { token, user } = response.data;
+  //       localStorage.setItem("token", token)
+  //       localStorage.setItem("user", JSON.stringify(user))
+  //       setState({
+  //           user,
+  //           token
+  //       });
+        
+  //       // Don't forget to get this newly-logged-in user's todos!
+  //       this.getTodos();
+  //       return response;
+  //   })
+  //   }catch (ex) {
+  //     console.log(ex);
+  //   }
+  // }
 
 
   return (
