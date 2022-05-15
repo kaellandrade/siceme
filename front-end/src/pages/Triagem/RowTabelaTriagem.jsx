@@ -1,5 +1,7 @@
 import React from "react";
 import Modal_detalhes from "../../components/Modal/Modal_detalhes";
+import "./rowTabelaTriagem.css";
+import Modal_triagem from "../../components/Modal/Modal_triagem";
 
 function RowTabelaTriagem(props) {
   return (
@@ -18,6 +20,7 @@ function RowTabelaTriagem(props) {
       </td>
       <td>
         {props.status}
+        <Modal_triagem status={props.status}></Modal_triagem>
       </td>
       <td>
         <Modal_detalhes codigo={props.codigo} nome={props.nome} qtde={props.qtde} 
