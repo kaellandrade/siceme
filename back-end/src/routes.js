@@ -54,15 +54,15 @@ routes.delete('/kit/:id', KitController.delete);
 // Atualização de um kit
 routes.put('/kit/:id', KitController.update);
 
+// ======== AUTENTICAÇÃO ========
+// Middleware de autenticação (válido apenas para as rotas a seguir)
+routes.use(authMiddleware);
+
 // ======== STATUS ========
 routes.get('/status/:id', StatusController.index);
 
 // ======== CATEGORIA ========
 routes.get('/categoria/:id', CategoriaController.index);
-
-// ======== AUTENTICAÇÃO ========
-// Middleware de autenticação (válido apenas para as rotas a seguir)
-routes.use(authMiddleware);
 
 // ======== ARQUIVOS ========
 // Upload de arquivos

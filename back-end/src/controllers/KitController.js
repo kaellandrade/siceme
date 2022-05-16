@@ -64,12 +64,12 @@ class KitController {
 
   async index(req, res) {
     const todosKits = await Kit.findAll({
-      attribuites: ['id'],
+      attributes: ['id'],
       include: [
         {
           model: Arquivo,
           as: 'imagem',
-          attribuites: ['ars_nome', 'ars_path', 'url'],
+          attributes: ['ars_nome', 'ars_path', 'url'],
         },
         {
           model: MaterialKit,

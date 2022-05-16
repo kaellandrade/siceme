@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import DataContext from "../../data/DataContext";
+import App from "../../App";
 const axios = require('axios').default;
 
 function ContainerLogin() {
@@ -8,17 +9,38 @@ function ContainerLogin() {
 
   const handleLogar = (event) => {
     event.preventDefault();
-    var userLogin = {
+    const userLogin = {
       uso_email: document.getElementById("in email").value,
       uso_senha: document.getElementById("in senha").value,
     };
-    // console.log(userLogin);
+
     setCredenciais(userLogin);
-    localStorage.setItem("userLogin", JSON.stringify(userLogin));
-    console.log(JSON.parse(localStorage.getItem('userLogin')));
-    // console.log(userLogin);
-    // enviarLogin(userLogin);  
+
+    
+    const { uso_email, uso_senha } = JSON.parse(localStorage.getItem('userLogin'));
+    
+    try {
+      axios.post('http://localhost:3000/sessao', { uso_email, uso_senha }).then(res => {
+        const { token } = res.data;
+
+        localStorage.setItem("userLogin", JSON.stringify(token));
+        console.log(localStorage.getItem("userLogin"));
+
+
+
+        return res;
+      })
+    } catch (error) {
+      console.log(error);
+    }
   }
+  //   // console.log(userLogin);
+  //   setCredenciais(userLogin);
+  //   localStorage.setItem("userLogin", JSON.stringify(userLogin));
+  //   console.log(JSON.parse(localStorage.getItem('userLogin')));
+  //   // console.log(userLogin);
+  //   enviarLogin(userLogin);  
+  // }
 
   // const enviarLogin = async (credenciais) => {  
   //   try {
