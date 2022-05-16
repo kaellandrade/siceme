@@ -14,18 +14,14 @@ function Main(props) {
 
   const handleCadastrar = (event) => {
     event.preventDefault();
-    let subCat = document.getElementById("inputSubCategoria").value;
-    if(subCat === 'Subcategoria' || subCat === 'None') 
-      subCat = ""; 
 
     novoMaterial = {
       mtl_nome: document.getElementById("nome do material").value,
       mtl_quantidade: document.getElementById("quantidade").value,
-    //   mtl_etiqueta: document.getElementById("etiqueta").value,
+      mtl_codigo: document.getElementById("etiqueta").value,
     //   mtl_descricao: document.getElementById("descricao").value,
-    //   mtl_imagem: document.getElementById("file image").value,
+    //   imagem: document.getElementById("file image").value,
     //   mtl_categoria: document.getElementById("inputCategoria").value,
-    //   mtl_subCategoria: subCat,
     //   mtl_status: "Em Limpeza"
     };
     console.log(novoMaterial);
