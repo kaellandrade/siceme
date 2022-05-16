@@ -48,6 +48,7 @@ function Modal_status(props) {
   const editarMaterial = async () => {  
     try {
       axios.put(`http://localhost:3000/material/${props.id}`, novoMaterial)
+      .then(document.location.reload(true))
     }catch (ex){
       console.log(ex);  
     }
