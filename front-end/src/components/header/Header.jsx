@@ -19,7 +19,7 @@ function Header(props) {
             <Button texto="Cadastro" href="/cadastro/material" buttonS="Cadastro" buttonSelect={props.buttonSelect} />
           </div>
           <div className="col">
-            <Button texto="Relatórios" href="/relatorios/entregas" buttonS="Relatorios" buttonSelect={props.buttonSelect} />
+            <Button texto="Relatórios" href="/relatorios/materiais-disponiveis" buttonS="Relatorios" buttonSelect={props.buttonSelect} />
           </div>
           <div className="col user">
             <svg id="icon-user" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">

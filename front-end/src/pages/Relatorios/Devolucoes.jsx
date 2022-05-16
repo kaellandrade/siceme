@@ -32,7 +32,7 @@ function Main(props) {
               <div className="row">
                 <button type="button" className="buttonMenu" >
                   <ButtonSubMenu texto={"Devoluções"} buttonSelect={buttonSelect}
-                    href="/relatorios/devolucoes"
+                    href=""
                   />
                 </button>
 
@@ -47,7 +47,7 @@ function Main(props) {
               <div className="row">
                 <button type="button" className="buttonMenu" >
                   <ButtonSubMenu texto={"Composição dos kits"} buttonSelect={buttonSelect} 
-                    href="/relatorios/composicao-kits"
+                    href=""
                   />
                 </button>
 

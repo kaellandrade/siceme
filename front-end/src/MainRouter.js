@@ -37,14 +37,14 @@ function MainRouter() {
           <Cadastrar_kit buttonSelect="Cadastro" />
           } 
         />
-        <Route path="/relatorios/entregas" element={
+        {/* <Route path="/relatorios/entregas" element={
           <Entregas buttonSelect="Relatórios" />
           } 
         />
         <Route path="/relatorios/devolucoes" element={
           <Devolucoes buttonSelect="Relatórios" />
           } 
-        />
+        /> */}
         <Route path="/relatorios/materiais-disponiveis" element={
           <Materiais_disponiveis buttonSelect="Relatórios" />
           } 
@@ -53,12 +53,10 @@ function MainRouter() {
           <Modelo_Mat_Disponiveis/>
           } 
         />
-        <Route path="/relatorios/composicao-kits" element={
+        {/* <Route path="/relatorios/composicao-kits" element={
           <Composicao_kits buttonSelect="Relatórios" />
           } 
-        />
-        
-    
+        /> */}
       </Routes>
     </BrowserRouter>
   );
