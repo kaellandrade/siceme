@@ -1,14 +1,15 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { categorias } from "../../data/data"
 
-function Categoria_Dropdown() {
+function Categoria_Dropdown(props) {
 
   const [ctgSelect, setCtgSelect] = useState({sub_categoria: []});
+  var categoria = props.categorias;
 
-  const renderizarCategorias = (categorias) => {
+  const renderizarCategorias = (categoria) => {
     return (
-      categorias.map(({ id }) => {
-        return <option>{id}</option>
+      categoria.map(({ id, cta_nome }) => {
+        return <option value={id}>{cta_nome}</option>
       })
     )
   };
@@ -16,7 +17,7 @@ function Categoria_Dropdown() {
   const handleCtgS = event => {
     event.preventDefault();
     let ctg = document.getElementById("inputCategoria").value;
-    let categoria = categorias.find( ({id}) => {
+    let categoria = categoria.find( ({id}) => {
       return id === ctg;
     } );
     setCtgSelect(categoria)
@@ -28,7 +29,7 @@ function Categoria_Dropdown() {
       <div className="categorias col-md-12 d-flex">
         <select id="inputCategoria" className="form-select categoria" onChange={handleCtgS} >
           <option disabled selected>Categoria/Aplicação</option>
-          {renderizarCategorias(categorias)}
+          {renderizarCategorias(categoria)}
         </select>
 
 

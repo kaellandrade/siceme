@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/header/Header"
 import { Input, Form, Row, Col, FormGroup, Label, Button, FormText } from "reactstrap"
 import ButtonSubMenu from "./ButtonSubMenu"
@@ -6,54 +6,61 @@ import "./index.css"
 import Categoria_Dropdown from "./Categoria_Dropdown";
 const axios = require('axios').default;
 
-
 function Main(props) {
 
   const [buttonSelect, setButtonSelect] = useState("Cadastrar material");
+  const [categoria, setCategoria] = useState([]);
   var novoMaterial;
 
-  const handleCadastrar = (event) => {
-    event.preventDefault();
-
-    novoMaterial = {
-      mtl_nome: document.getElementById("nome do material").value,
-      mtl_quantidade: document.getElementById("quantidade").value,
-      mtl_codigo: document.getElementById("etiqueta").value,
-    //   mtl_descricao: document.getElementById("descricao").value,
-    //   imagem: document.getElementById("file image").value,
-    //   mtl_categoria: document.getElementById("inputCategoria").value,
-    //   mtl_status: "Em Limpeza"
-    };
-    console.log(novoMaterial);
-
-    postarMaterial();
   
-    
-  }
-
-  const postarMaterial = async () => {  
+  const getCategorias = async () => {  
     try {
-      axios.post('http://localhost:3000/material', novoMaterial)
+      axios.get('http://localhost:3000/categoria')
       .then(res => {
-        if(res.data)  {
-          alert("Material cadastrado com sucesso!");
-          document.getElementById("nome do material").value = "";
-          document.getElementById("quantidade").value = "";
-          document.getElementById("etiqueta").value = "";
-          document.getElementById("descricao").value = "";
-          document.getElementById("file image").value = "";
-          document.getElementById("inputCategoria").value = "";
-          document.getElementById("inputSubCategoria").value = "";
-        }
-      }).catch(e => {
-        alert(e.message)
+        setCategoria(res.data);
       }); 
-    }catch (ex) {
+    }catch (ex){
       console.log(ex);
     }
   }
 
 
+  const handleCadastrar = (event) => {
+    event.preventDefault();
+    novoMaterial = {
+      mtl_nome: document.getElementById("nome do material").value,
+      mtl_quantidade: document.getElementById("quantidade").value,
+      mtl_codigo: document.getElementById("etiqueta").value,
+      mtl_descricao: document.getElementById("descricao").value,
+      imagem: document.getElementById("file image").value,
+      mtl_categoria: document.getElementById("inputCategoria").value,
+      mtl_status_id: 1
+    };
+    console.log(novoMaterial);
+    postarMaterial();
+  }
+
+  const postarMaterial = async () => {   
+    axios.post('http://localhost:3000/material', novoMaterial)
+    .then(res => {
+      if(res.data){
+        alert("Material cadastrado com sucesso!");
+        document.getElementById("nome do material").value = "";
+        document.getElementById("quantidade").value = "";
+        document.getElementById("etiqueta").value = "";
+        document.getElementById("descricao").value = "";
+        document.getElementById("file image").value = "";
+        document.getElementById("inputCategoria").value = "";
+      }
+    }).catch(e => {
+      alert(e.message)
+    }); 
+  }
+
+  useEffect(() => {
+    getCategorias();
+  }, [])
+  
   return (
 
     <div className="Main">
@@ -183,7 +190,7 @@ function Main(props) {
                   </Col>
                   <Col md={7}>
                     <FormGroup floating>
-                      <Categoria_Dropdown />
+                      <Categoria_Dropdown categorias={categoria} />
                     </FormGroup>
                   </Col>
                 </Row>

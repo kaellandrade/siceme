@@ -10,29 +10,44 @@ const axios = require('axios').default;
 function Main(props) {
 
   const [selectedValue, setSelectedValue] = useState([]);
+  const [categoria, setCategoria] = useState([]);
   var novoKit;
+
+  const getCategorias = async () => {  
+    try {
+      axios.get('http://localhost:3000/categoria')
+      .then(res => {
+        setCategoria(res.data);
+      }); 
+    }catch (ex){
+      console.log(ex);
+    }
+  }
 
   const handleCadastrar = (event) => {
     event.preventDefault();
     novoKit = {
-      nomeKit: document.getElementById("nome do kit").value,
-      etiqueta: document.getElementById("etiqueta").value,
-      materiais: selectedValue,
-      qtde: document.getElementById("quantidade").value,
+      ktt_nome: document.getElementById("nome do kit").value,
+      ktt_codigo: document.getElementById("etiqueta").value,
+      ktt_array_materiais: selectedValue,
       imagem: document.getElementById("file image").value,
-      categoria: document.getElementById("inputCategoria").value,
+      ktt_categoria: document.getElementById("inputCategoria").value,
     };
     console.log(novoKit);    
-    // postarKit();
+    postarKit();
   }
 
   const postarKit = async () => {  
     try {
-      axios.post('http://localhost:3001/cadastro/kit', novoKit);
+      axios.post('http://localhost:3000/kit', novoKit);
     }catch (ex) {
       console.log(ex);
     }
   }
+
+  useEffect(() => {
+    getCategorias();
+  }, [])
   
   return (
 
@@ -137,7 +152,7 @@ function Main(props) {
                   </Col>
                   <Col md={7}>
                     <FormGroup floating>
-                      <Categoria_Dropdown />
+                      <Categoria_Dropdown categorias={categoria} />
                     </FormGroup>
                   </Col>
                 </Row>

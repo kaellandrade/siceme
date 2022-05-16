@@ -13,16 +13,15 @@ function Cadastrar_categoria(props) {
   const handleCadastrar = (event) => {
     event.preventDefault();
     novaCategoria = {
-      categoria: document.getElementById("nova-categoria").value,
-      subcategoria: document.getElementById("nova-sub-categoria").value
+      cta_nome: document.getElementById("nova-categoria").value,
     };
     console.log(novaCategoria);
-    // postarCategoria();
+    postarCategoria();
   }
 
   const postarCategoria = async () => {  
     try {
-      axios.post('http://localhost:3001/cadastro/categoria', novaCategoria);
+      axios.post('http://localhost:3000/categoria', novaCategoria);
     }catch (ex) {
       console.log(ex);
     }
