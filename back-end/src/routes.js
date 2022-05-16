@@ -59,6 +59,7 @@ routes.get('/status/:id', StatusController.index);
 
 // ======== CATEGORIA ========
 routes.get('/categoria/:id', CategoriaController.index);
+routes.post('/categoria', CategoriaController.store);
 
 // ======== AUTENTICAÇÃO ========
 // Middleware de autenticação (válido apenas para as rotas a seguir)
