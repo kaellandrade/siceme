@@ -58,7 +58,7 @@ routes.put('/kit/:id', KitController.update);
 routes.get('/status', StatusController.index);
 
 // ======== CATEGORIA ========
-routes.get('/categoria/:id', CategoriaController.index);
+routes.get('/categoria', CategoriaController.index);
 routes.post('/categoria', CategoriaController.store);
 
 // ======== AUTENTICAÇÃO ========

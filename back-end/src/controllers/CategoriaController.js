@@ -7,10 +7,8 @@ import Categoria from '../app/models/Categoria';
  */
 class CategoriaController {
   async index(req, res) {
-    const categoria = await Categoria.findAll({
-      attributes: ['id', 'cta_nome']
-    });
-    return res.status(200).json(categoria);
+    const categorias = await Categoria.findAll();
+    return res.status(200).json(categorias);
   }
 
   async store(req, res) {
