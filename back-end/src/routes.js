@@ -55,7 +55,7 @@ routes.delete('/kit/:id', KitController.delete);
 routes.put('/kit/:id', KitController.update);
 
 // ======== STATUS ========
-routes.get('/status/:id', StatusController.index);
+routes.get('/status', StatusController.index);
 
 // ======== CATEGORIA ========
 routes.get('/categoria', CategoriaController.index);

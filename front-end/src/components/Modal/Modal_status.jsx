@@ -1,32 +1,61 @@
 import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { Form } from "reactstrap"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "./modal_status.css"
+import axios from 'axios';
 
 
 function Modal_status(props) {
   const [modal, setModal] = useState(false);
+  const [status, setStatus] = useState([])
+  var novoMaterial;
+
+  const getStatus = async () => {  
+    try {
+      axios.get('http://localhost:3000/status')
+      .then(res => {
+        setStatus(res.data);
+      }); 
+    }catch (ex){
+      console.log(ex);
+    }
+  }
 
   const renderizarStatus = (stSetado) => {
-    let status = [
-      'Limpeza - Processando',
-      'Limpeza - Pronto',
-      'Desinfecção - Processando',
-      'Desinfecção - Pronto',
-      'Esterelização - Processando',
-      'Esterelização - Pronto',
-      'Entregue',
-      'Devolvido'
-    ];
     return (
-      status.map((sts) => {
-        if(sts != stSetado){
-          return <option>{sts}</option>
+      status.map(({id, sts_status_nome}) => {
+        if(sts_status_nome != stSetado){
+          return <option>{sts_status_nome}</option>
         }
       })
     )
   }
+
+  const handleConfirmar = (event) => {
+    event.preventDefault();
+    let sts = document.getElementById("alterar-status").value;
+    const id_status = status.find(({id, sts_status_nome}) => sts_status_nome === sts);
+    novoMaterial = {
+      mtl_status_id: id_status.id
+    };
+    console.log(novoMaterial);
+
+    editarMaterial();
+ 
+  }
+
+  const editarMaterial = async () => {  
+    try {
+      axios.put(`http://localhost:3000/material/${props.id}`, novoMaterial)
+    }catch (ex){
+      console.log(ex);  
+    }
+  }
+
+  useEffect(() => {
+    getStatus();
+  }, [])
 
   return (
     <div>
@@ -50,7 +79,7 @@ function Modal_status(props) {
         <ModalBody>
           <div className="container-fluid">
             <Form>
-              <select className="form-select">  
+              <select id="alterar-status" className="form-select">  
                 <option selected>{props.status}</option>
                 {renderizarStatus(props.status)}
               </select>
@@ -59,9 +88,11 @@ function Modal_status(props) {
           
         </ModalBody>
         <ModalFooter>
-          <Button className='button-confirmar-status' onClick={() => setModal(false)} >
-            Confirmar
-          </Button>
+          <form onSubmit={handleConfirmar}>
+            <Button className='button-confirmar-status' type="submit" onClick={() => setModal(false)} >
+              Confirmar
+            </Button>
+          </form>
         </ModalFooter>
       </Modal>
     </div>
