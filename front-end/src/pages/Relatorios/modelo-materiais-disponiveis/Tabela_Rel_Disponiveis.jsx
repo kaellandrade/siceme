@@ -9,10 +9,10 @@ function Tabela_Rel_Disponiveis(props) {
 
   const renderMateriais = (materiais) => {
     return (
-      materiais.map(({ id, codigo, nome, qtde, aplicacao, status}) => {
-        if(status === "Esterilização - Pronto"){
-          return <RowTabela_Rel_Disponiveis id={id} codigo={codigo} nome={nome} 
-                    qtde={qtde} aplicacao={aplicacao} status={status} />
+      materiais.map(({ id, mtl_codigo, mtl_nome, mtl_quantidade, mtl_categoria, status, mtl_descricao,solicitante}) => {
+        if(status.sts_status_nome === "ESTERILIZAÇÃO:PRONTO"){
+          return <RowTabela_Rel_Disponiveis id={id} codigo={ mtl_codigo} nome={mtl_nome} 
+                    qtde={mtl_quantidade} aplicacao={mtl_categoria} status={status.sts_status_nome} />
         }
       })
     )
