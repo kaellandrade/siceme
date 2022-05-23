@@ -50,7 +50,9 @@ function ContainerLogin() {
         <input id="in senha" className="pass" type="password" align="center" placeholder="Senha" />
         <input className="in checkbox" type="checkbox" id="lembrarAcesso" name="lembrarAcesso" />
         <label for="lembrarAcesso">Lembrar acesso</label>
-        <button className="submit" type="submit" align="center">Entrar</button>
+        <button className="submit" type="submit" align="center">
+          <a className="botao-entrar" href="/triagem">Entrar</a>
+        </button>
         <p className="forgot" align="center">
           <a href="#" >Esqueceu a senha?</a>
         </p>

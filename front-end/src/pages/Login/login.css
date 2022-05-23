@@ -4,7 +4,6 @@
 }
 
 .page-login {
-  height: 93vh;
   background: url("../../../public/background-login-original.png") no-repeat center center fixed;
   height: 100vh;
 }
@@ -134,6 +133,21 @@ a {
   text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
   color: #316B83;
   text-decoration: none;
+}
+
+a.botao-entrar{
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a.botao-entrar:hover{
+  color: #ffffff;
+
+}
+
+p.ponto-login{
+  color: #fff;
 }
 
 a:hover{
